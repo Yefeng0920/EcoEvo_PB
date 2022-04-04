@@ -1,0 +1,1777 @@
+obs_ID,study_ID,year_pub,es,var
+obs001,Wu L.: Bradshaw A.D.,1972,0.337310245,0.000121864
+obs002,Wu L.: Bradshaw A.D.,1972,0.119600643,0.000010908
+obs003,Lin Wu: Bradshaw A.D.: Thurman D.A.,1975,0.429078444,0.005795849
+obs004,Lin Wu: Bradshaw A.D.: Thurman D.A.,1975,0.328243516,0.002030233
+obs005,Lin Wu: Bradshaw A.D.: Thurman D.A.,1975,0.240831239,0.000868489
+obs006,Lin Wu: Bradshaw A.D.: Thurman D.A.,1975,0.045901603,0.00003225
+obs007,Lin Wu: Bradshaw A.D.: Thurman D.A.,1975,0.537343434,0.009730303
+obs008,Snaydon R.W.: Davies T.M.,1982,0.342575248,0.026822697
+obs009,Snaydon R.W.: Davies T.M.,1982,0.119475622,0.015462049
+obs010,Wilson G.B.: Bell J.N.B.,1986,0.113083691,0.000116489
+obs011,Wilson G.B.: Bell J.N.B.,1986,0.012967746,2.16E-05
+obs012,Wilson G.B.: Bell J.N.B.,1986,0.055140399,4.32E-05
+obs013,Wilson G.B.: Bell J.N.B.,1986,0.02946099,2.69E-05
+obs014,Wilson G.B.: Bell J.N.B.,1986,0.060043167,4.74E-05
+obs015,Gorla M.S.: Ottaviano E.: Frascaroli E.: Landi P.,1989,1.068018813,0.015256878
+obs016,Gorla M.S.: Ottaviano E.: Frascaroli E.: Landi P.,1989,1.325675253,0.016296927
+obs017,Gorla M.S.: Ottaviano E.: Frascaroli E.: Landi P.,1989,0.681955929,0.005880094
+obs018,Gorla M.S.: Ottaviano E.: Frascaroli E.: Landi P.,1989,0.153342988,0.005571965
+obs019,Till-Bottraud I.: Lin Wu: Harding J.,1990,0.017745223,0.000601652
+obs020,Till-Bottraud I.: Lin Wu: Harding J.,1990,0.003697705,0.000585829
+obs021,Till-Bottraud I.: Lin Wu: Harding J.,1990,0.040072215,0.00066946
+obs022,Till-Bottraud I.: Lin Wu: Harding J.,1990,0.012995484,0.000593982
+obs023,Agrawal A.A.: Laforsch C.: Tollrian R.,1999,0.38817815,0.070347837
+obs024,Agrawal A.A.: Laforsch C.: Tollrian R.,1999,0.253647301,0.069555728
+obs025,Agrawal A.A.: Laforsch C.: Tollrian R.,1999,0.119672126,0.069096898
+obs026,Franks S.J.: Sim S.: Weis A.E.,2007,0.105636124,0.000436558
+obs027,Franks S.J.: Sim S.: Weis A.E.,2007,0.143137965,0.000460297
+obs028,Franks S.J.: Sim S.: Weis A.E.,2007,0.026023375,0.000409887
+obs029,Franks S.J.: Sim S.: Weis A.E.,2007,0.029444552,0.000410369
+obs030,Franks S.J.: Sim S.: Weis A.E.,2007,0.101043977,0.000307338
+obs031,Franks S.J.: Sim S.: Weis A.E.,2007,0,0.001379918
+obs032,Leger E.A.: Rice K.J.,2007,0.000638498,9.38E-06
+obs033,Leger E.A.: Rice K.J.,2007,0.000824297,9.40E-06
+obs034,Leger E.A.: Rice K.J.,2007,0.009980462,1.51E-05
+obs035,Leger E.A.: Rice K.J.,2007,0.010413587,3.45E-05
+obs036,Leger E.A.: Rice K.J.,2007,0.004663377,0.000022715
+obs037,Leger E.A.: Rice K.J.,2007,0.001889033,2.02E-05
+obs038,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.005849453,5.63E-06
+obs039,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.001633812,5.13E-06
+obs040,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.003462336,5.27E-06
+obs041,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.001869334,0.000005139
+obs042,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.003212607,6.34E-06
+obs043,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.007491786,7.24E-06
+obs044,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.002593443,6.27E-06
+obs045,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.003074266,6.32E-06
+obs046,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.027787965,6.05E-05
+obs047,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.018691557,3.31E-05
+obs048,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.019369416,3.48E-05
+obs049,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.008757962,1.76E-05
+obs050,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.004117122,0.000013116
+obs051,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.003711124,0.000012879
+obs052,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.001290956,1.50E-05
+obs053,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.003358776,1.59E-05
+obs054,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.001790233,1.51E-05
+obs055,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.027795056,0.000144444
+obs056,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.009396444,3.62E-05
+obs057,Maron J.L.: Elmendorf S.C.: Vila M.,2007,0.010215012,3.87E-05
+obs058,Barrett S.C.H.: Colautti R.I.: Eckert C.G.,2008,0.00761648,7.38E-06
+obs059,Barrett S.C.H.: Colautti R.I.: Eckert C.G.,2008,0.010032994,8.65E-06
+obs060,Eranen J.K.,2008,0.002282676,6.40E-06
+obs061,Eranen J.K.,2008,0.002684918,6.41E-06
+obs062,Eranen J.K.,2008,0.002533541,6.40E-06
+obs063,Eranen J.K.,2008,0.002245051,6.40E-06
+obs064,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.009073551,6.58E-05
+obs065,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.008153438,0.000138329
+obs066,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.010258716,0.000126955
+obs067,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.0153452,0.000232764
+obs068,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.013772341,0.000464641
+obs069,Cheptou P.-O.: Carrue O.: Rouifed S.: Cantarel A.,2008,0.026696209,0.000672973
+obs070,Franks S.J.: Weis A.E.,2008,0.107282544,0.00043745
+obs071,Franks S.J.: Weis A.E.,2008,0.026985652,0.000410016
+obs072,Franks S.J.: Weis A.E.,2008,0.020977589,0.000409283
+obs073,Franks S.J.: Weis A.E.,2008,0.080742169,0.000424752
+obs074,Franks S.J.: Weis A.E.,2008,0.001719184,0.000408171
+obs075,Franks S.J.: Weis A.E.,2008,0.102918075,0.000435115
+obs076,Franks S.J.: Weis A.E.,2008,0.036156117,0.00041149
+obs077,Franks S.J.: Weis A.E.,2008,0.036595544,0.000411571
+obs078,Franks S.J.: Weis A.E.,2008,0.027108705,0.000410033
+obs079,Franks S.J.: Weis A.E.,2008,0.005175246,0.000408231
+obs080,Franks S.J.: Weis A.E.,2008,0.018725559,0.000409056
+obs081,Franks S.J.: Weis A.E.,2008,0.023430922,0.00040956
+obs082,Franks S.J.: Weis A.E.,2008,0.00931025,0.000408384
+obs083,Franks S.J.: Weis A.E.,2008,0.012558216,0.000408565
+obs084,Franks S.J.: Weis A.E.,2008,0.036472414,0.000411548
+obs085,Franks S.J.: Weis A.E.,2008,0.013728543,0.000408643
+obs086,Franks S.J.: Weis A.E.,2008,0.148780874,0.000464488
+obs087,Franks S.J.: Weis A.E.,2008,0.073676923,0.000421976
+obs088,Franks S.J.: Weis A.E.,2008,0.034609881,0.000411211
+obs089,Franks S.J.: Weis A.E.,2008,0.009769695,0.000408406
+obs090,Franks S.J.: Weis A.E.,2008,0.079696669,0.000424325
+obs091,Franks S.J.: Weis A.E.,2008,0.113866165,0.000441154
+obs092,Franks S.J.: Weis A.E.,2008,0.087401979,0.000427601
+obs093,Franks S.J.: Weis A.E.,2008,0.008131538,0.000408332
+obs094,Franks S.J.: Weis A.E.,2008,0.029755833,0.000410416
+obs095,Franks S.J.: Weis A.E.,2008,0.033797474,0.00041107
+obs096,Franks S.J.: Weis A.E.,2008,0,0.000408163
+obs097,Franks S.J.: Weis A.E.,2008,0.012680121,0.000408572
+obs098,Franks S.J.: Weis A.E.,2008,0.005994106,0.000408255
+obs099,Franks S.J.: Weis A.E.,2008,0.053581584,0.000415469
+obs100,Franks S.J.: Weis A.E.,2008,0.048482991,0.000414144
+obs101,Franks S.J.: Weis A.E.,2008,0.001053415,0.000408166
+obs102,Franks S.J.: Weis A.E.,2008,0.014206696,0.000408677
+obs103,Franks S.J.: Weis A.E.,2008,0.027577688,0.000410098
+obs104,Franks S.J.: Weis A.E.,2008,0.006922165,0.000408285
+obs105,Franks S.J.: Weis A.E.,2008,0.055436415,0.000415983
+obs106,Franks S.J.: Weis A.E.,2008,0.051864062,0.000415008
+obs107,Franks S.J.: Weis A.E.,2008,0.007420007,0.000408303
+obs108,Franks S.J.: Weis A.E.,2008,0.029444644,0.000410369
+obs109,Franks S.J.: Weis A.E.,2008,0.03264334,0.000410875
+obs110,Franks S.J.: Weis A.E.,2008,0.002806,0.000408183
+obs111,Franks S.J.: Weis A.E.,2008,0.019844617,0.000409165
+obs112,Franks S.J.: Weis A.E.,2008,0.013165395,0.000408604
+obs113,Franks S.J.: Weis A.E.,2008,0.025887474,0.000409869
+obs114,Franks S.J.: Weis A.E.,2008,0.001422302,0.000408168
+obs115,Franks S.J.: Weis A.E.,2008,0.029007902,0.000410304
+obs116,Franks S.J.: Weis A.E.,2008,0.007146919,0.000408293
+obs117,Franks S.J.: Weis A.E.,2008,0.010458347,0.000408442
+obs118,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.002839145,1.25E-05
+obs119,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.010137063,1.30E-05
+obs120,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.010040214,0.000007064
+obs121,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.00197456,6.36E-06
+obs122,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.000687963,6.98E-06
+obs123,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.000702933,7.23E-06
+obs124,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.001645923,6.71E-06
+obs125,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.000982991,6.64E-06
+obs126,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.002079656,7.53E-06
+obs127,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.010478871,8.00E-06
+obs128,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.00299418,7.18E-06
+obs129,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.009499425,7.15E-06
+obs130,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.003001432,6.40E-06
+obs131,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.005056601,7.08E-06
+obs132,Er??nen J.K.: Nilsen J.: Zverev V.E.: Kozlov M.V.,2009,0.012102806,8.46E-06
+obs133,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.001212331,6.23E-07
+obs134,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.002883565,3.02E-06
+obs135,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.003878898,3.15E-06
+obs136,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.004936739,3.33E-06
+obs137,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.005003487,3.34E-06
+obs138,Seifert E.K.: Bever J.D.: Maron J.L.,2009,0.002808194,3.01E-06
+obs139,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000286942
+obs140,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.014478418,0.000378601
+obs141,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.019196534,0.000786567
+obs142,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.010609638,0.000210667
+obs143,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.005353509,4.34E-05
+obs144,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000102596
+obs145,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000153894
+obs146,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.038901503,0.000099572
+obs147,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.022539588,0.000239955
+obs148,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.002522089,0.000103895
+obs149,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000118906
+obs150,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000156629
+obs151,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000235371
+obs152,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.001863002,0.000109836
+obs153,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.011736465,1.33E-05
+obs154,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000100819
+obs155,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.004908379,5.58E-06
+obs156,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.006549183,1.52E-05
+obs157,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.006670613,1.12E-05
+obs158,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.045269235,0.000853644
+obs159,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.007745559,1.62E-05
+obs160,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.004049379,3.00E-06
+obs161,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000453515
+obs162,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000286942
+obs163,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.014478418,0.000378601
+obs164,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.019196534,0.000786567
+obs165,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.010609638,0.000210667
+obs166,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000102596
+obs167,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000153894
+obs168,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.025297116,0.000052188
+obs169,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.008729545,0.00015837
+obs170,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.002522089,0.000103895
+obs171,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000118906
+obs172,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000235371
+obs173,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.001863002,0.000109836
+obs174,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.009879994,1.23E-05
+obs175,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000100819
+obs176,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.00131182,4.13E-06
+obs177,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.011399397,1.94E-05
+obs178,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.008775259,1.22E-05
+obs179,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.004968944,0.000471137
+obs180,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.00114202,1.34E-05
+obs181,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.003323791,0.000002859
+obs182,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0,0.000453515
+obs183,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.036343994,0.000393526
+obs184,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.009279079,1.73E-05
+obs185,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.014499529,1.59E-05
+obs186,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.050916526,0.000956268
+obs187,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.006756283,0.000015511
+obs188,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.000575554,2.57E-06
+obs189,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.001583712,9.98E-06
+obs190,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.008910717,1.22E-05
+obs191,Colautti R.I.: Maron J.L.: Barrett S.C.H.,2009,0.005710102,1.49E-05
+obs192,Allan E.: Pannell J.R.,2009,0.038997312,0.000171054
+obs193,Allan E.: Pannell J.R.,2009,0.012031195,0.000129383
+obs194,Allan E.: Pannell J.R.,2009,0.013805355,0.000130772
+obs195,Allan E.: Pannell J.R.,2009,0.005721052,0.000125991
+obs196,Allan E.: Pannell J.R.,2009,0.008093632,0.000126984
+obs197,Allan E.: Pannell J.R.,2009,0.01243641,0.000129684
+obs198,Allan E.: Pannell J.R.,2009,0.01619332,0.000132941
+obs199,Allan E.: Pannell J.R.,2009,0.013700215,0.000130684
+obs200,Allan E.: Pannell J.R.,2009,0.018272214,0.000135111
+obs201,Allan E.: Pannell J.R.,2009,0.105198854,0.000191579
+obs202,Allan E.: Pannell J.R.,2009,0.012411787,7.04E-05
+obs203,Allan E.: Pannell J.R.,2009,0.009584084,6.89E-05
+obs204,Allan E.: Pannell J.R.,2009,0.011996653,7.02E-05
+obs205,Allan E.: Pannell J.R.,2009,0.004955037,6.73E-05
+obs206,Allan E.: Pannell J.R.,2009,0.007289621,6.80E-05
+obs207,Allan E.: Pannell J.R.,2009,0.009209905,6.87E-05
+obs208,Allan E.: Pannell J.R.,2009,0.015190285,7.23E-05
+obs209,Allan E.: Pannell J.R.,2009,0.010720032,6.95E-05
+obs210,Allan E.: Pannell J.R.,2009,0.012936853,7.07E-05
+obs211,Allan E.: Pannell J.R.,2009,0,0.00004
+obs212,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.025217395,0.017120576
+obs213,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.199688506,0.017582171
+obs214,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.038495315,0.017130527
+obs215,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.333258283,0.018419562
+obs216,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0,0.017113095
+obs217,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.001033128,0.017113108
+obs218,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.014045646,0.017115416
+obs219,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.657894737,0.09749349
+obs220,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.741550954,0.114002518
+obs221,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.889798461,0.148106228
+obs222,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.404976677,0.059585757
+obs223,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.598237194,0.086926097
+obs224,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.192648532,0.041691911
+obs225,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.186006444,0.041337248
+obs226,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.286815882,0.048058751
+obs227,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.04034706,0.017132245
+obs228,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.080290229,0.017188929
+obs229,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.062099806,0.01715846
+obs230,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.033404574,0.017126222
+obs231,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.039788712,0.017131719
+obs232,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.053901148,0.017147272
+obs233,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.079030538,0.017186568
+obs234,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,1.052631579,0.192708333
+obs235,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.474899954,0.068261583
+obs236,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.789671102,0.12439292
+obs237,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.873105514,0.143956411
+obs238,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.425049589,0.061935225
+obs239,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.244267848,0.044872282
+obs240,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.131586099,0.038900005
+obs241,Campbell L.G.: Snow A.A.: Sweeney P.M.,2009,0.076193379,0.03727699
+obs242,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002012001,1.75E-05
+obs243,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000218921,0.000016676
+obs244,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000491319,1.67E-05
+obs245,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001979364,1.74E-05
+obs246,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.0025393,1.79E-05
+obs247,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000750915,1.68E-05
+obs248,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003621002,1.92E-05
+obs249,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007571773,2.79E-05
+obs250,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004876741,2.13E-05
+obs251,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0,1.67E-05
+obs252,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002497319,1.79E-05
+obs253,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003693554,1.93E-05
+obs254,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,,
+obs255,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,,
+obs256,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0,1.67E-05
+obs257,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,,
+obs258,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0,1.67E-05
+obs259,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0,1.67E-05
+obs260,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002548304,0.000017935
+obs261,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005263281,2.21E-05
+obs262,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003364313,1.89E-05
+obs263,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.008000423,0.000029168
+obs264,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005257574,2.21E-05
+obs265,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000923761,1.68E-05
+obs266,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002021279,1.75E-05
+obs267,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.006600537,2.52E-05
+obs268,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.013691475,5.33E-05
+obs269,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.008724598,3.15E-05
+obs270,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.011699146,4.34E-05
+obs271,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.020455431,9.84E-05
+obs272,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002806928,1.82E-05
+obs273,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000724177,1.68E-05
+obs274,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002224078,1.76E-05
+obs275,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00500278,2.16E-05
+obs276,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000560265,0.000016728
+obs277,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003289433,0.00001878
+obs278,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001244233,1.28E-05
+obs279,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001670171,1.28E-05
+obs280,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001958397,1.28E-05
+obs281,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001258551,1.28E-05
+obs282,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002933772,0.000013057
+obs283,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002623533,1.30E-05
+obs284,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004050833,1.34E-05
+obs285,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001042281,1.27E-05
+obs286,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001456387,1.28E-05
+obs287,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001646618,0.000012801
+obs288,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001046746,1.27E-05
+obs289,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002407736,0.000012935
+obs290,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002145763,1.29E-05
+obs291,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003386455,1.32E-05
+obs292,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003953546,0.000013362
+obs293,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003771844,0.000013301
+obs294,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004425062,1.35E-05
+obs295,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.0040496,1.34E-05
+obs296,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005371093,1.39E-05
+obs297,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005188183,0.000013852
+obs298,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005997081,1.42E-05
+obs299,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003237285,1.31E-05
+obs300,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000869786,1.27E-05
+obs301,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005780865,1.41E-05
+obs302,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004375677,1.35E-05
+obs303,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003204714,1.31E-05
+obs304,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003271497,0.000013148
+obs305,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002633492,1.30E-05
+obs306,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.006517884,1.45E-05
+obs307,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003503686,1.32E-05
+obs308,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.008888051,1.61E-05
+obs309,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007731189,1.53E-05
+obs310,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.006956499,1.48E-05
+obs311,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007018101,1.48E-05
+obs312,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005993438,0.000014243
+obs313,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000135428,1.27E-05
+obs314,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001400537,1.28E-05
+obs315,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001850967,1.28E-05
+obs316,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000610143,1.27E-05
+obs317,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000554702,1.27E-05
+obs318,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000504279,1.27E-05
+obs319,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000638118,0.000012701
+obs320,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002119617,1.29E-05
+obs321,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002875761,1.30E-05
+obs322,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000423921,1.27E-05
+obs323,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00155352,1.28E-05
+obs324,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00266638,0.000012992
+obs325,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00262407,1.30E-05
+obs326,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002564402,1.30E-05
+obs327,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002737354,1.30E-05
+obs328,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002195493,1.29E-05
+obs329,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.0025324,1.30E-05
+obs330,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000618335,1.27E-05
+obs331,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002675999,1.30E-05
+obs332,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002675948,1.30E-05
+obs333,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000855917,1.27E-05
+obs334,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002058254,1.29E-05
+obs335,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002464967,1.29E-05
+obs336,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00285628,1.30E-05
+obs337,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000064057,1.27E-05
+obs338,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001910264,1.28E-05
+obs339,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001910217,1.28E-05
+obs340,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000307807,1.27E-05
+obs341,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002585598,1.30E-05
+obs342,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001566027,1.28E-05
+obs343,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001685437,1.28E-05
+obs344,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000881909,1.27E-05
+obs345,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002520158,1.30E-05
+obs346,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002520119,1.30E-05
+obs347,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001065228,1.27E-05
+obs348,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002996215,1.31E-05
+obs349,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000656362,0.000012702
+obs350,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000570577,1.27E-05
+obs351,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001595301,1.28E-05
+obs352,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002981014,1.31E-05
+obs353,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002980982,1.31E-05
+obs354,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001727778,1.28E-05
+obs355,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005647973,1.41E-05
+obs356,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00605223,1.43E-05
+obs357,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.039704891,0.005603296
+obs358,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004573207,0.005556189
+obs359,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004216873,0.005556094
+obs360,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.090008193,0.005800891
+obs361,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.02761339,0.005578646
+obs362,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.016016374,0.005563324
+obs363,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007843733,0.005557419
+obs364,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.024098619,0.005573142
+obs365,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004580931,0.005556191
+obs366,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.056563839,0.005652445
+obs367,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.042356197,0.022276551
+obs368,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.035154875,0.022259648
+obs369,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.121825166,0.022671661
+obs370,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.106252351,0.022564102
+obs371,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.028701175,0.022247168
+obs372,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,,
+obs373,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,,
+obs374,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005668613,0.000147178
+obs375,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.017232583,0.000176365
+obs376,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002162037,0.000144152
+obs377,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.015065913,0.000168652
+obs378,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.009852738,0.000154336
+obs379,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005240318,0.000146663
+obs380,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004019562,0.000145418
+obs381,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.016078248,0.000172127
+obs382,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004940712,0.000146327
+obs383,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000285118,0.000143646
+obs384,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.0012282,0.000143803
+obs385,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.010955539,0.000156865
+obs386,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.012137501,0.000159873
+obs387,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005617502,0.000147115
+obs388,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.011439629,6.32E-05
+obs389,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007716952,4.93E-05
+obs390,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003268309,3.98E-05
+obs391,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.005638968,4.39E-05
+obs392,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003689833,4.03E-05
+obs393,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001117679,3.79E-05
+obs394,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.020597183,0.000120548
+obs395,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.01652565,9.10E-05
+obs396,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002459886,0.00003887
+obs397,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001177785,3.80E-05
+obs398,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004512952,4.17E-05
+obs399,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.002072606,3.85E-05
+obs400,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.016002528,0.000087704
+obs401,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.014450161,7.85E-05
+obs402,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.004217001,4.12E-05
+obs403,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.007408508,4.84E-05
+obs404,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.008329803,5.12E-05
+obs405,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.003029093,3.95E-05
+obs406,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001935725,3.36E-07
+obs407,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000217979,1.86E-06
+obs408,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000164158,1.86E-06
+obs409,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000327169,1.86E-06
+obs410,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001451928,1.89E-06
+obs411,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.000370615,1.86E-06
+obs412,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.001246044,1.88E-06
+obs413,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.00044872,1.86E-06
+obs414,Crispo E.: DiBattista J.D.: Correa C.: Thibert-Plante X.: McKellar A.E.: Schwartz A.K.: Berner D.: De Leon L.F.: Hendry A.P.,2010,0.0014185,1.89E-06
+obs415,Lavergne S.: Muenke N.J.: Molofsky J.,2010,0.000948819,1.32E-06
+obs416,Colautti R.I.: Eckert C.G.: Barrett S.C.H.,2010,0.090347986,0.000779792
+obs417,Colautti R.I.: Eckert C.G.: Barrett S.C.H.,2010,0.122791843,0.001945124
+obs418,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004045923,0.000004902
+obs419,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008866671,1.27E-05
+obs420,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006895142,0.000011236
+obs421,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002834995,4.16E-06
+obs422,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.012312972,9.26E-06
+obs423,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004062438,2.71E-06
+obs424,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002001689,2.23E-06
+obs425,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003475883,6.34E-06
+obs426,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.010551046,4.50E-06
+obs427,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001999661,2.77E-06
+obs428,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002762951,1.70E-05
+obs429,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003487539,4.58E-06
+obs430,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.009931663,4.50E-06
+obs431,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00588122,1.61E-06
+obs432,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002003184,1.84E-06
+obs433,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004489286,1.17E-05
+obs434,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005815385,7.91E-06
+obs435,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002842737,2.72E-06
+obs436,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002279634,3.65E-06
+obs437,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001992075,4.75E-06
+obs438,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.007246141,1.11E-05
+obs439,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008950854,2.71E-05
+obs440,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004970077,9.05E-06
+obs441,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006486487,1.53E-05
+obs442,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00495603,4.78E-05
+obs443,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005732323,0.000015528
+obs444,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008004214,0.000004948
+obs445,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008001601,2.77E-05
+obs446,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002814919,7.85E-06
+obs447,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001999288,2.87E-06
+obs448,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005000094,5.83E-06
+obs449,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008029845,3.02E-06
+obs450,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002832153,4.69E-06
+obs451,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004959913,1.01E-05
+obs452,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001983034,7.09E-06
+obs453,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006260724,2.68E-06
+obs454,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001959402,1.30E-05
+obs455,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00349852,0.000002904
+obs456,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005443136,4.53E-06
+obs457,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003469081,7.36E-06
+obs458,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005863588,0.000003319
+obs459,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006236557,0.000004884
+obs460,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004543478,5.40E-06
+obs461,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.011152797,5.32E-06
+obs462,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006510411,7.66E-05
+obs463,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.008440956,1.98E-05
+obs464,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00197308,0.00000962
+obs465,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.030099019,0.000025641
+obs466,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.030386548,9.46E-06
+obs467,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005449191,3.91E-06
+obs468,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002828087,5.44E-06
+obs469,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003499993,2.68E-06
+obs470,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.007663494,5.28E-06
+obs471,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.009815951,1.19E-05
+obs472,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003484185,0.000005091
+obs473,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.010572752,0.000003127
+obs474,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001082333,7.04E-06
+obs475,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.007536211,1.48E-05
+obs476,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002824049,6.18E-06
+obs477,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005850497,4.58E-06
+obs478,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003158692,0.000007326
+obs479,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005455316,3.28E-06
+obs480,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.007323077,5.05E-06
+obs481,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005840046,5.57E-06
+obs482,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006223963,6.02E-06
+obs483,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001987147,6.03E-06
+obs484,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.003434177,1.25E-05
+obs485,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001978504,8.25E-06
+obs486,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00577917,3.65E-05
+obs487,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.006119717,1.52E-05
+obs488,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005798835,9.45E-06
+obs489,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.0034872,4.63E-06
+obs490,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00343788,6.94E-05
+obs491,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005428866,5.97E-06
+obs492,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001955749,1.39E-05
+obs493,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004542278,5.54E-06
+obs494,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002834527,4.25E-06
+obs495,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005738282,1.50E-05
+obs496,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001989908,5.32E-06
+obs497,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001994165,4.21E-06
+obs498,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.000629856,2.44E-06
+obs499,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.002829582,5.17E-06
+obs500,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.00039641,4.82E-06
+obs501,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.000628448,3.61E-06
+obs502,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001086902,4.89E-06
+obs503,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.004537522,6.10E-06
+obs504,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.000628448,3.61E-06
+obs505,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.001663611,4.91E-06
+obs506,Buswell J.M.: Moles A.T.: Hartley S.,2011,0.005550308,6.25E-06
+obs507,Manalil S.: Busi R.: Renton M.: Powles S.B.,2011,6.914041752,10.00338021
+obs508,Manalil S.: Busi R.: Renton M.: Powles S.B.,2011,8.447533105,14.10432595
+obs509,Manalil S.: Busi R.: Renton M.: Powles S.B.,2011,6.78832798,9.666939473
+obs510,Manalil S.: Busi R.: Renton M.: Powles S.B.,2011,2.899173505,1.808308661
+obs511,Rowe C.L.J.: Leger E.A.,2011,0.004791335,3.34E-07
+obs512,Rowe C.L.J.: Leger E.A.,2011,0.000165921,3.24E-07
+obs513,Rowe C.L.J.: Leger E.A.,2011,0.005491512,0.000000843
+obs514,Rowe C.L.J.: Leger E.A.,2011,0.003253538,0.000000794
+obs515,Rowe C.L.J.: Leger E.A.,2011,0.000268609,3.14E-06
+obs516,Rowe C.L.J.: Leger E.A.,2011,0.004898588,2.27E-06
+obs517,Rowe C.L.J.: Leger E.A.,2011,0.007358471,7.58E-06
+obs518,Rowe C.L.J.: Leger E.A.,2011,0.001595037,2.11E-06
+obs519,Rowe C.L.J.: Leger E.A.,2011,0.006814906,7.41E-06
+obs520,Rowe C.L.J.: Leger E.A.,2011,0.00418022,2.21E-06
+obs521,Rowe C.L.J.: Leger E.A.,2011,0.00715968,7.36E-06
+obs522,Rowe C.L.J.: Leger E.A.,2011,0.000410305,3.08E-06
+obs523,Rowe C.L.J.: Leger E.A.,2011,0.005309088,2.29E-06
+obs524,Rowe C.L.J.: Leger E.A.,2011,0.006553061,7.29E-07
+obs525,Rowe C.L.J.: Leger E.A.,2011,0.004654122,0.000002258
+obs526,Rowe C.L.J.: Leger E.A.,2011,0.000428206,3.08E-06
+obs527,Rowe C.L.J.: Leger E.A.,2011,0.00061701,2.14E-06
+obs528,Rowe C.L.J.: Leger E.A.,2011,0.000873583,3.08E-06
+obs529,Rowe C.L.J.: Leger E.A.,2011,0.001231206,3.09E-06
+obs530,Rowe C.L.J.: Leger E.A.,2011,0.014193674,3.55E-06
+obs531,Rowe C.L.J.: Leger E.A.,2011,0.002462412,3.11E-06
+obs532,Rowe C.L.J.: Leger E.A.,2011,0.000306385,3.08E-06
+obs533,Rowe C.L.J.: Leger E.A.,2011,0.003051211,2.20E-06
+obs534,Rowe C.L.J.: Leger E.A.,2011,0.000754988,3.08E-06
+obs535,Rowe C.L.J.: Leger E.A.,2011,0.000757048,3.08E-06
+obs536,Rowe C.L.J.: Leger E.A.,2011,0.002278461,2.17E-06
+obs537,Rowe C.L.J.: Leger E.A.,2011,0.000916219,3.08E-06
+obs538,Rowe C.L.J.: Leger E.A.,2011,0.001195736,3.09E-06
+obs539,Rowe C.L.J.: Leger E.A.,2011,0.002761472,3.12E-06
+obs540,Rowe C.L.J.: Leger E.A.,2011,0.002534053,3.21E-06
+obs541,Rowe C.L.J.: Leger E.A.,2011,0.002215818,3.10E-06
+obs542,Rowe C.L.J.: Leger E.A.,2011,0.000656561,3.08E-06
+obs543,Rowe C.L.J.: Leger E.A.,2011,0.000644446,2.14E-06
+obs544,Rowe C.L.J.: Leger E.A.,2011,0.003678616,2.23E-06
+obs545,Rowe C.L.J.: Leger E.A.,2011,0.001125378,2.06E-06
+obs546,Rowe C.L.J.: Leger E.A.,2011,0.003563929,2.23E-06
+obs547,Rowe C.L.J.: Leger E.A.,2011,0.011452905,0.000003058
+obs548,Rowe C.L.J.: Leger E.A.,2011,0.00059077,3.08E-06
+obs549,Rowe C.L.J.: Leger E.A.,2011,0.002746527,0.000003117
+obs550,Rowe C.L.J.: Leger E.A.,2011,0.000347551,3.08E-06
+obs551,Rowe C.L.J.: Leger E.A.,2011,4.88E-05,3.08E-06
+obs552,Rowe C.L.J.: Leger E.A.,2011,0.001464774,0.000003089
+obs553,Rowe C.L.J.: Leger E.A.,2011,0.00619187,0.000007089
+obs554,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.006718192,5.39E-06
+obs555,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.009776772,6.56E-06
+obs556,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.003359096,4.60E-06
+obs557,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.002160474,4.45E-06
+obs558,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.014039104,8.92E-06
+obs559,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.009766388,6.56E-06
+obs560,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.000102728,4.34E-06
+obs561,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.007939365,5.81E-06
+obs562,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.004337354,4.78E-06
+obs563,Oduor A.M.O.: Lankau R.A.: Strauss S.Y.: Gomez J.M.,2011,0.004781988,4.87E-06
+obs564,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.004642747,4.97E-06
+obs565,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.019674212,8.90E-06
+obs566,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.00614194,2.78E-06
+obs567,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.003324564,2.50E-06
+obs568,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.009326314,0.000003283
+obs569,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.006286987,2.80E-06
+obs570,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.006063194,2.77E-06
+obs571,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.00298165,0.000002482
+obs572,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.004676021,2.62E-06
+obs573,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.009504946,3.32E-06
+obs574,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.011947044,1.95E-06
+obs575,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.018773015,3.04E-06
+obs576,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.006833148,1.46E-06
+obs577,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.012315796,2.00E-06
+obs578,Godoy O.: Saldana A.: Fuentes N.: Valladares F.: Gianoli E.,2011,0.016674967,2.65E-06
+obs579,Bodbyl Roels S.A.: Kelly J.K.,2011,0.023963096,0.000227348
+obs580,Bodbyl Roels S.A.: Kelly J.K.,2011,0.001270308,0.000226759
+obs581,Bodbyl Roels S.A.: Kelly J.K.,2011,0.019902904,0.000227165
+obs582,Bodbyl Roels S.A.: Kelly J.K.,2011,0.035107677,0.000228024
+obs583,Bodbyl Roels S.A.: Kelly J.K.,2011,0.007806031,0.00022682
+obs584,Bodbyl Roels S.A.: Kelly J.K.,2011,0.061809573,0.000230684
+obs585,Bodbyl Roels S.A.: Kelly J.K.,2011,0.098333411,0.000236695
+obs586,Bodbyl Roels S.A.: Kelly J.K.,2011,0.054083376,0.000229764
+obs587,Bodbyl Roels S.A.: Kelly J.K.,2011,0.040084254,0.000228409
+obs588,Bodbyl Roels S.A.: Kelly J.K.,2011,0.013648802,0.000226949
+obs589,Bodbyl Roels S.A.: Kelly J.K.,2011,0.088217555,0.000234756
+obs590,Bodbyl Roels S.A.: Kelly J.K.,2011,0.049513605,0.000229277
+obs591,Bodbyl Roels S.A.: Kelly J.K.,2011,0.035980624,0.000228088
+obs592,Bodbyl Roels S.A.: Kelly J.K.,2011,0.006933766,0.000226807
+obs593,Bodbyl Roels S.A.: Kelly J.K.,2011,0.097811234,0.00023659
+obs594,Bodbyl Roels S.A.: Kelly J.K.,2011,0.043648626,0.000228715
+obs595,Bodbyl Roels S.A.: Kelly J.K.,2011,0.039379557,0.000228351
+obs596,Bodbyl Roels S.A.: Kelly J.K.,2011,0.06037899,0.000230504
+obs597,Bodbyl Roels S.A.: Kelly J.K.,2011,0.040419153,0.000228436
+obs598,Bodbyl Roels S.A.: Kelly J.K.,2011,0.022795944,0.000227291
+obs599,Bodbyl Roels S.A.: Kelly J.K.,2011,0.086822811,0.000234505
+obs600,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.006379044,6.82E-07
+obs601,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.008947485,7.67E-07
+obs602,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.019435271,1.41E-06
+obs603,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.007692894,7.22E-07
+obs604,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.001629061,6.01E-07
+obs605,Porter S.S.: Stanton M.L.: Rice K.J.,2011,0.002397913,6.07E-07
+obs606,terHorst C.P.: Lau J.A.,2012,0.271426765,0.020269795
+obs607,terHorst C.P.: Lau J.A.,2012,0.050609312,0.019913337
+obs608,terHorst C.P.: Lau J.A.,2012,0.004379846,0.019323765
+obs609,terHorst C.P.: Lau J.A.,2012,0.600918422,0.021080918
+obs610,Jensen H.R.: Dreiseitl A.: Sadiki M.: Schoen D.J.,2012,0.055435918,0.000194949
+obs611,Lau J.A.: Lennon J.T.,2012,0.311394494,0.056044444
+obs612,Lau J.A.,2012,0.02998543,0.125099091
+obs613,Lau J.A.,2012,0.248452549,0.131803014
+obs614,Lau J.A.,2012,0.152372731,0.171201325
+obs615,Lau J.A.,2012,0.327153676,0.187570871
+obs616,Lau J.A.,2012,0.133333333,0.140277778
+obs617,Lau J.A.,2012,0.58718551,0.218705882
+obs618,Powles: S.B.: D.E Lorraine-Colwill: J.J. Dellow & C. Preston.,1998,0.201374294,0.006691347
+obs619,Alcocer-Ruthling: M.: Thill: D.C.: and Shafii: B.,1992,0.719843578,0.01308542
+obs620,Alcocer-Ruthling: M.: Thill: D.C.: and Shafii: B.,1992,0.002053075,3.10E-06
+obs621,Alcocer-Ruthling: M.: Thill: D.C.: and Shafii: B.,1992,0.022294175,0.000262646
+obs622,Alcocer-Ruthling: M.: Thill: D.C.: and Shafii: B.,1992,0.019871787,5.06E-05
+obs623,Alcocer-Ruthling: M.: Thill: D.C.: and Shafii: B.,1992,0.012272784,0.000262234
+obs624,Antonovics: J. & A.D. Bradshaw,1970,0.03950644,0.000055561
+obs625,Antonovics: J. & A.D. Bradshaw,1970,0.00755313,6.30E-06
+obs626,Antonovics: J. & A.D. Bradshaw,1970,0.004868747,6.26E-06
+obs627,Antonovics: J. & A.D. Bradshaw,1970,0.020474516,1.14E-05
+obs628,Antonovics: J. & A.D. Bradshaw,1970,0.01621089,9.83E-06
+obs629,Antonovics: J. & A.D. Bradshaw,1970,0.009715614,6.48E-06
+obs630,Antonovics: J. & A.D. Bradshaw,1970,0.001614125,5.56E-06
+obs631,Antonovics: J. & A.D. Bradshaw,1970,0.00666497,5.54E-06
+obs632,Antonovics: J. & A.D. Bradshaw,1970,0.007238195,6.94E-06
+obs633,Antonovics: J. & A.D. Bradshaw,1970,0.001735601,5.83E-06
+obs634,Antonovics: J. & A.D. Bradshaw,1970,0.002361091,5.22E-06
+obs635,Antonovics: J. & A.D. Bradshaw,1970,0.00077004,5.61E-06
+obs636,Blair: A. C: and L. M. Wolfe,2004,0.003835375,2.70E-06
+obs637,Blair: A. C: and L. M. Wolfe,2004,0.001095821,2.52E-06
+obs638,Blair: A. C: and L. M. Wolfe,2004,0.002988604,2.62E-06
+obs639,Blair: A. C: and L. M. Wolfe,2004,0.004058598,2.73E-06
+obs640,Blair: A. C: and L. M. Wolfe,2004,0.010866896,4.12E-06
+obs641,Blair: A. C: and L. M. Wolfe,2004,0.006095507,3.01E-06
+obs642,Blair: A. C: and L. M. Wolfe,2004,0.003422039,2.66E-06
+obs643,Blair: A. C: and L. M. Wolfe,2004,0.002962038,2.62E-06
+obs644,Blair: A. C: and L. M. Wolfe,2004,0.002892007,2.61E-06
+obs645,Blair: A. C: and L. M. Wolfe,2004,0.002285907,2.57E-06
+obs646,Blair: A. C: and L. M. Wolfe,2004,0.005288093,0.000002883
+obs647,Blair: A. C: and L. M. Wolfe,2004,0.001100622,2.52E-06
+obs648,Blair: A. C: and L. M. Wolfe,2004,0.004148524,2.74E-06
+obs649,Blair: A. C: and L. M. Wolfe,2004,0.003774496,2.70E-06
+obs650,Blair: A. C: and L. M. Wolfe,2004,0.000576224,0.000002573
+obs651,Blair: A. C: and L. M. Wolfe,2004,0.000640131,0.000002575
+obs652,Blossey: B.: and R. N??tzold.,1995,0.009593049,4.35E-06
+obs653,Blossey: B.: and R. N??tzold.,1995,0.009872661,4.42E-06
+obs654,Blossey: B.: and R. N??tzold.,1995,0.00650644,3.67E-06
+obs655,Blossey: B.: and R. N??tzold.,1995,0.014052063,0.000005791
+obs656,Blossey: B.: and R. N??tzold.,1995,0.001270235,1.25E-05
+obs657,Blossey: B.: and R. N??tzold.,1995,0.00099737,1.24E-05
+obs658,Blossey: B.: and R. N??tzold.,1995,0.003119484,3.39E-06
+obs659,Blossey: B.: and R. N??tzold.,1995,0.001952108,3.07E-06
+obs660,Bossdorf O: Prati D: Auge H: Schmid B.,2004,0.002990148,7.38E-07
+obs661,Bossdorf O: Prati D: Auge H: Schmid B.,2004,0.002642219,7.30E-07
+obs662,Bossdorf O: Prati D: Auge H: Schmid B.,2004,0.00306242,0.00000074
+obs663,Bossdorf O: Prati D: Auge H: Schmid B.,2004,0.002387972,7.25E-07
+obs664,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.007968415,1.60E-05
+obs665,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.003292438,1.35E-05
+obs666,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.000193491,7.12E-06
+obs667,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.000701296,7.13E-06
+obs668,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.000122544,7.12E-06
+obs669,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.003753779,7.45E-06
+obs670,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.004212454,0.000007535
+obs671,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.001300496,6.63E-06
+obs672,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.000302936,6.60E-06
+obs673,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.002818015,6.76E-06
+obs674,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.002945605,0.000006778
+obs675,Bossdorf O: Schro??der S: Prati D: Auge H.,2004,0.001698243,6.65E-06
+obs676,Buckley YM: Downey P: Fowler SV: Hill R: Memmot J: Norambuena H: Pitcairn M: Shaw R: Sheppard AW: Winks C et al.,2003,0.0002106,5.81E-09
+obs677,Buckley YM: Downey P: Fowler SV: Hill R: Memmot J: Norambuena H: Pitcairn M: Shaw R: Sheppard AW: Winks C et al.,2003,4.73E-05,9.51E-09
+obs678,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.028637726,0.000176846
+obs679,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.005390244,2.23E-05
+obs680,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.016191788,6.79E-05
+obs681,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.011650255,4.32E-05
+obs682,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.003099699,1.85E-05
+obs683,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001372046,1.70E-05
+obs684,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.004487689,2.06E-05
+obs685,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002483658,1.79E-05
+obs686,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.012828933,4.88E-05
+obs687,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001814598,1.73E-05
+obs688,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001539328,1.71E-05
+obs689,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.010529415,3.83E-05
+obs690,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000707049,1.68E-05
+obs691,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000131958,1.67E-05
+obs692,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000712337,1.68E-05
+obs693,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.00651042,2.49E-05
+obs694,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002230015,1.76E-05
+obs695,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0,1.67E-05
+obs696,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000921715,1.68E-05
+obs697,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.05713512,0.000654249
+obs698,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002303267,1.77E-05
+obs699,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001156195,1.69E-05
+obs700,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.015958751,6.64E-05
+obs701,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000756044,1.68E-05
+obs702,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000989775,0.000016858
+obs703,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.000602744,1.67E-05
+obs704,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.004624439,2.08E-05
+obs705,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001262018,5.05E-06
+obs706,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002656023,5.21E-06
+obs707,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002538336,5.20E-06
+obs708,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001669021,5.08E-06
+obs709,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001185377,3.36E-06
+obs710,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001850708,3.40E-06
+obs711,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002257425,3.43E-06
+obs712,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002882057,0.00000349
+obs713,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.002284939,3.43E-06
+obs714,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.00012561,3.33E-06
+obs715,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0,3.33E-06
+obs716,Buschmann: H.: Edwards: P.J. & Dietz: H.,2005,0.001667941,3.39E-06
+obs717,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.070971478,2.87E-05
+obs718,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.161682209,8.18E-05
+obs719,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.024198423,3.51E-05
+obs720,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.004843248,4.01E-05
+obs721,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.005563592,4.01E-05
+obs722,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.017723039,0.000040497
+obs723,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.223222161,0.000236586
+obs724,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.582103105,0.001453523
+obs725,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.001355381,5.33E-05
+obs726,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,,
+obs727,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.221768478,0.000715747
+obs728,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.016992576,8.47E-05
+obs729,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.039662864,0.000206091
+obs730,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.025306316,4.15E-05
+obs731,Callaway: R. M.: W. M. Ridenour: T. Laboski: T. Weir: and J. M. Vivanco.,2005,0.046463198,0.000189569
+obs732,Ca??o L: Escarre?? J: Vrieling K: Sans FX.,2009,0.009957233,3.29E-06
+obs733,Ca??o L: Escarre?? J: Vrieling K: Sans FX.,2009,0.041757783,5.69E-05
+obs734,Cody: M.L. & Overton: J.M.,1996,0.921849351,0.514811883
+obs735,Cody: M.L. & Overton: J.M.,1996,0.521265459,0.476391827
+obs736,Cody: M.L. & Overton: J.M.,1996,0.076137802,0.003320577
+obs737,Cody: M.L. & Overton: J.M.,1996,0.04864079,0.003222606
+obs738,Cody: M.L. & Overton: J.M.,1996,0.870832056,0.164983554
+obs739,Cody: M.L. & Overton: J.M.,1996,0.476034369,0.129643863
+obs740,Cody: M.L. & Overton: J.M.,1996,0.17035432,0.005892368
+obs741,Cody: M.L. & Overton: J.M.,1996,0.056497745,0.004936699
+obs742,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.003940529,1.82E-06
+obs743,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.000767895,0.000001729
+obs744,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.0015985,1.74E-06
+obs745,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.004343868,1.84E-06
+obs746,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.00999247,2.35E-06
+obs747,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.008744114,2.20E-06
+obs748,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.006605828,2.00E-06
+obs749,Cripps MG: Hinz HL: McKenney JL: Price WJ: Schwarzl??nder M.,2009,0.005623643,0.000012426
+obs750,Daehler: C.C. & Strong: D.R.,1997,0.045750044,4.35E-05
+obs751,Daehler: C.C. & Strong: D.R.,1997,0.003652373,2.12E-05
+obs752,Davies: M. S.: & Snaydon: R. W.,1973,0.009064792,0.000103951
+obs753,Davies: M. S.: & Snaydon: R. W.,1973,0.058959474,0.000796266
+obs754,Davies: M. S.: & Snaydon: R. W.,1973,0.002662751,9.82E-05
+obs755,Davies: M. S.: & Snaydon: R. W.,1973,0.00995014,0.000105241
+obs756,Davies: M. S.: & Snaydon: R. W.,1973,0.003164907,9.84E-05
+obs757,Davies: M. S.: & Snaydon: R. W.,1973,0.002966202,9.83E-05
+obs758,Davies: M. S.: & Snaydon: R. W.,1973,0.030586937,0.00016933
+obs759,Davies: M. S.: & Snaydon: R. W.,1973,0.003684149,9.87E-05
+obs760,DAVIES: M. S.: AND R. W. SNAYDON.,1973,0.004037309,0.000123867
+obs761,DAVIES: M. S.: AND R. W. SNAYDON.,1973,0.007761787,0.000102272
+obs762,DAVIES: M. S.: AND R. W. SNAYDON.,1973,0.003176674,9.84E-05
+obs763,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.00266771,3.30E-05
+obs764,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.0059175,0.000100339
+obs765,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.001870423,9.79E-05
+obs766,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.001395475,9.78E-05
+obs767,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.000859278,9.77E-05
+obs768,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.006449633,0.000100843
+obs769,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.004885437,9.95E-05
+obs770,DAVIES: M. S.: AND R. W. SNAYDON.,1974,0.00295617,9.83E-05
+obs771,Davison AW: Reiling K.,1995,0.233984808,0.005964388
+obs772,Davison AW: Reiling K.,1995,0.31967547,0.021009932
+obs773,Davison AW: Reiling K.,1995,0.107686872,0.004912347
+obs774,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0.022796368,0.000102543
+obs775,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0.022447259,8.92E-05
+obs776,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0.00503619,8.76E-05
+obs777,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0.018625953,8.45E-05
+obs778,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0,8.68E-05
+obs779,Ferrero-Serrano: A.: A. Hild: and B. Mealor.,2009,0.013650436,7.96E-05
+obs780,Kiang: Y.T.,1982,0.02681846,3.76E-05
+obs781,Kiang: Y.T.,1982,0,3.29E-05
+obs782,Kiang: Y.T.,1982,0.012595914,3.39E-05
+obs783,Kiang: Y.T.,1982,0.021167985,3.58E-05
+obs784,Kiang: Y.T.,1982,0.01301098,3.40E-05
+obs785,Kiang: Y.T.,1982,0.034101226,4.05E-05
+obs786,Kiang: Y.T.,1982,0.013936897,3.41E-05
+obs787,Kiang: Y.T.,1982,0.023110646,1.28E-05
+obs788,Kiang: Y.T.,1982,0.003292667,1.17E-05
+obs789,Kiang: Y.T.,1982,0.012137161,1.20E-05
+obs790,Kiang: Y.T.,1982,0.010441753,1.19E-05
+obs791,Kiang: Y.T.,1982,0.022541366,1.28E-05
+obs792,Kiang: Y.T.,1982,0.015846411,1.22E-05
+obs793,Kiang: Y.T.,1982,0.006263715,1.18E-05
+obs794,Kiang: Y.T.,1982,,
+obs795,Kiang: Y.T.,1982,0.007311977,0.000203547
+obs796,Kiang: Y.T.,1982,0.007709974,3.33E-05
+obs797,Kiang: Y.T.,1982,0.043557447,1.57E-05
+obs798,Kiang: Y.T.,1982,0.006265747,0.000101249
+obs799,Kollmann J: Ba??uelos MJ,2004,0.006586748,9.34E-06
+obs800,Kollmann J: Ba??uelos MJ,2004,0.001159557,7.17E-06
+obs801,Kollmann J: Ba??uelos MJ,2004,0.016305274,1.85E-05
+obs802,Kollmann J: Ba??uelos MJ,2004,0.009130361,1.07E-05
+obs803,Kollmann J: Ba??uelos MJ,2004,0.015278017,1.71E-05
+obs804,Lavergne S: Molofsky J.,2007,0.101079391,0.007866868
+obs805,Lavergne S: Molofsky J.,2007,0.018974155,0.000320084
+obs806,Lavergne S: Molofsky J.,2007,0.010623178,0.000130847
+obs807,Lavergne S: Molofsky J.,2007,0.049837839,0.001946112
+obs808,Law & Salick,2005,0.009356983,5.81E-06
+obs809,Law & Salick,2005,0.001070594,1.39E-06
+obs810,Leger EA: Rice KJ.,2003,0.00518605,3.43E-07
+obs811,Leger EA: Rice KJ.,2003,0.003779536,3.22E-07
+obs812,Leger EA: Rice KJ.,2003,0.008741134,5.18E-07
+obs813,Leger EA: Rice KJ.,2003,0.002700052,3.10E-07
+obs814,Leger EA: Rice KJ.,2003,0.009750324,4.57E-07
+obs815,Leger EA: Rice KJ.,2003,0.006997335,3.81E-07
+obs816,Leger EA: Rice KJ.,2003,0.008337565,5.04E-07
+obs817,Leger EA: Rice KJ.,2003,0.005693172,3.52E-07
+obs818,Leger: E. A.,2008,0.009907525,4.55E-05
+obs819,Leger: E. A.,2008,0.003626555,3.47E-06
+obs820,Leger: E. A.,2008,0.015473018,6.11E-05
+obs821,Leger: E. A.,2008,0.019412395,7.63E-05
+obs822,Macnair: M.R.: S.E. Smith & Q.1. Cumbes,1993,0.009349358,1.12E-05
+obs823,Macnair: M.R.: S.E. Smith & Q.1. Cumbes,1993,0.015248744,1.73E-05
+obs824,Macnair: M.R.: S.E. Smith & Q.1. Cumbes,1993,0.012831814,1.38E-05
+obs825,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.002104642,0.000007153
+obs826,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.002316106,3.92E-06
+obs827,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.001082764,0.00000584
+obs828,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.002548153,4.63E-06
+obs829,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.002887529,7.08E-06
+obs830,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.002470196,3.92E-06
+obs831,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.003935425,6.32E-06
+obs832,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.001553539,4.53E-06
+obs833,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,9.16E-05,4.00E-06
+obs834,Maron JL: Vil?? M: Bommarco R: Elmendorf S: Beardsley P,2004,0.000538518,5.73E-06
+obs835,Maron: J. L.: M. Vila: and J. Arnason.,2004,0.003744188,4.16E-06
+obs836,Maron: J. L.: M. Vila: and J. Arnason.,2004,0.004202441,4.20E-06
+obs837,Maron: J. L.: M. Vila: and J. Arnason.,2004,0.007448721,5.73E-06
+obs838,Maron: J. L.: M. Vila: and J. Arnason.,2004,0.005854851,3.80E-06
+obs839,Maron: J. L.: M. Vila: and J. Arnason.,2004,0.003769062,3.44E-06
+obs840,McGraw,2001,0.000339921,1.27E-07
+obs841,McGraw,2001,0.001075249,1.28E-07
+obs842,McGraw,2001,0.001919743,1.31E-07
+obs843,McGraw,2001,0.001570815,1.29E-07
+obs844,McGraw,2001,0.001075249,1.28E-07
+obs845,McGraw,2001,0.002303668,1.32E-07
+obs846,McGraw,2001,0.00140969,1.29E-07
+obs847,McGraw,2001,0.001451522,1.29E-07
+obs848,McGraw,2001,0.00140969,1.29E-07
+obs849,McGraw,2001,0.002448157,1.33E-07
+obs850,McGraw,2001,0.002408728,1.33E-07
+obs851,Mealor: B. A.: and A. L. Hild.,2007,0.026119312,8.23E-05
+obs852,Mealor: B. A.: and A. L. Hild.,2007,0.027830412,8.48E-05
+obs853,Mealor: B. A.: and A. L. Hild.,2007,0.019078782,7.38E-05
+obs854,Mealor: B. A.: and A. L. Hild.,2007,0.004063415,6.45E-05
+obs855,Mealor: B. A.: and A. L. Hild.,2007,0.00447712,4.35E-05
+obs856,Mealor: B. A.: and A. L. Hild.,2007,0.021785227,5.15E-05
+obs857,Mealor: B. A.: and A. L. Hild.,2007,0.004007044,4.34E-05
+obs858,Mealor: B. A.: and A. L. Hild.,2007,0.025515899,5.46E-05
+obs859,Meyer G: Clare R: Weber E.,2005,0.003815439,2.67E-06
+obs860,Meyer G: Clare R: Weber E.,2005,0.007205232,3.38E-06
+obs861,Meyer G: Clare R: Weber E.,2005,0.000760885,2.41E-06
+obs862,Meyer G: Clare R: Weber E.,2005,0.002956487,2.56E-06
+obs863,Meyer G: Clare R: Weber E.,2005,0.000908902,2.42E-06
+obs864,Meyer G: Clare R: Weber E.,2005,0.002135743,0.000002486
+obs865,Meyer G: Clare R: Weber E.,2005,0.002668605,2.53E-06
+obs866,Meyer G: Clare R: Weber E.,2005,0.000941994,2.42E-06
+obs867,Moloney KA: Knaus F: Dietz H.,2009,0.003989357,6.01E-07
+obs868,Moloney KA: Knaus F: Dietz H.,2009,0.00057592,5.56E-07
+obs869,M??ller C: Martens N.,2005,0.004965312,1.65E-05
+obs870,M??ller C: Martens N.,2005,0.002179469,1.59E-05
+obs871,M??ller C: Martens N.,2005,0.002710666,1.69E-05
+obs872,M??ller C: Martens N.,2005,0.006213416,2.38E-05
+obs873,M??ller C: Martens N.,2005,0.000345699,1.65E-05
+obs874,M??ller C: Martens N.,2005,0.003984359,1.70E-05
+obs875,M??ller C: Martens N.,2005,0.010030429,1.96E-05
+obs876,M??ller C: Martens N.,2005,0.002658331,1.67E-05
+obs877,M??ller C: Martens N.,2005,0.001995897,1.66E-05
+obs878,M??ller C: Martens N.,2005,0.001377832,1.66E-05
+obs879,M??ller C: Martens N.,2005,0.002846917,1.68E-05
+obs880,M??ller C: Martens N.,2005,0.008092986,1.76E-05
+obs881,Pe??uelas J: Filella I: Comas P,2002,0.043099369,0.000148672
+obs882,Pe??uelas J: Filella I: Comas P,2002,0.01730585,5.12E-05
+obs883,Pe??uelas J: Filella I: Comas P,2002,0.08292135,0.000415338
+obs884,Pe??uelas J: Filella I: Comas P,2002,0.032319417,6.71E-05
+obs885,Pe??uelas J: Filella I: Comas P,2002,0.014604742,0.000377736
+obs886,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.00413713,1.26E-05
+obs887,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.010938402,1.44E-05
+obs888,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.034951321,0.000413479
+obs889,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.053998784,0.001110457
+obs890,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.034600406,0.00041242
+obs891,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.040279477,0.001024495
+obs892,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.043444875,0.000442391
+obs893,Rapo C: Muller-Scharer H: Vrieling K: Schaffner U.,2010,0.025697766,0.000960556
+obs894,Rogers: W.E. & Siemann: E.,2004,0.001283592,2.51E-05
+obs895,Rogers: W.E. & Siemann: E.,2004,0.001414214,2.51E-05
+obs896,Rogers: W.E. & Siemann: E.,2004,0.012791347,3.15E-05
+obs897,Rogers: W.E. & Siemann: E.,2004,0.002757716,2.53E-05
+obs898,Rogers: W.E. & Siemann: E.,2004,0.018719045,0.000039
+obs899,Rogers: W.E. & Siemann: E.,2004,0.008468139,2.79E-05
+obs900,Rogers: W.E. & Siemann: E.,2004,0.011885108,3.06E-05
+obs901,Rogers: W.E. & Siemann: E.,2004,0.008749119,2.81E-05
+obs902,Rogers: W.E. & Siemann: E.,2004,0.00386266,2.56E-05
+obs903,Rogers: W.E. & Siemann: E.,2004,0.005091169,2.60E-05
+obs904,Rogers: W.E. & Siemann: E.,2004,0.023482373,4.70E-05
+obs905,Rogers: W.E. & Siemann: E.,2004,0.007974695,2.75E-05
+obs906,Rogers: W.E. & Siemann: E.,2004,0.020294883,4.15E-05
+obs907,Rogers: W.E. & Siemann: E.,2004,0.013036478,3.18E-05
+obs908,Rogers: W.E. & Siemann: E.,2004,0.012643221,3.14E-05
+obs909,Rogers: W.E. & Siemann: E.,2004,0.003390439,2.55E-05
+obs910,Rogers: W.E. & Siemann: E.,2004,0.002377022,2.52E-05
+obs911,Rogers: W.E. & Siemann: E.,2004,0.004828325,2.59E-05
+obs912,Rogers: W.E. & Siemann: E.,2004,0.014039284,0.000032875
+obs913,Rogers: W.E. & Siemann: E.,2004,0.009470945,2.86E-05
+obs914,Rogers: W.E. & Siemann: E.,2004,0.013281608,3.20E-05
+obs915,Rogers: W.E. & Siemann: E.,2004,0.015376358,3.44E-05
+obs916,Rogers: W.E. & Siemann: E.,2004,0.007505851,2.73E-05
+obs917,Rogers: W.E. & Siemann: E.,2004,0.002917254,0.00002534
+obs918,Rogers: W.E. & Siemann: E.,2005,0.003915719,2.56E-05
+obs919,Rogers: W.E. & Siemann: E.,2005,0.008690985,2.80E-05
+obs920,Rogers: W.E. & Siemann: E.,2005,0.003799792,2.99E-05
+obs921,Rogers: W.E. & Siemann: E.,2005,0.005055179,3.38E-05
+obs922,Rogers: W.E. & Siemann: E.,2005,0.001276299,2.51E-05
+obs923,Rogers: W.E. & Siemann: E.,2005,0.007604612,2.73E-05
+obs924,Rogers: W.E. & Siemann: E.,2005,0.000777358,2.92E-05
+obs925,Rogers: W.E. & Siemann: E.,2005,0.013243144,4.17E-05
+obs926,Rogers: W.E. & Siemann: E.,2005,0.012445079,3.12E-05
+obs927,Rogers: W.E. & Siemann: E.,2005,0.004393245,2.58E-05
+obs928,Rogers: W.E. & Siemann: E.,2005,0.003064723,2.96E-05
+obs929,Rogers: W.E. & Siemann: E.,2005,0.002311282,3.28E-05
+obs930,Rogers: W.E. & Siemann: E.,2005,0.010619458,2.95E-05
+obs931,Rogers: W.E. & Siemann: E.,2005,0.004710149,2.59E-05
+obs932,Rogers: W.E. & Siemann: E.,2005,0.00395795,2.99E-05
+obs933,Rogers: W.E. & Siemann: E.,2005,0.003946768,3.33E-05
+obs934,Rogers: W.E. & Siemann: E.,2005,0.004296028,3.44E-05
+obs935,Rogers: W.E. & Siemann: E.,2005,0.003265986,3.40E-05
+obs936,Rogers: W.E. & Siemann: E.,2005,0.012382036,4.23E-05
+obs937,Rogers: W.E. & Siemann: E.,2005,0.003014757,3.39E-05
+obs938,Rogers: W.E. & Siemann: E.,2005,0.010053054,3.93E-05
+obs939,Rogers: W.E. & Siemann: E.,2005,0.004583661,3.46E-05
+obs940,Rogers: W.E. & Siemann: E.,2005,0.010156859,3.94E-05
+obs941,Rogers: W.E. & Siemann: E.,2005,0.004192007,3.44E-05
+obs942,Rogers: W.E. & Siemann: E.,2005,0.010656814,4.00E-05
+obs943,Rogers: W.E. & Siemann: E.,2005,0.001671224,3.35E-05
+obs944,Rogers: W.E. & Siemann: E.,2005,0.002515992,3.37E-05
+obs945,Rogers: W.E. & Siemann: E.,2005,0.000518668,3.33E-05
+obs946,Siemann: E. & Rogers: W.E.,2001,0.026653059,2.91E-06
+obs947,Siemann: E. & Rogers: W.E.,2001,0.015325689,2.14E-06
+obs948,Siemann: E. & Rogers: W.E.,2001,0.012572091,4.39E-05
+obs949,Siemann: E. & Rogers: W.E.,2001,0.018364881,5.17E-05
+obs950,Siemann: E. & Rogers: W.E.,2003,0.007501503,8.97E-06
+obs951,Siemann: E. & Rogers: W.E.,2003,0.006935086,8.87E-06
+obs952,Siemann: E. & Rogers: W.E.,2003,0.003850177,4.73E-06
+obs953,TAYLOR: G. E. & MURDY: W. H.,1975,0.036522416,2.76E-05
+obs954,Weber: E. & Schmid: B.,1998,0.001294121,4.90E-06
+obs955,Weber: E. & Schmid: B.,1998,0.000311282,4.82E-06
+obs956,Weber: E. & Schmid: B.,1998,0.000232483,4.82E-06
+obs957,Weber: E. & Schmid: B.,1998,0.001724582,4.96E-06
+obs958,Weber: E. & Schmid: B.,1998,0.000369527,4.82E-06
+obs959,Weber: E. & Schmid: B.,1998,0.001301337,4.90E-06
+obs960,Weber: E. & Schmid: B.,1998,0.001783747,4.97E-06
+obs961,Weber: E. & Schmid: B.,1998,0.004274177,5.67E-06
+obs962,Weber: E. & Schmid: B.,1998,0.020069468,2.36E-05
+obs963,Weber: E. & Schmid: B.,1998,0.02219745,0.000027798
+obs964,Weber: E. & Schmid: B.,1998,0.015391593,1.59E-05
+obs965,Weber: E. & Schmid: B.,1998,0.015468615,1.60E-05
+obs966,Weber: E. & Schmid: B.,1998,0.015365625,1.58E-05
+obs967,Weber: E. & Schmid: B.,1998,0.007753438,7.62E-06
+obs968,Weber: E. & Schmid: B.,1998,0.008698447,8.35E-06
+obs969,Weber: E. & Schmid: B.,1998,0.005901068,6.44E-06
+obs970,Weber: E. & Schmid: B.,1998,0.000486397,4.83E-06
+obs971,Weber: E. & Schmid: B.,1998,0.006578302,6.84E-06
+obs972,Weber: E. & Schmid: B.,1998,0.006285078,6.66E-06
+obs973,Weber: E. & Schmid: B.,1998,0.003383412,5.35E-06
+obs974,Williams JL: Auge H: Maron JL.,2008,0.003474683,8.91E-06
+obs975,Williams JL: Auge H: Maron JL.,2008,0.006070282,9.66E-06
+obs976,Williams JL: Auge H: Maron JL.,2008,0.006054331,9.65E-06
+obs977,Williams JL: Auge H: Maron JL.,2008,0.012256156,1.31E-05
+obs978,Williams JL: Auge H: Maron JL.,2008,0.006937145,1.00E-05
+obs979,Williams JL: Auge H: Maron JL.,2008,0.005163689,9.35E-06
+obs980,Williams JL: Auge H: Maron JL.,2008,0.001329531,8.60E-06
+obs981,Williams JL: Auge H: Maron JL.,2008,0.000881792,8.57E-06
+obs982,Williams JL: Auge H: Maron JL.,2008,0.000764575,8.56E-06
+obs983,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.025287389,0.000165427
+obs984,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.024174108,0.000162809
+obs985,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.000937789,0.000135068
+obs986,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.00111138,2.51E-05
+obs987,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.000713623,2.51E-05
+obs988,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.003018993,2.57E-05
+obs989,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.006806369,2.75E-05
+obs990,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.004736391,2.61E-05
+obs991,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.001076789,2.48E-05
+obs992,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.002301863,0.000021307
+obs993,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.001321773,2.11E-05
+obs994,Willis: AJ.: J. Memmott & Rl. Forrester,2000,0.000748615,2.10E-05
+obs995,WILSON: G. B. & BELL: J. N. B.,1985,0.107107679,0.025807239
+obs996,WILSON: G. B. & BELL: J. N. B.,1985,0.166959891,0.030933349
+obs997,WILSON: G. B. & BELL: J. N. B.,1985,0.146821437,0.050188831
+obs998,WILSON: G. B. & BELL: J. N. B.,1985,0.324676081,0.055164271
+obs999,WILSON: G. B. & BELL: J. N. B.,1985,0.173249184,0.031601997
+obs1000,WILSON: G. B. & BELL: J. N. B.,1985,0.01003459,0.000195393
+obs1001,WILSON: G. B. & BELL: J. N. B.,1985,0.004120137,7.20E-05
+obs1002,WILSON: G. B. & BELL: J. N. B.,1985,0.007496423,7.15E-06
+obs1003,WILSON: G. B. & BELL: J. N. B.,1985,0.004654822,1.76E-06
+obs1004,WILSON: G. B. & BELL: J. N. B.,1985,0.00346548,0.000179004
+obs1005,WILSON: G. B. & BELL: J. N. B.,1985,0.023786846,7.20E-05
+obs1006,WILSON: G. B. & BELL: J. N. B.,1985,0.007148033,6.64E-06
+obs1007,WILSON: G. B. & BELL: J. N. B.,1985,0.001092414,1.47E-06
+obs1008,WILSON: G. B. & BELL: J. N. B.,1985,0.031039711,0.000471489
+obs1009,WILSON: G. B. & BELL: J. N. B.,1985,0.007812656,0.000010394
+obs1010,WILSON: G. B. & BELL: J. N. B.,1985,0.000972727,1.84E-06
+obs1011,Wolfe LM: Elzinga JA: Biere A.,2004,0.007067359,0.000003466
+obs1012,Wolfe LM: Elzinga JA: Biere A.,2004,0.009107766,3.96E-06
+obs1013,Wolfe LM: Elzinga JA: Biere A.,2004,0.012003415,4.87E-06
+obs1014,Wolfe LM: Elzinga JA: Biere A.,2004,0.013334238,5.37E-06
+obs1015,Wolfe LM: Elzinga JA: Biere A.,2004,0.003351486,2.89E-06
+obs1016,Wolfe LM: Elzinga JA: Biere A.,2004,0.012807887,5.17E-06
+obs1017,Wolfe LM: Elzinga JA: Biere A.,2004,0.01200085,4.87E-06
+obs1018,Wolfe LM: Elzinga JA: Biere A.,2004,0.007207104,3.50E-06
+obs1019,Wolfe LM: Elzinga JA: Biere A.,2004,0.006209216,3.30E-06
+obs1020,Wolfe LM: Elzinga JA: Biere A.,2004,0.004594126,3.04E-06
+obs1021,Wolfe LM: Elzinga JA: Biere A.,2004,0.004554583,3.03E-06
+obs1022,Wolfe LM: Elzinga JA: Biere A.,2004,0.00490147,3.08E-06
+obs1023,Wolfe LM: Elzinga JA: Biere A.,2004,0.008251068,3.74E-06
+obs1024,Wolfe LM: Elzinga JA: Biere A.,2004,0.004148506,2.98E-06
+obs1025,Wolfe LM: Elzinga JA: Biere A.,2004,0.003403285,2.89E-06
+obs1026,Wolfe LM: Elzinga JA: Biere A.,2004,0.002891822,2.85E-06
+obs1027,Wolfe LM: Elzinga JA: Biere A.,2004,0.008181828,3.72E-06
+obs1028,Wolfe LM: Elzinga JA: Biere A.,2004,0.002805363,0.000002838
+obs1029,Wu: L. & A.L. Kruckeberg,1985,0.025682433,0.00037093
+obs1030,Wu: L. & A.L. Kruckeberg,1985,0.023013747,8.08E-06
+obs1031,Wu: L. & A.L. Kruckeberg,1985,0.040516006,0.000210498
+obs1032,Wu: L. & A.L. Kruckeberg,1985,0.045593273,2.09E-05
+obs1033,Wu: L. & A.L. Kruckeberg,1985,0.005733397,3.32E-05
+obs1034,Zangerl: A.R. & Berenbaum: M.R.,2005,0.027462895,0.000270317
+obs1035,Zangerl: A.R. & Berenbaum: M.R.,2005,0.012079899,8.02E-05
+obs1036,Zangerl: A.R. & Berenbaum: M.R.,2005,0.020908357,0.000171238
+obs1037,Zangerl: A.R. & Berenbaum: M.R.,2005,0.018987381,0.000147289
+obs1038,Zangerl: A.R. & Berenbaum: M.R.,2005,0.01192119,7.90E-05
+obs1039,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.003868185,5.10E-06
+obs1040,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.002060663,5.03E-06
+obs1041,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.0047885,5.15E-06
+obs1042,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.001559298,5.02E-06
+obs1043,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.015610458,4.52E-06
+obs1044,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.01550142,4.50E-06
+obs1045,Zou J: Siemann E: Rogers WE: DeWalt SJ.,2008,0.014938073,3.68E-06
+obs1046,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.008254887,5.20E-06
+obs1047,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.005391093,5.49E-06
+obs1048,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0,3.56E-05
+obs1049,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.010690691,3.90E-05
+obs1050,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.008294358,3.76E-05
+obs1051,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.002690917,3.58E-05
+obs1052,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.034518882,7.16E-05
+obs1053,Beaton L. L.: Van Zandt P. A.: Esselman E. J.: & Knight T. M.,2011,0.016152855,4.35E-05
+obs1054,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002698892,2.57E-05
+obs1055,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001914478,2.56E-05
+obs1056,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.000645543,2.56E-05
+obs1057,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.011847345,2.92E-05
+obs1058,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.000340825,2.56E-05
+obs1059,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002759274,2.58E-05
+obs1060,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003366979,2.58E-05
+obs1061,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.00176176,2.56E-05
+obs1062,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009630653,2.79E-05
+obs1063,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009324449,2.78E-05
+obs1064,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.010075657,2.82E-05
+obs1065,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.006151744,3.92E-05
+obs1066,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009954156,4.33E-05
+obs1067,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003353171,3.74E-05
+obs1068,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.010711185,2.85E-05
+obs1069,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009231253,2.77E-05
+obs1070,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.00154319,2.56E-05
+obs1071,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.0004304,2.56E-05
+obs1072,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,7.01E-05,2.56E-05
+obs1073,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003879794,2.59E-05
+obs1074,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001275196,2.56E-05
+obs1075,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002445815,2.57E-05
+obs1076,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.0028764,2.58E-05
+obs1077,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.000689539,2.56E-05
+obs1078,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.00167726,3.69E-05
+obs1079,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003503186,3.75E-05
+obs1080,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002975478,3.73E-05
+obs1081,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.015309253,2.36E-05
+obs1082,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001786541,1.93E-05
+obs1083,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005587967,1.98E-05
+obs1084,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.011538465,2.17E-05
+obs1085,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009233935,2.08E-05
+obs1086,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.00932504,2.09E-05
+obs1087,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.009866864,2.11E-05
+obs1088,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.012411203,0.000022129
+obs1089,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.00241971,1.93E-05
+obs1090,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.014425444,2.31E-05
+obs1091,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.010647887,0.000021362
+obs1092,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.004436857,4.73E-05
+obs1093,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005051286,4.76E-05
+obs1094,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001616927,4.63E-05
+obs1095,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002118804,2.04E-05
+obs1096,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.000120727,2.03E-05
+obs1097,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003547063,2.05E-05
+obs1098,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.007064468,2.13E-05
+obs1099,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005192121,2.08E-05
+obs1100,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003464553,2.05E-05
+obs1101,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001628508,2.03E-05
+obs1102,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.004762717,2.07E-05
+obs1103,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002518351,2.04E-05
+obs1104,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.008081866,2.16E-05
+obs1105,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.030614254,0.000101133
+obs1106,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.030856968,0.000102009
+obs1107,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.004671833,4.74E-05
+obs1108,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.019894041,0.000161786
+obs1109,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005740092,0.000154943
+obs1110,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.006227568,0.000155053
+obs1111,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.044370834,0.000191458
+obs1112,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.020341321,0.000162126
+obs1113,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.027986128,0.000169095
+obs1114,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003219823,0.000154517
+obs1115,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.024970236,0.000166082
+obs1116,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.020061068,0.000161912
+obs1117,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.031579564,0.000173133
+obs1118,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.022669697,0.000164015
+obs1119,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.020768334,0.000395681
+obs1120,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.020729287,0.000395586
+obs1121,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.015335243,0.00038417
+obs1122,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.0134263,0.000157721
+obs1123,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.013598122,0.000157809
+obs1124,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.004361447,0.00015468
+obs1125,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.002117634,0.000154406
+obs1126,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005373112,0.000154866
+obs1127,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.010612173,0.000156445
+obs1128,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.011034756,0.000156618
+obs1129,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.016373743,0.000159378
+obs1130,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.013380981,0.000157698
+obs1131,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.005454438,0.000154882
+obs1132,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.001961993,0.000370596
+obs1133,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.000661273,0.000370396
+obs1134,Colomer-Ventura F.: Mart??nez-Vilalta J.: Zuccarini P.: Escol?? A.: Armengot L.: Castells E.,2015,0.003951281,0.000371287
+obs1135,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.006494202,2.99E-06
+obs1136,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.003033845,2.71E-06
+obs1137,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.002305797,2.68E-06
+obs1138,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.001293801,4.22E-07
+obs1139,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.000326249,4.14E-07
+obs1140,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.001848672,4.30E-07
+obs1141,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.00191407,6.73E-07
+obs1142,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.00191407,6.73E-07
+obs1143,Flores-Moreno H.: Garc??a-Trevi??o E.S.: Letten A.D.: Moles A.T.,2014,0.00191407,6.73E-07
+obs1144,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000866779,6.87E-06
+obs1145,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0,0.030525444
+obs1146,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000422635,7.13E-06
+obs1147,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.013107606,0.00020314
+obs1148,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.002249993,2.25E-05
+obs1149,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.030679814,0.000643262
+obs1150,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.006513528,1.29E-05
+obs1151,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.028112944,0.002288285
+obs1152,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.002387479,0.000029774
+obs1153,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.003998581,0.000342954
+obs1154,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000594303,7.49E-06
+obs1155,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.00372058,0.000151765
+obs1156,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.00535371,9.02E-06
+obs1157,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.014385301,2.93E-05
+obs1158,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.005064227,0.000280076
+obs1159,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.003719303,7.60E-06
+obs1160,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.001989894,2.62E-05
+obs1161,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.005178074,7.43E-05
+obs1162,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,1.86E-05,8.47E-06
+obs1163,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.017023624,2.62E-05
+obs1164,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.002291771,8.65E-06
+obs1165,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.011951462,3.61E-05
+obs1166,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.00677405,0.00024662
+obs1167,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000706294,8.83E-06
+obs1168,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.009836078,1.98E-05
+obs1169,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.010842363,3.22E-05
+obs1170,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.01054967,5.14E-05
+obs1171,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.001412084,5.38E-06
+obs1172,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.001303058,0.000102234
+obs1173,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000894525,0.00016648
+obs1174,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.016451001,4.09E-05
+obs1175,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.000237189,8.61E-05
+obs1176,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.002672391,2.75E-05
+obs1177,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.025164745,8.47E-05
+obs1178,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.026535481,0.001932812
+obs1179,Dalrymple R.L.: Buswell J.M.: Moles A.T.,2015,0.003493959,3.34E-05
+obs1180,Vandegrift R.: Blaser W.: Campos-Cerda F.: Heneghan A.F.: Carroll G.C.: Roy B.A.,2015,0.048247849,7.07E-05
+obs1181,Vandegrift R.: Blaser W.: Campos-Cerda F.: Heneghan A.F.: Carroll G.C.: Roy B.A.,2015,0.000208254,1.05E-05
+obs1182,Vandegrift R.: Blaser W.: Campos-Cerda F.: Heneghan A.F.: Carroll G.C.: Roy B.A.,2015,0.012399628,1.26E-05
+obs1183,Vandegrift R.: Blaser W.: Campos-Cerda F.: Heneghan A.F.: Carroll G.C.: Roy B.A.,2015,0.021237883,2.45E-06
+obs1184,Vandegrift R.: Blaser W.: Campos-Cerda F.: Heneghan A.F.: Carroll G.C.: Roy B.A.,2015,0.050447767,6.53E-06
+obs1185,Huang F.: Peng S.: Chen B.: Liao H.: Huang Q.: Lin Z.: Liu G.,2015,0.033418455,0.000174294
+obs1186,Huang F.: Peng S.: Chen B.: Liao H.: Huang Q.: Lin Z.: Liu G.,2015,0.032327791,0.000172085
+obs1187,Huang F.: Peng S.: Chen B.: Liao H.: Huang Q.: Lin Z.: Liu G.,2015,0.002355768,0.000317497
+obs1188,Huang F.: Peng S.: Chen B.: Liao H.: Huang Q.: Lin Z.: Liu G.,2015,0.005722078,0.000342372
+obs1189,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.024671769,2.70E-05
+obs1190,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.010468926,1.76E-05
+obs1191,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.028902821,3.13E-05
+obs1192,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.008251573,9.75E-06
+obs1193,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.0069771,9.52E-06
+obs1194,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.006464892,1.13E-05
+obs1195,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.025605552,1.98E-05
+obs1196,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.003594618,1.09E-05
+obs1197,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.015558653,1.41E-05
+obs1198,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.055720532,5.33E-05
+obs1199,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.069885112,7.77E-05
+obs1200,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.022195418,0.00001752
+obs1201,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.025442928,0.000018572
+obs1202,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.025973356,1.89E-05
+obs1203,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.013599851,1.26E-05
+obs1204,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.01194001,1.20E-05
+obs1205,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.019193771,1.49E-05
+obs1206,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.029895799,2.30E-05
+obs1207,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.012700517,1.30E-05
+obs1208,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.034318928,2.69E-05
+obs1209,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.054906989,5.21E-05
+obs1210,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.024392411,1.89E-05
+obs1211,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.032560802,2.39E-05
+obs1212,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.016765914,1.38E-05
+obs1213,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.024278443,1.78E-05
+obs1214,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.009422378,1.24E-05
+obs1215,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.023882107,1.90E-05
+obs1216,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.013594512,1.37E-05
+obs1217,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.041895884,0.00024246
+obs1218,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.00838496,5.68E-05
+obs1219,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.022229646,0.000103475
+obs1220,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.002407809,4.97E-05
+obs1221,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.02699957,0.000129354
+obs1222,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.00124998,0.000049187
+obs1223,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.025796922,0.000122356
+obs1224,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.027827659,0.000134358
+obs1225,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.007331344,5.49E-05
+obs1226,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.08769535,0.000896569
+obs1227,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.023871321,0.000111816
+obs1228,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.014531018,7.23E-05
+obs1229,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.007670332,5.55E-05
+obs1230,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.030210193,0.000149597
+obs1231,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.010303475,6.07E-05
+obs1232,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.010588067,6.14E-05
+obs1233,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.000997828,4.91E-05
+obs1234,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.065606867,0.00052338
+obs1235,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.017102768,8.13E-05
+obs1236,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.00499992,5.18E-05
+obs1237,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.012595493,0.000066499
+obs1238,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.005910589,5.29E-05
+obs1239,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.002959375,0.00004998
+obs1240,Turner K.G.: Hufbauer R.A.: Rieseberg L.H.,2014,0.00136931,4.92E-05
+obs1241,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.011216819,0.00050381
+obs1242,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.037453098,0.000542479
+obs1243,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.053773716,0.000587566
+obs1244,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.026043956,0.000520541
+obs1245,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.024959396,0.000518865
+obs1246,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.051788609,0.00058122
+obs1247,Bustos-Segura C.: Fornoni J.: N????ez-Farf??n J.,2014,0.049309366,0.00057363
+obs1248,Grossman J.D.: Rice K.J.,2014,0.178423981,0.005034014
+obs1249,Grossman J.D.: Rice K.J.,2014,0.321467816,0.018446859
+obs1250,Grossman J.D.: Rice K.J.,2014,0.068004844,0.007914564
+obs1251,Grossman J.D.: Rice K.J.,2014,0.015378335,0.007446382
+obs1252,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.016967834,0.00085529
+obs1253,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.072263552,0.001959927
+obs1254,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.001738412,0.000533743
+obs1255,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.006642331,0.000912308
+obs1256,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.016535395,0.00017066
+obs1257,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.047276033,0.000893883
+obs1258,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.016158372,0.000883953
+obs1259,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.003780896,0.000826097
+obs1260,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.001409166,0.000157379
+obs1261,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.045411632,0.000878716
+obs1262,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.0582412,0.000606448
+obs1263,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.027418559,0.000225252
+obs1264,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.016169188,0.000624185
+obs1265,Didiano T.J.: Turley N.E.: Everwand G.: Schaefer H.: Crawley M.J.: Johnson M.T.J.,2014,0.016930959,0.000885509
+obs1266,Burger J.C.: Ellstrand N.C.,2014,0.026866455,5.30E-05
+obs1267,Burger J.C.: Ellstrand N.C.,2014,0.029753513,5.74E-05
+obs1268,Burger J.C.: Ellstrand N.C.,2014,0.022252052,5.15E-05
+obs1269,Burger J.C.: Ellstrand N.C.,2014,0.014417878,3.91E-05
+obs1270,Burger J.C.: Ellstrand N.C.,2014,0.007409414,3.50E-05
+obs1271,Burger J.C.: Ellstrand N.C.,2014,0.000474085,3.65E-05
+obs1272,Burger J.C.: Ellstrand N.C.,2014,0.002669093,3.37E-05
+obs1273,Burger J.C.: Ellstrand N.C.,2014,0.00204785,3.36E-05
+obs1274,Burger J.C.: Ellstrand N.C.,2014,0.01232621,0.000041124
+obs1275,Burger J.C.: Ellstrand N.C.,2014,0.013042597,3.81E-05
+obs1276,Burger J.C.: Ellstrand N.C.,2014,0.008191401,3.53E-05
+obs1277,Burger J.C.: Ellstrand N.C.,2014,0.036670473,0.000077245
+obs1278,Burger J.C.: Ellstrand N.C.,2014,0.024574204,4.98E-05
+obs1279,Burger J.C.: Ellstrand N.C.,2014,0.002876116,3.68E-05
+obs1280,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.051281286,0.001021443
+obs1281,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.061148546,0.001064792
+obs1282,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.194055848,0.014360176
+obs1283,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.194006804,0.014355703
+obs1284,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.030558151,0.005729109
+obs1285,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.013741114,0.005554019
+obs1286,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.034637731,0.00579162
+obs1287,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.093207128,0.007551447
+obs1288,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.134489189,0.009760638
+obs1289,Sakata Y.: Yamasaki M.: Isagi Y.: Ohgushi T. ,2014,0.084925416,0.007204726
+obs1290,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.048453769,0.000020962
+obs1291,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.022320482,1.75E-05
+obs1292,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.03041029,2.84E-05
+obs1293,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.055856611,2.42E-05
+obs1294,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.10213098,0.000038929
+obs1295,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.129002646,5.15E-05
+obs1296,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.086092065,3.28E-05
+obs1297,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.061817371,0.000111685
+obs1298,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.045138075,9.53E-05
+obs1299,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.038530907,0.000090248
+obs1300,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.06806346,0.000119127
+obs1301,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.066363693,0.000113047
+obs1302,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.21806062,0.00049485
+obs1303,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.009164186,7.48E-05
+obs1304,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.429526467,0.036774527
+obs1305,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.013717061,0.00077749
+obs1306,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.115208589,0.000191528
+obs1307,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.004072783,7.42E-05
+obs1308,Mu J.: Peng Y.: Xi X.: Wu X.: Griffin J.N.: Niklas K.J.: Sun S.,2014,0.565319629,0.000441125
+obs1309,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.002317191,5.28E-06
+obs1310,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.003387569,1.12E-06
+obs1311,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.001734329,4.26E-07
+obs1312,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.003499957,5.32E-06
+obs1313,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.006655605,1.18E-06
+obs1314,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.000761277,4.22E-07
+obs1315,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.000470447,5.26E-06
+obs1316,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.000648592,0.000001103
+obs1317,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.002570183,4.32E-07
+obs1318,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.00815666,5.59E-06
+obs1319,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.002779476,1.12E-06
+obs1320,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.001946528,4.27E-07
+obs1321,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.013515729,0.000006158
+obs1322,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.004491787,0.000001138
+obs1323,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.00502015,4.65E-07
+obs1324,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.000797771,5.26E-06
+obs1325,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.00129706,1.11E-06
+obs1326,Garc??a Y.: Callaway R.M.: Diaconu A.: Montesinos D.,2013,0.002873191,4.35E-07
+obs1327,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.008329582,0.000110325
+obs1328,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.018257504,0.00019281
+obs1329,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.009527878,0.000117012
+obs1330,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.017213,2.36E-05
+obs1331,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.007276557,1.56E-05
+obs1332,Bartle K.: Moles A.T.: Bonser: S.P.,2013,0.007735492,0.000015815
+obs1333,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.028151367,5.39E-05
+obs1334,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.022048414,3.59E-05
+obs1335,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.030578938,6.22E-05
+obs1336,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.062643326,0.000237621
+obs1337,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.003640266,8.12E-06
+obs1338,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.02450219,4.26E-05
+obs1339,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.042856576,0.000115125
+obs1340,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.008069273,0.000011168
+obs1341,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.03543381,8.10E-05
+obs1342,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.028313071,5.44E-05
+obs1343,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.011139694,0.000014629
+obs1344,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.050346367,0.000156088
+obs1345,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.020134134,3.11E-05
+obs1346,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.028314505,0.000054392
+obs1347,Moroney J.R.: Rundel P.W.: Sork V.L.,2013,0.005133347,8.89E-06
+obs1348,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.0089997,3.25E-05
+obs1349,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.013695554,5.33E-05
+obs1350,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.011879316,4.42E-05
+obs1351,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.021213367,0.000104559
+obs1352,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.007778109,2.85E-05
+obs1353,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.009302396,3.36E-05
+obs1354,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.011879537,4.42E-05
+obs1355,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.004399428,2.04E-05
+obs1356,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.005743392,2.31E-05
+obs1357,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.008604607,3.11E-05
+obs1358,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.005715349,2.30E-05
+obs1359,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.038863319,0.000311658
+obs1360,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.00387744,1.96E-05
+obs1361,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.000235179,1.67E-05
+obs1362,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.003530276,1.91E-05
+obs1363,Oduor A.M.O.: Strauss S.Y.: Garc??a Y. : Cascales M.B.: G??mez J.,2013,0.032194697,0.000219108
+obs1364,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.061647895,0.000526188
+obs1365,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.056852508,0.000495359
+obs1366,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.028704901,0.000364703
+obs1367,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.04231083,0.000396873
+obs1368,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.008700275,0.001309373
+obs1369,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.018776202,0.000676306
+obs1370,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.010198206,0.000361888
+obs1371,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.00248538,0.000320335
+obs1372,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.00938475,0.000360918
+obs1373,Turley N.E.: Odell W.C.: Schaefer H.: Everwand G.: Crawley M.J.: Johnson M.T.J.,2013,0.010292418,0.00034292
+obs1374,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,6.100361931,1.736866117
+obs1375,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,3.105019618,0.447702731
+obs1376,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,1.064840664,0.073081086
+obs1377,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,4.045126186,0.903769729
+obs1378,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,2.787625868,0.372977142
+obs1379,Agrawal A.A.: Johnson M.T.J.: Hastings A.P.: Maron J.L.,2013,1.442541867,0.110919212
+obs1380,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.041834638,0.000629509
+obs1381,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.057879445,0.000645349
+obs1382,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.047440023,0.000634464
+obs1383,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0,0.001836547
+obs1384,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.094894412,0.002146796
+obs1385,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.071425037,0.002012311
+obs1386,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.068423965,0.001997851
+obs1387,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.051017737,0.001926222
+obs1388,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.032964914,0.001873987
+obs1389,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0,0.001836547
+obs1390,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.108527555,0.002242344
+obs1391,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.073465687,0.002022498
+obs1392,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.051655441,0.001928478
+obs1393,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.06122087,0.001965677
+obs1394,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.089474914,0.002112371
+obs1395,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.028256292,0.001864055
+obs1396,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.061234362,0.001965734
+obs1397,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.041635001,0.001896271
+obs1398,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.071427093,0.002012321
+obs1399,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.005323376,0.001837524
+obs1400,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.14967172,0.002608353
+obs1401,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0,0.001836547
+obs1402,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.091835723,0.002127118
+obs1403,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.080554576,0.002060115
+obs1404,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.069966736,0.002005207
+obs1405,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.003826318,0.001837052
+obs1406,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0,0.001836547
+obs1407,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.027331821,0.000619578
+obs1408,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.02894216,0.000620475
+obs1409,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.006551506,0.000612607
+obs1410,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.064561936,0.000653449
+obs1411,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0,0.000612182
+obs1412,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.067771728,0.000657654
+obs1413,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.051455564,0.000638395
+obs1414,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.030881897,0.000621624
+obs1415,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.059738076,0.000647513
+obs1416,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.051827061,0.000638775
+obs1417,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.074050572,0.00066647
+obs1418,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.039533803,0.000627656
+obs1419,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.024823739,0.000618283
+obs1420,Sultan S.E.: Horgan-Kobelski T.: Nichols L.M.: Riggs C.E.: Waples R.K.,2013,0.054062622,0.000641119
+obs1421,Hulme P.E.: Barrett S.C.H.,2013,0.006109771,4.20E-06
+obs1422,Hulme P.E.: Barrett S.C.H.,2013,0.010327793,2.40E-05
+obs1423,Hulme P.E.: Barrett S.C.H.,2013,0.005633404,3.27E-06
+obs1424,Hulme P.E.: Barrett S.C.H.,2013,0.005692561,3.43E-06
+obs1425,Hulme P.E.: Barrett S.C.H.,2013,0.010824732,6.91E-06
+obs1426,Hulme P.E.: Barrett S.C.H.,2013,0.005055804,8.00E-06
+obs1427,Hulme P.E.: Barrett S.C.H.,2013,0.011573101,7.99E-06
+obs1428,Hulme P.E.: Barrett S.C.H.,2013,0.009433903,7.24E-06
+obs1429,Hulme P.E.: Barrett S.C.H.,2013,0.006513167,3.94E-06
+obs1430,Hulme P.E.: Barrett S.C.H.,2013,0.0075704,3.22E-06
+obs1431,Hulme P.E.: Barrett S.C.H.,2013,0.01532133,9.43E-06
+obs1432,Hulme P.E.: Barrett S.C.H.,2013,0.002259126,4.92E-06
+obs1433,Hulme P.E.: Barrett S.C.H.,2013,0,0.000006907
+obs1434,Hulme P.E.: Barrett S.C.H.,2013,0.009341551,4.46E-06
+obs1435,Hulme P.E.: Barrett S.C.H.,2013,0.005393675,3.17E-06
+obs1436,Hulme P.E.: Barrett S.C.H.,2013,0.006090524,4.13E-06
+obs1437,Hulme P.E.: Barrett S.C.H.,2013,0.008237686,7.52E-06
+obs1438,Hulme P.E.: Barrett S.C.H.,2013,0.002794691,0.000011875
+obs1439,Hulme P.E.: Barrett S.C.H.,2013,0.005401246,4.68E-06
+obs1440,Uesugi A: Kessler A.,2013,0.027368617,0.000408026
+obs1441,Uesugi A: Kessler A.,2013,0.032999528,0.000411089
+obs1442,Uesugi A: Kessler A.,2013,0.055306169,0.000428834
+obs1443,Uesugi A: Kessler A.,2013,0.026287312,0.000407504
+obs1444,Uesugi A: Kessler A.,2013,0.030820717,0.000409836
+obs1445,Uesugi A: Kessler A.,2013,0.00162813,0.000401303
+obs1446,Uesugi A: Kessler A.,2013,0.093742675,0.000480442
+obs1447,Uesugi A: Kessler A.,2013,0.080178179,0.00045919
+obs1448,Uesugi A: Kessler A.,2013,0.106193159,0.000502867
+obs1449,Carman JG: Briske DD ,1985,0.00178031,4.73E-05
+obs1450,Carman JG: Briske DD ,1985,0.003133346,4.74E-05
+obs1451,Carman JG: Briske DD ,1985,0.009591876,4.91E-05
+obs1452,Carman JG: Briske DD ,1985,0.006119817,4.80E-05
+obs1453,Carman JG: Briske DD ,1985,0.000770776,4.72E-05
+obs1454,Carman JG: Briske DD ,1985,0.003506145,8.97E-06
+obs1455,Carman JG: Briske DD ,1985,0.00467486,9.17E-06
+obs1456,Carman JG: Briske DD ,1985,0.000280492,8.72E-06
+obs1457,Carman JG: Briske DD ,1985,0.007323947,9.81E-06
+obs1458,Carman JG: Briske DD ,1985,0.006485829,9.58E-06
+obs1459,Carman JG: Briske DD ,1985,0.00435187,4.76E-05
+obs1460,Carman JG: Briske DD ,1985,0.008159756,4.86E-05
+obs1461,Carman JG: Briske DD ,1985,0.006527805,4.81E-05
+obs1462,Carman JG: Briske DD ,1985,0.005108717,0.000047758
+obs1463,Carman JG: Briske DD ,1985,0.003969611,0.000047547
+obs1464,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.028599243,0.000157884
+obs1465,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.049027274,0.000233274
+obs1466,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.044045894,0.000211232
+obs1467,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.054598556,0.000260721
+obs1468,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.083197799,0.000448079
+obs1469,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.031199175,0.000165275
+obs1470,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.021666094,0.000141315
+obs1471,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.03466575,0.00017613
+obs1472,Cid MS: Detling JK: Brizuela MA: Whicker AD,1989,0.023399381,0.000145029
+obs1473,Detling JK: Painter EL ,1983,0.029499666,0.00018349
+obs1474,Detling JK: Painter EL ,1983,0.058105403,0.000283615
+obs1475,Detling JK: Painter EL ,1983,0.133460848,0.000860374
+obs1476,Detling JK: Painter EL ,1983,0.127831887,0.00080161
+obs1477,Detling JK: Painter EL ,1983,0.082800199,0.000422641
+obs1478,Detling JK: Painter EL ,1983,0.119638607,0.000720599
+obs1479,Detling JK: Painter EL ,1983,0.059267511,0.000289065
+obs1480,Detling JK: Painter EL ,1983,0.004519367,0.000149537
+obs1481,Detling JK: Painter EL ,1983,0.01162157,0.000154117
+obs1482,Detling JK: Painter EL ,1983,0.000544705,0.000148733
+obs1483,Detling JK: Painter EL ,1983,0.011246952,0.000153775
+obs1484,Detling JK: Painter EL ,1983,0.011778235,0.000154264
+obs1485,Detling JK: Painter EL ,1983,0.003418353,0.000149188
+obs1486,Detling JK: Painter EL ,1983,0.020266049,0.000165131
+obs1487,Detling JK: Painter EL ,1983,0.001300836,0.000148789
+obs1488,Detling JK: Painter EL ,1983,0.031127895,0.000187434
+obs1489,Detling JK: Painter EL ,1983,0.018032711,0.000161713
+obs1490,Detling JK: Painter EL ,1983,0.007953177,0.000151248
+obs1491,Detling JK: Painter EL ,1983,0.003928253,0.000149338
+obs1492,Detling JK: Painter EL ,1983,0.069242272,0.00034028
+obs1493,Detling JK: Painter EL ,1983,0.068273849,0.00033496
+obs1494,Jaramillo VJ: Detling JK,1988,0.010627639,6.51E-05
+obs1495,Jaramillo VJ: Detling JK,1988,0.015682514,6.77E-05
+obs1496,Jaramillo VJ: Detling JK,1988,0.015145772,0.000067339
+obs1497,Jaramillo VJ: Detling JK,1988,0.011787105,6.56E-05
+obs1498,Jaramillo VJ: Detling JK,1988,0.00342606,6.32E-05
+obs1499,Jaramillo VJ: Detling JK,1988,0.001126715,6.30E-05
+obs1500,Jaramillo VJ: Detling JK,1988,0.00400849,6.33E-05
+obs1501,Jaramillo VJ: Detling JK,1988,0.009403009,6.47E-05
+obs1502,Jaramillo VJ: Detling JK,1988,0.000902074,6.30E-05
+obs1503,Jaramillo VJ: Detling JK,1988,0.00272813,6.32E-05
+obs1504,Jaramillo VJ: Detling JK,1988,0.002907257,6.32E-05
+obs1505,Jaramillo VJ: Detling JK,1988,0.013590039,6.65E-05
+obs1506,Jaramillo VJ: Detling JK,1988,0.020213755,7.07E-05
+obs1507,Jaramillo VJ: Detling JK,1988,0.022954603,7.30E-05
+obs1508,Jaramillo VJ: Detling JK,1988,0.016151426,6.79E-05
+obs1509,Jaramillo VJ: Detling JK,1988,0.006261784,6.38E-05
+obs1510,Jaramillo VJ: Detling JK,1988,0.001153162,6.30E-05
+obs1511,Jaramillo VJ: Detling JK,1988,0.003140555,0.000063198
+obs1512,Jaramillo VJ: Detling JK,1988,0.010624914,6.51E-05
+obs1513,Jaramillo VJ: Detling JK,1988,0.001099194,6.30E-05
+obs1514,Jaramillo VJ: Detling JK,1988,0.002415812,6.31E-05
+obs1515,Jaramillo VJ: Detling JK,1988,0.002299525,6.31E-05
+obs1516,Musche M: Settele J: Durka W,2010,0.121661623,0.003091382
+obs1517,Musche M: Settele J: Durka W,2010,0.041105264,0.002567508
+obs1518,Musche M: Settele J: Durka W,2010,0.031514439,0.002539681
+obs1519,Musche M: Settele J: Durka W,2010,0.024399699,0.002523786
+obs1520,Musche M: Settele J: Durka W,2010,0.101817828,0.002914198
+obs1521,Musche M: Settele J: Durka W,2010,0.028364355,0.002532145
+obs1522,Musche M: Settele J: Durka W,2010,0.029855796,0.002535614
+obs1523,Musche M: Settele J: Durka W,2010,0.024881662,0.002524735
+obs1524,Musche M: Settele J: Durka W,2010,0.037818695,0.002557144
+obs1525,Musche M: Settele J: Durka W,2010,0.003939285,0.00250062
+obs1526,Musche M: Settele J: Durka W,2010,0.011122622,0.002504943
+obs1527,Polley HW: Detling JK,1988,0,9.01E-05
+obs1528,Polley HW: Detling JK,1988,0.02978845,0.000111772
+obs1529,Polley HW: Detling JK,1988,0.035951578,0.00012165
+obs1530,Polley HW: Detling JK,1988,0.019237956,0.00043284
+obs1531,Polley HW: Detling JK,1988,0.003667014,0.000363182
+obs1532,Polley HW: Detling JK,1988,0.006626625,0.000369132
+obs1533,Polley HW: Detling JK,1988,0.070669591,0.001335983
+obs1534,Polley HW: Detling JK,1988,0.034399524,0.000591674
+obs1535,Polley HW: Detling JK,1988,0.01888767,0.000430232
+obs1536,Polley HW: Detling JK,1988,0.055428436,0.000960616
+obs1537,Polley HW: Detling JK,1988,0.019515659,0.000434942
+obs1538,Polley HW: Detling JK,1988,0.000294642,0.000360572
+obs1539,Polley HW: Detling JK,1988,0.006604918,0.000369076
+obs1540,Polley HW: Detling JK,1988,0.000940969,0.000360728
+obs1541,Polley HW: Detling JK,1988,0.032605466,0.000568195
+obs1542,Polley HW: Detling JK,1988,0.01828589,0.000425863
+obs1543,Polley HW: Detling JK,1988,0.003070847,0.000362397
+obs1544,Polley HW: Detling JK,1988,0.016659857,0.000414764
+obs1545,Polley HW: Detling JK,1988,0.006352515,0.000368437
+obs1546,Polley HW: Detling JK,1988,0.02050519,0.000442677
+obs1547,Polley HW: Detling JK,1988,0.008951077,0.000376204
+obs1548,Polley HW: Detling JK,1988,0.003660268,0.000363172
+obs1549,Polley HW: Detling JK,1988,0.131783155,0.003752508
+obs1550,Polley HW: Detling JK,1988,0.037942936,0.00064174
+obs1551,Polley HW: Detling JK,1988,0.025990091,0.000492486
+obs1552,Polley HW: Detling JK,1988,0.07735199,0.001529175
+obs1553,Polley HW: Detling JK,1988,0.061955323,0.001110255
+obs1554,Polley HW: Detling JK,1988,0.007298042,0.000370958
+obs1555,Polley HW: Detling JK,1988,0.039147729,0.00065988
+obs1556,Polley HW: Detling JK,1988,0.015768186,0.000409117
+obs1557,Polley HW: Detling JK,1988,0.033642257,0.00058161
+obs1558,Polley HW: Detling JK,1988,0.061849001,0.001107684
+obs1559,Polley HW: Detling JK,1988,0.003046265,0.000362368
+obs1560,Polley HW: Detling JK,1988,0.02778671,0.000511356
+obs1561,Polley HW: Detling JK,1988,0.019558258,0.000435267
+obs1562,Polley HW: Detling JK,1988,0.037442506,0.000634372
+obs1563,Polley HW: Detling JK,1988,0.034987965,0.000599649
+obs1564,Polley HW: Detling JK,1988,0.039466425,0.000664774
+obs1565,Polley HW: Detling JK,1988,0.032382708,0.000565368
+obs1566,Polley HW: Detling JK,1988,0.049852326,0.000845957
+obs1567,Polley HW: Detling JK,1988,0.01578657,0.00040923
+obs1568,Polley HW: Detling JK,1988,0.011276121,0.000385389
+obs1569,Polley HW: Detling JK,1988,0.049432694,0.000837819
+obs1570,Polley HW: Detling JK,1988,0.141122368,0.004250306
+obs1571,Polley HW: Detling JK,1988,0.065777375,0.001205607
+obs1572,Polley HW: Detling JK,1988,0.166973337,0.005805886
+obs1573,Polley HW: Detling JK,1988,0.043225132,0.00072548
+obs1574,Polley HW: Detling JK,1988,0.049698461,0.000842965
+obs1575,Polley HW: Detling JK,1988,0.039466425,0.000664774
+obs1576,Reisch C: Poschlod P,2009,0.057365294,0.000563475
+obs1577,Reisch C: Poschlod P,2009,0.066194335,0.00062749
+obs1578,Reisch C: Poschlod P,2009,0.003405854,0.000371051
+obs1579,Reisch C: Poschlod P,2011,0.000677956,0.000370397
+obs1580,Reisch C: Poschlod P,2011,0.018500471,0.000390455
+obs1581,Reisch C: Poschlod P,2011,0.041335495,0.000470633
+obs1582,Reisch C: Poschlod P,2011,0.004232966,0.000371422
+obs1583,Reisch C: Poschlod P,2011,0.001182549,0.000370452
+obs1584,Reisch C: Poschlod P,2011,0.045241133,0.000490475
+obs1585,Reisch C: Poschlod P,2011,0.058257777,0.00056953
+obs1586,Tomas MA: Carrera AD: Poverene M,2000,0.277257241,0.001026505
+obs1587,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.034059344,4.36E-05
+obs1588,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.074234495,0.000155124
+obs1589,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.089959469,0.000221296
+obs1590,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.236144816,0.00144306
+obs1591,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.065596414,0.000124168
+obs1592,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.084589318,0.000197273
+obs1593,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.095734322,0.000248779
+obs1594,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.093959411,0.00024015
+obs1595,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.015445667,2.00E-05
+obs1596,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.095900269,0.000249594
+obs1597,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.133970509,0.000473877
+obs1598,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.157620061,0.000650613
+obs1599,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.078571099,0.000172107
+obs1600,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.082372563,0.000187788
+obs1601,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.088506053,0.000214649
+obs1602,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.091105529,0.000226614
+obs1603,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.00744976,1.53E-05
+obs1604,Bossdorf: O.: A. Lipowsky: and D. Prati,2008,0.01553713,2.01E-05
+obs1605,Cipollini: D.: J. Mbagwu: K. Barto: C. Hillstrom: and S. Enright.,2005,0.000684529,1.87E-05
+obs1606,Cipollini: D.: J. Mbagwu: K. Barto: C. Hillstrom: and S. Enright.,2005,0.000395213,1.87E-05
+obs1607,Cipollini: D.: J. Mbagwu: K. Barto: C. Hillstrom: and S. Enright.,2005,0.005617033,2.08E-05
+obs1608,Eigenbrode: S. D.: J. E. Andreas: M. G. Cripps: H. Ding: R. C. Biggam: and M. Schwarzlander,2008,0.001651845,5.13E-05
+obs1609,Eigenbrode: S. D.: J. E. Andreas: M. G. Cripps: H. Ding: R. C. Biggam: and M. Schwarzlander,2008,0.000936511,5.11E-05
+obs1610,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.000207606,1.23E-07
+obs1611,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.00110165,1.25E-07
+obs1612,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.00103009,2.39E-07
+obs1613,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.001033177,2.39E-07
+obs1614,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.000209365,2.44E-07
+obs1615,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.000786729,2.60E-07
+obs1616,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.00226928,3.95E-07
+obs1617,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.001814109,1.20E-07
+obs1618,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.001695286,1.27E-07
+obs1619,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.00023015,4.83E-07
+obs1620,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,0.000134514,1.21E-07
+obs1621,Franks: S. J.: P. D. Pratt: F. A. Dray: and E. L. Simms,2008,8.62E-05,0.000000124
+obs1622,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.004412396,1.78E-06
+obs1623,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.001375249,1.55E-06
+obs1624,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.004383646,1.78E-06
+obs1625,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.002604944,1.62E-06
+obs1626,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.001424685,1.55E-06
+obs1627,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.003886728,1.72E-06
+obs1628,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000214285,1.53E-06
+obs1629,Guesewell: S.: G. Jakobs: and E. Weber,2006,0,1.53E-06
+obs1630,Guesewell: S.: G. Jakobs: and E. Weber,2006,1.89E-05,1.53E-06
+obs1631,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.001932202,1.58E-06
+obs1632,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000876729,1.54E-06
+obs1633,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.00114049,1.54E-06
+obs1634,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.001356633,1.55E-06
+obs1635,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.001168972,0.000001545
+obs1636,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000371762,1.53E-06
+obs1637,Guesewell: S.: G. Jakobs: and E. Weber,2006,2.69E-05,1.53E-06
+obs1638,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000435311,1.53E-06
+obs1639,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000236475,0.000001528
+obs1640,Guesewell: S.: G. Jakobs: and E. Weber,2006,0.000292243,1.53E-06
+obs1641,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.01312191,3.45E-05
+obs1642,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.020474937,9.12E-06
+obs1643,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.011018128,3.30E-05
+obs1644,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.050846132,0.00023166
+obs1645,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.01007817,2.92E-05
+obs1646,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.007471797,3.55E-05
+obs1647,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.010744401,0.000032498
+obs1648,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.029357842,0.000176934
+obs1649,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.010077415,3.39E-05
+obs1650,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.027657553,9.21E-05
+obs1651,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.011771505,2.65E-05
+obs1652,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.010109315,2.43E-05
+obs1653,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.023522677,2.60E-05
+obs1654,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.015348059,2.11E-05
+obs1655,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.009876368,2.14E-05
+obs1656,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.027734631,4.45E-05
+obs1657,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.014757566,2.06E-05
+obs1658,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.017939133,2.34E-05
+obs1659,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.024240674,0.000089644
+obs1660,Ridenour: W. M.: J. M. Vivanco: Y. L. Feng: J. Horiuchi: and R. M. Callaway,2008,0.028752448,0.000111259
+obs1661,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.001092603,1.92E-05
+obs1662,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.00204719,1.93E-05
+obs1663,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.000209871,1.92E-05
+obs1664,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,7.16E-05,1.92E-05
+obs1665,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.000397959,1.92E-05
+obs1666,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.000452557,1.92E-05
+obs1667,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.000644385,1.92E-05
+obs1668,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.002987368,1.95E-05
+obs1669,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.003844247,1.97E-05
+obs1670,He: W. M.: Y. L. Feng: W. M. Ridenour: G. C. Thelen: J. L. Pollock: A. Diaconu: et al,2009,0.000434665,1.92E-05
+obs1671,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.003005873,7.55E-06
+obs1672,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.004215491,7.08E-06
+obs1673,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.007527917,9.36E-06
+obs1674,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0,6.04E-06
+obs1675,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.003513298,6.76E-06
+obs1676,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.001405288,6.15E-06
+obs1677,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.018738765,2.66E-05
+obs1678,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.005269391,7.67E-06
+obs1679,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.014054528,1.76E-05
+obs1680,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.015224194,1.96E-05
+obs1681,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.009661756,1.15E-05
+obs1682,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.007353966,8.45E-06
+obs1683,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.005384607,7.13E-06
+obs1684,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.007572059,8.62E-06
+obs1685,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.005036644,6.13E-06
+obs1686,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.008519188,8.18E-06
+obs1687,Huang: W.: E. Siemann: G. S. Wheeler: J. W. Zou: J. Carrillo: and J. Q. Ding,2010,0.004620483,5.96E-06
+obs1688,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.001744335,0.00000264
+obs1689,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,6.44E-05,2.58E-06
+obs1690,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.002986565,2.75E-06
+obs1691,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.001871114,2.65E-06
+obs1692,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.005072484,3.07E-06
+obs1693,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.004113187,2.90E-06
+obs1694,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.001076326,0.000001198
+obs1695,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.001762727,3.16E-07
+obs1696,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,9.61E-05,2.27E-07
+obs1697,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,7.93E-05,2.47E-07
+obs1698,Hull-Sanders: H. M.: R. Clare: R. H. Johnson: and G. A. Meyer,2007,0.000959004,1.45E-06
+obs1699,Johnson: R. H.: H. M. Hull-Sanders: and G. A. Meyer,2007,0.00248995,9.59E-07
+obs1700,Johnson: R. H.: H. M. Hull-Sanders: and G. A. Meyer,2007,0.000199476,9.19E-07
+obs1701,Johnson: R. H.: H. M. Hull-Sanders: and G. A. Meyer,2007,0.002124584,2.45E-07
+obs1702,Johnson: R. H.: H. M. Hull-Sanders: and G. A. Meyer,2007,9.20E-05,2.37E-07
+obs1703,Johnson: R. H.: H. M. Hull-Sanders: and G. A. Meyer,2007,0.003736178,2.61E-07
+obs1704,Joshi: J.: and K. Vrieling,2005,0.011494295,1.51E-05
+obs1705,Joshi: J.: and K. Vrieling,2005,0.015758943,2.01E-05
+obs1706,Joshi: J.: and K. Vrieling,2005,0.008198394,1.23E-05
+obs1707,Joshi: J.: and K. Vrieling,2005,0.007395195,1.23E-05
+obs1708,Joshi: J.: and K. Vrieling,2005,0.006134122,1.15E-05
+obs1709,Joshi: J.: and K. Vrieling,2005,0.00850316,1.31E-05
+obs1710,Joshi: J.: and K. Vrieling,2005,0.006707631,1.24E-05
+obs1711,Joshi: J.: and K. Vrieling,2005,0.006421224,1.04E-05
+obs1712,Joshi: J.: and K. Vrieling,2005,0.015479039,2.36E-05
+obs1713,Joshi: J.: and K. Vrieling,2005,0.007132769,1.16E-05
+obs1714,Joshi: J.: and K. Vrieling,2005,0.008480537,1.25E-05
+obs1715,Joshi: J.: and K. Vrieling,2005,0.010446163,1.41E-05
+obs1716,Joshi: J.: and K. Vrieling,2005,0.01246037,1.49E-05
+obs1717,Joshi: J.: and K. Vrieling,2005,0.009307363,1.43E-05
+obs1718,Joshi: J.: and K. Vrieling,2005,0.009745415,1.47E-05
+obs1719,Joshi: J.: and K. Vrieling,2005,0.002308274,8.35E-06
+obs1720,Joshi: J.: and K. Vrieling,2005,0.002127608,8.34E-06
+obs1721,Joshi: J.: and K. Vrieling,2005,0.000771749,8.26E-06
+obs1722,Joshi: J.: and K. Vrieling,2005,0.013943999,1.21E-05
+obs1723,Joshi: J.: and K. Vrieling,2005,0.014999019,1.27E-05
+obs1724,Joshi: J.: and K. Vrieling,2005,0.001756076,8.31E-06
+obs1725,Joshi: J.: and K. Vrieling,2005,0.018386481,1.49E-05
+obs1726,Joshi: J.: and K. Vrieling,2005,0.007064387,9.23E-06
+obs1727,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.006468965,1.13E-05
+obs1728,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.002264112,1.02E-05
+obs1729,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.00271695,1.03E-05
+obs1730,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.000748692,1.01E-05
+obs1731,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.000131977,1.01E-05
+obs1732,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.000857491,1.01E-05
+obs1733,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.006618409,1.14E-05
+obs1734,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.000323433,0.000010063
+obs1735,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.002264125,1.02E-05
+obs1736,McKenney: J. L.: M. G. Cripps: W. J. Price: H. L. Hinz: and M. Schwarzlander,2007,0.001132088,1.01E-05
+obs1737,van Kleunen: M.: and M. Fischer,2008,0.003575109,1.11E-05
+obs1738,van Kleunen: M.: and M. Fischer,2008,0.00114242,1.08E-05
+obs1739,van Kleunen: M.: and M. Fischer,2008,0.006619987,1.21E-05
+obs1740,van Kleunen: M.: and M. Fischer,2008,0.001040573,1.08E-05
+obs1741,van Kleunen: M.: and M. Fischer,2008,0.001514302,1.08E-05
+obs1742,van Kleunen: M.: and M. Fischer,2008,0.000109118,0.00001075
+obs1743,van Kleunen: M.: and M. Fischer,2008,0.001943646,0.000010864
+obs1744,van Kleunen: M.: and M. Fischer,2008,0.001854717,1.09E-05
+obs1745,van Kleunen: M.: and M. Fischer,2008,0.001352302,1.98E-05
+obs1746,van Kleunen: M.: and M. Fischer,2008,0.002370414,1.99E-05
+obs1747,van Kleunen: M.: and M. Fischer,2008,0.004016174,2.02E-05
+obs1748,van Kleunen: M.: and M. Fischer,2008,0.004879962,2.04E-05
+obs1749,van Kleunen: M.: and M. Fischer,2008,0.001062964,0.000019797
+obs1750,van Kleunen: M.: and M. Fischer,2008,0.009968573,2.26E-05
+obs1751,van Kleunen: M.: and M. Fischer,2008,0.00456,2.04E-05
+obs1752,van Kleunen: M.: and M. Fischer,2008,0.003139605,2.00E-05
+obs1753,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.007425359,2.52E-05
+obs1754,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.000168791,1.74E-05
+obs1755,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.001040177,1.76E-05
+obs1756,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.002048274,2.07E-05
+obs1757,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.00100721,2.01E-05
+obs1758,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.002031647,1.80E-05
+obs1759,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.001053947,1.76E-05
+obs1760,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.003642607,1.93E-05
+obs1761,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.007747534,0.000025883
+obs1762,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.002703148,1.84E-05
+obs1763,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.005962885,2.24E-05
+obs1764,Willis: A. J.: M. B. Thomas: and J. H. Lawton,1999,0.001513706,1.77E-05
+obs1765,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.008748362,3.63E-06
+obs1766,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.005742528,2.96E-06
+obs1767,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.001272357,0.000002474
+obs1768,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.000370969,2.45E-06
+obs1769,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.001258547,2.47E-06
+obs1770,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.001908625,2.51E-06
+obs1771,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.002354011,2.53E-06
+obs1772,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.002551452,2.55E-06
+obs1773,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.00479764,2.33E-06
+obs1774,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.001010739,1.86E-06
+obs1775,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.002883975,2.02E-06
+obs1776,Zou: J. W.: W. E. Rogers: and E. Siemann,2007,0.002506632,0.000001972

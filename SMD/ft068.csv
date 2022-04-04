@@ -1,0 +1,66 @@
+﻿obs_ID,study_ID,year_pub,es,var
+obs001,Møller et al. (2010),2010,-0.329,0.005476
+obs002,Møller et al. (2010),2010,-0.036,0.023716
+obs003,"unpubl., Lehikoinen et al. (2010)",2010,-0.078,0.054289
+obs004,"unpubl, Dyrcz & Halupka (2009)*",2009,-0.166,0.022201
+obs005,"unpubl., Halupka et al. (2008)*",2008,0.313,0.007569
+obs006,Schaefer et al. (2006),2006,-0.39,0.043681
+obs007,Gullet et al. (2013),2013,-0.51,0.0484
+obs008,"unpubl., Lehikoinen et al. (2011)",2011,0.08,0.103684
+obs009,Weatherhead (2005),2005,0.371,0.028561
+obs010,"unpubl., Torti & Dunn (2005). Dunn & Møller (2014)*",2005,-0.486,0.030276
+obs011,"unpubl., Drever & Clark (2007)",2007,0.499,0.25
+obs012,"unpubl., Lehikoinen et al. (2009)",2009,-0.128,0.011236
+obs013,"unpubl., Polish NCS",,0.869,0.085849
+obs014,"unpubl., Torti & Dunn (2005). Dunn & Møller (2014)*",2005,-0.076,0.268324
+obs015,"unpubl., Polish NCS",,0.827,0.150544
+obs016,"unpubl., Polish NCS",,-0.213,0.157609
+obs017,"unpubl., A Dyrcz & L Halupka",,0.388,0.025281
+obs018,Møller et al. (2010),2010,0.604,0.062001
+obs019,"unpubl., Potti (2009)",2009,0.147,0.120409
+obs020,"unpubl., Blondel (1985)",1985,-0.097,0.021316
+obs021,Møller et al. (2010),2010,0.861,0.012769
+obs022,"unpubl., Polish NCS",,0.746,0.097344
+obs023,"unpubl., Potti (2008)",2008,0.265,0.087616
+obs024,"unpubl., Torti & Dunn (2005), Dunn & Møller (2014)*",2005,0.034,0.151321
+obs025,Møller et al. (2010),2010,0.185,0.007056
+obs026,"unpubl., Fletcher et al. (2013)",2013,-0.497,0.182329
+obs027,"unpubl., Eeva et al. (2012)",2012,-0.261,0.011881
+obs028,"unpubl., Wright et al. (2009)",2009,1.483,0.546121
+obs029,"unpubl., Drever & Clark (2007)",2007,0.338,0.439569
+obs030,"unpubl., Torti & Dunn (2005), Dunn & Møller (2014)*",2005,-0.19,0.185761
+obs031,"unpubl., Stępniewski (2012)*",2012,0.475,0.227529
+obs032,Møller et al. (2010),2010,0.573,0.097344
+obs033,Møller et al. (2010),2010,0.649,0.0025
+obs034,Møller et al. (2010),2010,0.763,0.006889
+obs035,Møller et al. (2010),2010,0.321,0.141376
+obs036,"unpubl., E. Belskii, Porkert et al. (2014)*",2014,0.411,0.1444
+obs037,"unpubl. S. Gashkov & B Kuranov, Kuranov (2009)*",2009,0.378,0.079524
+obs038,"unpubl., J. Porkert & J Zajíc, Porkert et al. (2014)*",2014,0.282,0.106276
+obs039,"unpubl., Wesołowski & Maziarz (2009), Wesołowski (1985)",2009,-0.199,0.045369
+obs040,Møller et al. (2010),2010,0.011,0.002401
+obs041,"unpubl., Orell & Ojanen (1983), Vatka et al. (2011)",1983,0.422,0.128881
+obs042,"unpubl., Bulluck et al.(2013)",2013,0.45,0.089401
+obs043,"unpubl., Polish NCS",,-0.289,0.212521
+obs044,"unpubl., Torti & Dunn (2005). Dunn & Møller (2014)*",2005,0.297,0.0121
+obs045,"unpubl., Drever & Clark (2007)",2007,0.672,0.290521
+obs046,Møller et al. (2010b),2010,-0.434,0.031684
+obs047,Møller et al. (2010b),2010,-0.142,0.014161
+obs048,Møller et al. (2010b),2010,-0.241,0.004225
+obs049,"unpubl., Solonen (2014)",2014,-0.838,0.964324
+obs050,"unpubl., Lehikoinen et al. (2011)",2011,0.168,0.148996
+obs051,"unpubl., Lehikoinen et al. (2011)",2011,-0.686,0.219024
+obs052,Møller et al. (2010b),2010,-0.427,0.024025
+obs053,"unpubl., Polish NCS",,0.017,0.037636
+obs054,"unpubl., Polish NCS",,1.005,0.155236
+obs055,"unpubl., Torti & Dunn (2005), Dunn & Møller (2014)*",2005,0.239,0.0081
+obs056,Møller et al. (2010b),2010,-0.932,0.109561
+obs057,Møller et al. (2010b),2010,0.589,0.010201
+obs058,"unpubl., Najmanová & Adamík (2009)*",2009,1.109,0.1681
+obs059,Jankowiak et al. (2014)*,2014,0.58,0.473344
+obs060,"unpubl., Torti & Dunn (2005). Dunn & Møller (2014)*",2005,0.322,0.032041
+obs061,"unpubl., Najmanová & Adamík (2009)*",2009,1.053,0.099856
+obs062,Vengerov (2011)*,2011,0.796,0.173889
+obs063,"unpubl., Najmanová & Adamík (2009)*",2009,-0.28,0.024336
+obs064,"unpubl., Béziers & Roulin (2015)",2015,0.125,0.431649
+obs065,"unpubl. data of M. Harris, Reed et al. (2006), Harris & Wanless 1987)",2006,-0.441,0.015625

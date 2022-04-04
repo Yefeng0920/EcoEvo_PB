@@ -1,0 +1,146 @@
+﻿obs_ID,study_ID,year_pub,es,var
+obs001,Abbott et al. 1993,1993,-0.2121,1.0056
+obs002,Abbott et al. 1993,1993,-0.3108,1.0126
+obs003,Abbott et al. 1993,1993,-2.1014,1.552
+obs004,Abbott et al. 1993,1993,-1.4182,1.2514
+obs005,Abbott et al. 1993,1993,-8.4224,9.8671
+obs006,Abbott et al. 1993,1993,-1.8439,1.425
+obs007,Blundell & Peart 2000,2000,0.0516,0.0408
+obs008,Blundell & Peart 2000,2000,-0.0587,0.04
+obs009,Blundell & Peart 2000,2000,-0.0587,0.0404
+obs010,Blundell & Peart 2000,2000,-6.7549,0.2262
+obs011,Bultman & Faeth 1986,1986,-0.592,0.027
+obs012,Burrows 2003,2003,-3.093,2.2
+obs013,Burrows 2003,2003,-2.773,1.96
+obs014,Faeth et al. 1981,1981,-0.124,0.026
+obs015,Faeth et al. 1981,1981,-0.257,0.01
+obs016,Faeth et al. 1981,1981,0.235,0.022
+obs017,Fernandes et al. 2008,2008,-3.6444,1.0641
+obs018,Fernandes et al. 2008,2008,-1.3987,0.4978
+obs019,Fonseca 1994,1994,-0.819,0.1034
+obs020,Giertych et al. 2006,2006,-0.1645,0.0056
+obs021,Giertych et al. 2006,2006,-0.6944,0.0059
+obs022,Gripenberg & Roslin 2008,2008,-3.35,0.05
+obs023,Hileman & Lieto 1981,1981,-0.0904,0.021
+obs024,Hileman & Lieto 1981,1981,0.021,0.0164
+obs025,Hileman & Lieto 1981,1981,-0.3028,0.0186
+obs026,Hileman & Lieto 1981,1981,-0.3792,0.0212
+obs027,Hileman & Lieto 1981,1981,-0.6174,0.0254
+obs028,Hileman & Lieto 1981,1981,-0.8057,0.0224
+obs029,Hodge et al. 1998,1998,0.0324,0.125
+obs030,Hodge et al. 2000,2000,0.6189,0.1905
+obs031,Hodge et al. 2000,2000,-0.1812,0.1826
+obs032,Hodge et al. 2000,2000,-0.6442,0.1913
+obs033,Hosking & Hutcheson 1986,1986,-4.39,0.289
+obs034,Kagata & Ohgushi 2004,2004,-0.583,0.013
+obs035,Kahn & Cornell 1989,1989,-5.4313,3.1249
+obs036,Kozlov 2004,2004,0.5041,1.0318
+obs037,Kudo 1996,1996,0.1687,0.0418
+obs038,Kudo 1996,1996,-0.2947,0.0421
+obs039,Lam & Dudgeon 1985,1985,-0.3913,0.0763
+obs040,Lam & Dudgeon 1985,1985,-0.5869,0.0779
+obs041,Lam & Dudgeon 1985,1985,-1.0039,0.0834
+obs042,Lam & Dudgeon 1985,1985,-0.8693,0.0813
+obs043,Lam & Dudgeon 1985,1985,-0.9513,0.0825
+obs044,Lam & Dudgeon 1985,1985,-1.3324,0.0898
+obs045,Lam & Dudgeon 1985,1985,-1.7167,0.0996
+obs046,Lee 1991,1991,-0.1199,0.027
+obs047,Lee 1991,1991,-0.739,0.0285
+obs048,Lee 1991,1991,-1.046,0.0303
+obs049,Lee 1991,1991,-3.858,0.0763
+obs050,Maier 1983,1983,-1.1184,0.0025
+obs051,Maier 1989,1989,-1.5905,0.0416
+obs052,Maier 1989,1989,-1.0084,0.0922
+obs053,Maier 1989,1989,-2.0484,0.0953
+obs054,Maier 1996,1996,-2.1108,0.1227
+obs055,Mazia et al. 2012,2012,-0.696,0.074
+obs056,Mazia et al. 2012,2012,-0.017,0.077
+obs057,Naruse 1977,1977,0.28,0.36
+obs058,Naruse 1977,1977,-1.06,0.41
+obs059,Oishi & Sato 2007,2007,-0.6375,0.0092
+obs060,Owen 1978,1978,-4.1462,2.0992
+obs061,Potter 1985,1985,-0.5909,0.2982
+obs062,Preszler & Price 1993,1993,-0.2228,0.0014
+obs063,Preszler & Price 1993,1993,-0.125,0.0017
+obs064,Preszler & Price 1993,1993,-0.0047,0.0017
+obs065,Pritchard & James 1984,1984,-0.8673,1.094
+obs066,Pritchard & James 1984,1984,-0.894,0.046
+obs067,Pritchard & James 1984,1984,-0.894,0.046
+obs068,Pritchard & James 1984,1984,-1.512,0.07
+obs069,Pritchard & James 1984,1984,-1.718,0.085
+obs070,Risley 1986,1986,-0.6119,0.0196
+obs071,Risley 1986,1986,-0.8714,0.019
+obs072,Risley 1986,1986,-1.3048,0.0666
+obs073,Risley 1986,1986,-0.3717,0.0119
+obs074,Risley 1986,1986,-0.1246,0.0107
+obs075,Risley 1993,1993,-0.8696,0.5473
+obs076,Risley 1993,1993,-1.3043,0.6063
+obs077,Risley 1993,1993,-0.4348,0.5118
+obs078,Risley 1993,1993,-0.9032,0.4408
+obs079,Risley 1993,1993,-0.7527,0.4283
+obs080,Risley 1993,1993,-0.4516,0.4102
+obs081,Risley 1993,1993,-2.029,0.7573
+obs082,Risley 1993,1993,-1.0145,0.5643
+obs083,Risley 1993,1993,-0.6522,0.5266
+obs084,Risley 1993,1993,0.1806,0.4016
+obs085,Risley 1993,1993,0.5419,0.4147
+obs086,Risley 1993,1993,0.9032,0.4408
+obs087,Risley 1993,1993,-2.1014,0.776
+obs088,Risley 1993,1993,-1.2319,0.5948
+obs089,Risley 1993,1993,-0.3623,0.5082
+obs090,Risley 1993,1993,-1.3548,0.4918
+obs091,Risley 1993,1993,-0.3613,0.4065
+obs092,Risley 1993,1993,0.4516,0.4102
+obs093,Risley 1993,1993,-2.4155,0.8647
+obs094,Risley 1993,1993,-0.6763,0.5286
+obs095,Risley 1993,1993,-0.2899,0.5053
+obs096,Risley 1993,1993,-0.9032,0.4408
+obs097,Risley 1993,1993,0,0.4
+obs098,Risley 1993,1993,0.3613,0.4065
+obs099,Simberloff & Stiling 1987,1987,-1.1856,0.7838
+obs100,Simberloff & Stiling 1987,1987,-1.4913,0.852
+obs101,Simberloff & Stiling 1987,1987,-3.9337,1.9562
+obs102,Sipura 2002,2002,-1.21,0.1221
+obs103,Stiling & Simberloff 1989,1989,-0.021,0.008
+obs104,Sunose & Yukawa 1979,1979,-0.3665,0.0041
+obs105,Sunose & Yukawa 1979,1979,-2.1907,0.0064
+obs106,Waddell et al. 2001,2001,-6.8321,4.5565
+obs107,Wagner et al. 2008,2008,-0.6634,0.1049
+obs108,Wagner et al. 2008,2008,-1.6866,0.3378
+obs109,Wagner et al. 2008,2008,-4.1174,0.6905
+obs110,Wagner et al. 2008,2008,-2.4233,0.1378
+obs111,Williams & Whitham 1986,1986,-0.661,0.005
+obs112,Williams & Whitham 1986,1986,-0.61,0.011
+obs113,Williams & Whitham 1986,1986,-1.177,0.002
+obs114,Williams & Whitham 1986,1986,-1.54,0.004
+obs115,Williams & Whitham 1986,1986,-0.694,0.017
+obs116,Williams & Whitham 1986,1986,-1.024,0.008
+obs117,Williams & Whitham 1986,1986,-1.562,0.028
+obs118,Williams & Whitham 1986,1986,-1.525,0.025
+obs119,Wool & Bogen 1999,1999,0.606,0.075
+obs120,Wool & Bogen 1999,1999,-0.63,0.075
+obs121,Yamazaki & Sugiura 2008,2008,-2.9519,0.4178
+obs122,Yukawa & Tsuda 1986,1986,-0.642,0.013
+obs123,Zvereva & Kozlov 2014,2014,-2.38,0.57
+obs124,Zvereva & Kozlov 2014,2014,-1.99,0.5
+obs125,Zvereva & Kozlov 2014,2014,-0.55,0.23
+obs126,Zvereva & Kozlov 2014,2014,-1.27,0.24
+obs127,Zvereva & Kozlov 2014,2014,-0.54,0.26
+obs128,Zvereva & Kozlov 2014,2014,-0.376,0.185
+obs129,Zvereva & Kozlov 2014,2014,0.35,0.406
+obs130,Zvereva & Kozlov 2014,2014,-0.445,0.186
+obs131,Zvereva & Kozlov 2014,2014,-0.261,0.403
+obs132,Zvereva & Kozlov 2014,2014,-0.119,0.2
+obs133,Zvereva & Kozlov 2014,2014,-0.559,0.208
+obs134,Zvereva & Kozlov 2014,2014,0.1087,0.2
+obs135,Zvereva & Kozlov 2014,2014,-0.319,0.203
+obs136,Zvereva & Kozlov 2014,2014,-0.7636,0.215
+obs137,Zvereva & Kozlov 2014,2014,-0.29,0.2
+obs138,Zvereva & Kozlov 2014,2014,-0.053,0.2
+obs139,Zvereva & Kozlov 2014,2014,-0.177,0.2
+obs140,Zvereva & Kozlov 2014,2014,0.1397,0.2
+obs141,Zvereva & Kozlov 2014,2014,-0.036,0.2
+obs142,Zvereva & Kozlov 2014,2014,-0.569,0.21
+obs143,Zvereva & Kozlov 2014,2014,-0.5813,0.21
+obs144,Zvereva & Kozlov unpubl.,,-1.25,0.6
+obs145,Zvereva & Kozlov unpubl.,,-12.1,9.6
