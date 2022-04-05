@@ -5,7 +5,7 @@ date: "2022/4/4"
 output: html_document
 ---
 
-## Setup
+# setup
 
 ```{r setup, echo = FALSE}
 # Tidy
@@ -27,7 +27,7 @@ pacman::p_load(knitr, # knit markdown
                cowplot, 
                ggpubr,
                gridExtra,
-               orchaRd, # forest-like plot
+               orchaRd, # v2.0, a new version
                gridGraphics, # Redraw Base Graphics Using 'grid' Graphics. `gridGraphics` is required to handle base-R plots.
                dabestr,
                here,
@@ -35,7 +35,7 @@ pacman::p_load(knitr, # knit markdown
                lme4,
                car, # logit transformation, car::logit()
                boot, # Bootstrap Resampling
-               lmerTest, # get p-valus from lme4 model, but need to re-fit the model lmerTest::lme4
+               lmerTest, # get p-valus from lme4 model
                ggthemes,
                modi # weighted variance
                )
@@ -116,119 +116,76 @@ estimates.CI <- function(model){
 ```
 
 
-## Import data and pre-process
+# 1. import data and pre-process
 
-Import lnRR, SMD, and Zr datasets
+(1) import data
+we have two subsets: pre-calculated effect sizes and descriptive statistics
 
+(2) compute effect size and sampling variance for subset with descriptive statistics
+
+(3) calculate effective sample size related variables for for subset with descriptive statistics
+
+(4) scale/center continuous variables
 ```{r}
 #*************************************************************************#
-#           import datasets with calculated effect sizes                    
+#       import datasets with pre-calculated effect sizes                    
 #*************************************************************************#
-## read lnRR, SMD and Zr datasets, which contain the calculated effect size (es) and sampling variance (var)
-### lnRR
-lnRR_csv <- list.files(path = "./dataset/lnRR", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv) ## need to use full name of each dataset, otherwise read_csv is not able to read it
-### SMD
-SMD_csv <- list.files(path = "./dataset/SMD", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv)
-### Zr
-Zr_csv <- list.files(path = "./dataset/Zr", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv)
+
+## import SMD datasets with pre-calculated effect size (es) and sampling variance (var)
+SMD_csv <- list.files(path = "./SMD", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv)
 
 ### get names of each .csv file
-lnRR_filenames <- list.files(path = "./dataset/lnRR", pattern = "*.csv", full.names = FALSE)
-SMD_filenames <- list.files(path = "./dataset/SMD", pattern = "*.csv", full.names = FALSE)
-Zr_filenames <- list.files(path = "./dataset/Zr", pattern = "*.csv", full.names = FALSE)
+SMD_filenames <- list.files(path = "./SMD", pattern = "*.csv", full.names = FALSE)
+
 ### rename the elements of the list
-names(lnRR_csv) <- lnRR_filenames
 names(SMD_csv) <- SMD_filenames
-names(Zr_csv) <- Zr_filenames
 
 
 #*************************************************************************#
 #                      import datasets with raw data                    
 #*************************************************************************#
 
-## read another sets of lnRR, SMD and Zr datasets, which contain descriptive statistics (mean, sd and sample size)
-### lnRR
-lnRR_des_csv <- list.files(path = "./dataset/lnRR/des_stat", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv) 
-lnRR_des_filenames <- list.files(path = "./dataset/lnRR/des_stat", pattern = "*.csv", full.names = FALSE) # extract file names, which will be used later
+## import SMD datasets with descriptive statistics (mean, sd and sample size)
+SMD_des_csv <- list.files(path = "./SMD/des_stat", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv)
+SMD_des_filenames <- list.files(path = "./SMD/des_stat", pattern = "*.csv", full.names = FALSE) # extract file names, which will be used later
 
+## for datasets with descriptive statistics, we also need to create a variable named 'effective sample size' for each of them 
+## effective sample size makes the examination of the small-study effect more statistically sound (see below or the main text for explanations)
 
-### SMD
-SMD_des_csv <- list.files(path = "./dataset/SMD/des_stat", pattern = "*.csv", full.names = TRUE) %>% lapply(read_csv)
-SMD_des_filenames <- list.files(path = "./dataset/SMD/des_stat", pattern = "*.csv", full.names = FALSE) # extract file names, which will be used later
-
-## for datasets with descriptive statistics, we also need to create 'effective sample size'-related variables for each of them 
-## these variables make the examination of the small-study effect more statistically sound (see below or the main text for explanations)
-
-### function to calculate effective sample size
+## function to calculate effective sample size
 ess_cal <- function(dat){(4*dat$C_n*dat$T_n) / (dat$C_n + dat$T_n)}
-### calculate effective sample size for lnRR with descriptive statistics
-ess <- NA
-for (i in 1:length(lnRR_des_csv)) {
-  ess[i] <- ess_cal(lnRR_des_csv[[i]]) %>% list()}
-### allocate each set of effective sample size into corresponding dataset
-for (i in 1:length(lnRR_des_csv)) {
-  lnRR_des_csv[[i]]$ess <- ess[[i]]
-}
 
-### calculate effective sample size for SMD with descriptive statistics
+## calculate effective sample size for SMD with descriptive statistics
 ess <- NA
 for (i in 1:length(SMD_des_csv)) {
   ess[i] <- ess_cal(SMD_des_csv[[i]]) %>% list()}
+
 ### allocate each set of effective sample size into corresponding dataset
 for (i in 1:length(SMD_des_csv)) {
   SMD_des_csv[[i]]$ess <- ess[[i]]
 }
  
-#### create inverse of effective sample size - "effective sample size" based "sampling variance" 
-#### function to calculate inverse of effective sample size 
+### create inverse effective sample size - "effective sample size" based "sampling variance" 
+### function to calculate inverse of effective sample size 
 ess.var_cal <- function(dat){1/dat$C_n + 1/dat$T_n}
-#### calculations for lnRR
-ess.var <- NA
-for (i in 1:length(lnRR_des_csv)) {
-  ess.var[i] <- ess.var_cal(lnRR_des_csv[[i]]) %>% list()}
-#### allocate each set of effective sample size into corresponding dataset
-for (i in 1:length(lnRR_des_csv)) {
-  lnRR_des_csv[[i]]$ess.var <- ess.var[[i]]
-}
 
-#### calculate inverse sqrt of effective sample size - "effective sample size" based "sampling error" 
-for (i in 1:length(lnRR_des_csv)) {
-  lnRR_des_csv[[i]]$ess.sei <- sqrt(lnRR_des_csv[[i]]$ess.var)
-}
-
-
-#### calculations for SMD
+### calculations for SMD
 ess.var <- NA
 for (i in 1:length(SMD_des_csv)) {
   ess.var[i] <- ess.var_cal(SMD_des_csv[[i]]) %>% list()}
-#### allocate each set of effective sample size into corresponding dataset
+
+### allocate each set of effective sample size into corresponding dataset
 for (i in 1:length(SMD_des_csv)) {
   SMD_des_csv[[i]]$ess.var <- ess.var[[i]]
 }
-#### calculate inverse sqrt of effective sample size - "effective sample size" based "sampling error" 
+
+### calculate inverse sqrt of effective sample size - "effective sample size" based "sampling error" 
 for (i in 1:length(SMD_des_csv)) {
   SMD_des_csv[[i]]$ess.sei <- sqrt(SMD_des_csv[[i]]$ess.var)
 }
 
 
-## recalculate effect size for datasets with descriptive statistics
-### lnRR
-lnRR_es <- NA
-for (i in 1:length(lnRR_des_csv)) {
-  lnRR_es[i] <- escalc(measure = "ROM",
-                    m1i = T_mean,
-                    m2i = C_mean,
-                    sd1i = T_sd,
-                    sd2i = C_sd,
-                    n1i = T_n,
-                    n2i = C_n,
-                    data = lnRR_des_csv[[i]]) %>% list()
-}
-### rename the elements of the list
-names(lnRR_es) <- lnRR_des_filenames
-
-
-### SMD
+## calculate effect size for datasets with descriptive statistics
 SMD_es <- NA
 for (i in 1:length(SMD_des_csv)) {
   SMD_es[i] <- escalc(measure = "SMD",
@@ -240,714 +197,148 @@ for (i in 1:length(SMD_des_csv)) {
                     n2i = C_n,
                     data = SMD_des_csv[[i]]) %>% list()
 }
+
 ### rename the elements of the list
 names(SMD_es) <- SMD_des_filenames
 
-## to keep consistant, rename effect size and sampling variance
-### lnRR
-for (i in 1:length(lnRR_es)) {
-  names(lnRR_es[[i]])[names(lnRR_es[[i]]) == "yi"] <- "es"
-  names(lnRR_es[[i]])[names(lnRR_es[[i]]) == "vi"] <- "var"
-}
-### SMD
+## to keep consistent, rename effect size and sampling variance
 for (i in 1:length(SMD_es)) {
   names(SMD_es[[i]])[names(SMD_es[[i]]) == "yi"] <- "es"
   names(SMD_es[[i]])[names(SMD_es[[i]]) == "vi"] <- "var"
 }
 
-## combine two sets of dataset for lnRR and SMD (Zr only has one set dataset, so no need to combine)
-lnRR <- append(lnRR_csv, lnRR_es) # or c(lnRR_csv, lnRR_es)
+## combine two sets of dataset for SMD (
 SMD <- append(SMD_csv, SMD_es)
-Zr <- Zr_csv # for consistence, create Zr to instead of Zr_csv
 
 ## remove NAs, zero variance, and +-Inf
-### lnRR
-#### delete NAs, zero variance
-for (i in 1:length(lnRR)) {
-  lnRR[[i]] <- lnRR[[i]][!is.na(lnRR[[i]]$es) & !is.na(lnRR[[i]]$var) & lnRR[[i]]$var != 0 & !is.na(lnRR[[i]]$year_pub), ]
-}
-#### delete +-Inf
-for (i in 1:length(lnRR)) {
-  lnRR[[i]] <- lnRR[[i]] %>% na.omit()
-}
-
-### SMD
-#### delete NAs, zero variance
+### delete NAs, zero variance
 for (i in 1:length(SMD)) {
   SMD[[i]] <- SMD[[i]][!is.na(SMD[[i]]$es) & !is.na(SMD[[i]]$var) & SMD[[i]]$var != 0 & !is.na(SMD[[i]]$year_pub), ]
 }
-#### delete +-Inf
+### delete +-Inf
 for (i in 1:length(SMD)) {
   SMD[[i]] <- SMD[[i]] %>% na.omit()
 }
 
 
-### Zr
-#### delete NAs, zero variance
-for (i in 1:length(Zr)) {
-  Zr[[i]] <- Zr[[i]][!is.na(Zr[[i]]$es) & !is.na(Zr[[i]]$var) & Zr[[i]]$var != 0 & !is.na(Zr[[i]]$year_pub), ]
-}
-#### delete +-Inf
-for (i in 1:length(Zr)) {
-  Zr[[i]] <- Zr[[i]] %>% na.omit()
-}
 
-# create the variable of latest-year-centring publication year, which was used as a predictor to test time-lag bias (decline effect). The reason why creating this variable is to set the intercept conditional on the latest year rather than zero year (details see the main text)
+## create the variable of latest-year-centring publication year, which is used as a predictor to test time-lag bias (decline effect). The reason why creating this variable is to set the intercept conditional on the latest year rather than zero year (details see the main text)
 
-## lnRR
-for (i in 1:length(lnRR)) {
-  lnRR[[i]]$year_pub.l <- as.vector(lnRR[[i]]$year_pub - max(lnRR[[i]]$year_pub))
-}
 ## SMD
 for (i in 1:length(SMD)) {
   SMD[[i]]$year_pub.l <- as.vector(SMD[[i]]$year_pub - max(SMD[[i]]$year_pub))
 }
 
-## Zr
-for (i in 1:length(Zr)) {
-  Zr[[i]]$year_pub.l <- as.vector(Zr[[i]]$year_pub - max(Zr[[i]]$year_pub))
-}
 
-
-# create the variable of sampling error, which was used as a predictor to test small-study effect
-
-## lnRR
-for (i in 1:length(lnRR)) {
-  lnRR[[i]]$sei <- sqrt(lnRR[[i]]$var)
-}
-## SMD
+## create the variable of sampling error, which was used as a predictor to test small-study effect
 for (i in 1:length(SMD)) {
   SMD[[i]]$sei <- sqrt(SMD[[i]]$var)
 }
-## Zr
-for (i in 1:length(Zr)) {
-  Zr[[i]]$sei <- sqrt(Zr[[i]]$var)
-}
-
-
 
 
 ## transform effect size, sei, and year_pub.l prior to model fitting. This  is to eliminate scale-dependency and to allow for aggregations of model coefficients over different effect size metrics in subsequent second-order meta-analysis
 
 ## scale data using respective standard deviation
-### lnRR
-for (i in 1:length(lnRR)) {
-  lnRR[[i]]$es_zscore <- scale(lnRR[[i]]$es, center = F, scale = TRUE) # without centering, which is used to estimate intercept
-  lnRR[[i]]$var_zscore <- scale(lnRR[[i]]$var, scale = TRUE) - ( (0-mean(lnRR[[i]]$var))/sd(lnRR[[i]]$var) ) # see Equation 7 for explanations
-  lnRR[[i]]$sei_zscore <- scale(lnRR[[i]]$sei, scale = TRUE) - ( (0-mean(lnRR[[i]]$sei))/sd(lnRR[[i]]$sei) ) # see Equation 7 for explanations
-  lnRR[[i]]$year_pub.l_zscore <- scale(lnRR[[i]]$year_pub.l, scale = TRUE)
-}
-
-## also need to scale effective sample size related variables
-for (i in 1:length(lnRR[lnRR_des_filenames])) {
-  lnRR[lnRR_des_filenames][[i]]$ess.var_zscore <- scale(lnRR[lnRR_des_filenames][[i]]$ess.var, scale = TRUE) - ( (0-mean(lnRR[lnRR_des_filenames][[i]]$ess.var))/sd(lnRR[lnRR_des_filenames][[i]]$ess.var) ) # see Equation 7 for explanations
-  lnRR[lnRR_des_filenames][[i]]$ess.sei_zscore <- scale(lnRR[lnRR_des_filenames][[i]]$ess.sei, scale = TRUE) - ( (0-mean(lnRR[lnRR_des_filenames][[i]]$ess.sei))/sd(lnRR[lnRR_des_filenames][[i]]$ess.sei) )
-}
-
-### SMD
 for (i in 1:length(SMD)) {
-  SMD[[i]]$es_zscore <- scale(SMD[[i]]$es, center = F, scale = TRUE) # without centering, which is used to estimate intercept
+  # scale effect size
+  SMD[[i]]$es_zscore <- scale(SMD[[i]]$es, center = F, scale = TRUE) # without centering, which is used to estimate intercept; otherwise, the intercept will be zero
+  # scale sampling variance
   SMD[[i]]$var_zscore <- scale(SMD[[i]]$var, scale = TRUE) - ( (0-mean(SMD[[i]]$var))/sd(SMD[[i]]$var) ) # see Equation 7 for explanations
-  SMD[[i]]$sei_zscore <- scale(SMD[[i]]$sei, scale = TRUE) - ( (0-mean(SMD[[i]]$sei))/sd(SMD[[i]]$sei) ) # see Equation 7 for explanations
+  # scale sampling error
+  SMD[[i]]$sei_zscore <- scale(SMD[[i]]$sei, scale = TRUE) - ( (0-mean(SMD[[i]]$sei))/sd(SMD[[i]]$sei) ) # see Equation 7 for explanations; should we use sqrt(var_zscore)?
+  # scale year
   SMD[[i]]$year_pub.l_zscore <- scale(SMD[[i]]$year_pub.l, scale = TRUE)
 }
 
-## also need to scale effective sample size related variables
+## also need to scale effective-sample-size-related variables
+## note that only SMD_des_filenames contains descriptive statistics, so we only need to scale this subset
+
 for (i in 1:length(SMD[SMD_des_filenames])) {
+  # scale effective-sample-size based sampling variance 
   SMD[SMD_des_filenames][[i]]$ess.var_zscore <- scale(SMD[SMD_des_filenames][[i]]$ess.var, scale = TRUE) - ( (0-mean(SMD[SMD_des_filenames][[i]]$ess.var))/sd(SMD[SMD_des_filenames][[i]]$ess.var) ) # see Equation 7 for explanations
+  # scale effective-sample-size based sampling error
   SMD[SMD_des_filenames][[i]]$ess.sei_zscore <- scale(SMD[SMD_des_filenames][[i]]$ess.sei, scale = TRUE) - ( (0-mean(SMD[SMD_des_filenames][[i]]$ess.sei))/sd(SMD[SMD_des_filenames][[i]]$ess.sei) )
 }
-
-
-### Zr
-for (i in 1:length(Zr)) {
-  Zr[[i]]$es_zscore <- scale(Zr[[i]]$es, center = F, scale = TRUE) # without centering, which is used to estimate intercept
-  Zr[[i]]$var_zscore <- scale(Zr[[i]]$var, scale = TRUE) - ( (0-mean(Zr[[i]]$var))/sd(Zr[[i]]$var) ) # see Equation 7 for explanations
-  Zr[[i]]$sei_zscore <- scale(Zr[[i]]$sei, scale = TRUE) - ( (0-mean(Zr[[i]]$sei))/sd(Zr[[i]]$sei) ) # see Equation 7 for explanations
-  Zr[[i]]$year_pub.l_zscore <- scale(Zr[[i]]$year_pub.l, scale = TRUE)
-}
-
-
-## scale data using respective weighted standard deviation - this can alleviate the negative impact of some extreme effect sizes
-
-### lnRR
-### calculate weighted sd for each lnRR dataset
-# w.sd_es_lnRR <- NA
-# for (i in 1:length(lnRR)) {
-#   w.sd_es_lnRR[i] <- sqrt(weighted.var(lnRR[[i]]$es, w = 1/lnRR[[i]]$var)) %>% list()
-# }
-# for (i in 1:length(lnRR)) {
-#   lnRR[[i]]$es_zscore2 <- lnRR[[i]]$es/w.sd_es_lnRR[[i]] # using weighted sd to scale data
-# }
-
-### SMD
-### calculate weighted sd for each SMD dataset
-# w.sd_es_SMD <- NA
-# for (i in 1:length(SMD)) {
-#   w.sd_es_SMD[i] <- sqrt(weighted.var(SMD[[i]]$es, w = 1/SMD[[i]]$var)) %>% list()
-# }
-### 6th value in w.sd_es_SMD is very unusual, so we use unweighted sd to replace it
-# w.sd_es_SMD[[6]] <- sd(SMD[[6]]$es)
-# for (i in 1:length(SMD)) {
-#   SMD[[i]]$es_zscore2 <- SMD[[i]]$es/w.sd_es_SMD[[i]] # using weighted sd to scale data
-# }
-
-### Zr
-### calculate weighted sd for each Zr dataset
-# w.sd_es_Zr <- NA
-#for (i in 1:length(Zr)) {
-#  w.sd_es_Zr[i] <- sqrt(weighted.var(Zr[[i]]$es, w = 1/Zr[[i]]$var)) %>% list()
-# }
-# for (i in 1:length(Zr)) {
-#  Zr[[i]]$es_zscore2 <- Zr[[i]]$es/w.sd_es_Zr[[i]] # using weighted sd to scale data
-# }
 
 ```
 
 
-## 2.2 Statistical analysis  
 
-I use the structure of MS as the outline of this Rmd file.
-In brief, we first do meta-analysis within each meta-analytic case to obtain beta0, beta1 and beta2. Then these values of beta are aggregated by second-order meta-analysis, weighting by the inverse square of their SEs, using random-effect model. 
+# 2. multilevel modelling 
 
-I randomly choose 3 meta-analyses for each type of effect-size metric to show whole analysis pipeline.
+we will use multilevel meta-analytic model to fit two types data:
+2.1 original scale data
+2.2 scaled data
+
+For each type of data, we:
+(i) estimate the meta-analytic overall mean, model intercept (beta0)
+(ii) detect potential publication bias - test for small-study (sign & significance of beta1) and decline effects (sign & significance of beta1)
+(iii) correct for publication bias and estimate bias-corrected overall mean (beta0_c)
 
 
-### 2.2.1 Multilevel meta-analytic modelling 
+# 2.1 original scale data
 
-We will use multilevel meta-analytic approaches to (i) estimate the meta-analytic overall mean (i.e., uncorrected effect size estimates), (ii) detect potential publication bias (i.e., test for small-study and decline effects), and (iii) adjust for publication bias for each meta-analysis included in our datasets.
-
-#### 2.2.1.1 Estimating uncorrected effect sizes
-
-This is to use multilevel meta-analytic model to fit data of each meta-analysis and then we can get meta-analytic overall mean (i.e., beta0) of each meta-analysis. In contrast to the following bias-corrected effect, we call this as an uncorrected effect.
-
+## (i) estimates of beta0
+fit intercept-only multilevel model to each dataset
 ```{r}
 
 #*************************************************************************#
-#                        meta-analytic overall mean                    
+#                      meta-analytic overall mean, beta0                    
 #*************************************************************************#
 
-## lnRR
-## 8th meta-analysis (names(lnRR)[8]:"ft127.csv") can not achieve convergence (when fitting scaled effect sizes) although we used different numerical optimizer, adjusted different step length. So we deleted this dataset here
-# lnRR <- lnRR[names(lnRR) != "ft127.csv"]
-model_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  model_lnRR[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = lnRR[[i]], sparse = TRUE, control = list(optimizer = "optim")) %>% list()
-}
-
-## SMD
-### 23rd meta-analysis (names(SMD)[23]:"ft040.csv") can not achieve convergence although we used different numerical optimizer, adjusted different step length.. So we deleted this dataset
-# SMD <- SMD[names(SMD) != "ft040.csv"]
 model_SMD <- NA
 for (i in 1:length(SMD)) {
   model_SMD[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = SMD[[i]], sparse = TRUE, control = list(optimizer = "optim")) %>% list()
 }
-
-## Zr
-model_Zr <- NA
-for (i in 1:length(Zr)) {
-  model_Zr[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = Zr[[i]], sparse=TRUE, control=list(optimizer="optim")) %>% list()
-}
-
 ```
 
 
-#### 2.2.1.2 Detecting publication bias
+## (ii) detect publication bias
 
-In this section of detecting and correcting for publication bias, we do not need to z-transform error term and year term. But we will z-transform them in next section when we aggregate them over effect-size metric.
+we aim for detecting two forms of publication bias: small-study effect  and decline effect.
 
+we use a full model with sampling error (sei) and publication year (year_pub.l) as moderators to detect publication bias.
 
-For SMD and lnRR, we need to model 'effective sample size' based sampling error analogue (ees.sei) or sampling variance analogue (ess.var).
-For Zr, we can direct model sampling error of effect size or sampling variance.
+of relevance, sei's slope (beta1) and year_pub.l's slope (beta2) can be used to indicate the occurrence of small-study effect and decline effect, respectively.
 
+note that for SMD we need to model 'effective sample size' based sampling error analogue (ees.sei), where possible
+
+### (a) fit full models with samping error and year as predictors
 ```{r}
-## the point estimate of SMD and lnRR are inherently correlated with their sampling variances. To avoid such ‘artefactual’ correlation between effect size and sampling error, we need to use "effective sample size" based sampling error to let its estimate get rid of point estimate
-
 
 #*************************************************************************#
 #       Full model with error and latest year as predictors
 #*************************************************************************#
 
-## use sampling error (sei) and latest year (year_pub.l) as predictors for those with calculated effect sizes and sampling variance
+## use sampling error (sei) and latest year (year_pub.l) as predictors for those with pre-calculated effect sizes and sampling variance
 
-## lnRR
-## as mentioned above, "ft127.csv" has the issue of convergence, so we need to excluded it
-# lnRR_filenames <- lnRR_filenames[lnRR_filenames != "ft127.csv"]
-model_lnRR_sei.year <- NA
-for (i in 1:length(lnRR[lnRR_filenames])) {
-  model_lnRR_sei.year[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = lnRR[lnRR_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-} # note that here only fit the subset of lnRR[lnRR_filenames] - lnRR with calculated effect sizes and sampling variance
-
-## use effective-sample-size based sampling error (ess.sei) where possible (lnRR with descriptive statistics)
-model_lnRR_ess.sei.year <- NA
-for (i in 1:length(lnRR[lnRR_des_filenames])) {
-  model_lnRR_ess.sei.year[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei + year_pub.l, method = "REML", test = "t", data = lnRR[lnRR_des_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-} 
-
-## SMD
 model_SMD_sei.year <- NA
 for (i in 1:length(SMD[SMD_filenames])) {
   model_SMD_sei.year[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = SMD[SMD_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-} # note that here only fit the subset of SMD[SMD_filenames] - SMD with calculated effect sizes and sampling variance
+} # note that here only fit the subset of SMD[SMD_filenames] - SMD with pre-calculated effect sizes and sampling variance
 
 ## use effective-sample-size based sampling error (ess.sei) where possible (SMD with descriptive statistics)
-
-# as mentioned above, "ft040.csv" has the issue of convergence, so we need to excluded it
-# SMD_des_filenames <- SMD_des_filenames[SMD_des_filenames != "ft040.csv"]
 model_SMD_ess.sei.year <- NA
 for (i in 1:length(SMD[SMD_des_filenames])) {
   model_SMD_ess.sei.year[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei + year_pub.l, method = "REML", test = "t", data = SMD[SMD_des_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
 } 
 
-## Zr - Zr does not have the concern of ‘artefactual’ correlation between effect size and sampling error (because the formula to Zr's estimate sampling error has no component of point estimate: 1/(n-3)). So we only need to fit the regression model with sampling error (sei) as a predictor
-model_Zr_sei.year <- NA
-for (i in 1:length(Zr)) {
-  model_Zr_sei.year[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = Zr[[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
 ```
 
+### (b) identify the presence of publication bias
 
-#### bubble plot - publication bias
+we next aim for identify the presence of the small-study effect and decline effect for each meta-analysis. 
+
+our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In this respect, a slope (beta1 or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias.
+
+we use the product of beta0 and beta1 (i.e., beta×beta1) as the signal, that is, if beta0×beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction).
+
+similarly, when the product of beta0×beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
 ```{r}
-## example of small-study effect
-sse_SMD$case
-which(model_est_SMD$case == "ft117.csv") # 10
-
-pred.sse_SMD10 <- predict.rma(model_SMD_pb[[10]], newmods = cbind(seq(min(SMD[[10]]$sei), max(SMD[[10]]$sei), length.out=nrow(SMD[[10]])), c(0)))
-
-newdat <- data.frame(sei= seq(min(SMD[[10]]$sei), max(SMD[[10]]$sei), length.out=nrow(SMD[[10]])),
-                     fit=pred.sse_SMD10$pred,
-                     upper=pred.sse_SMD10$ci.ub,
-                     lower=pred.sse_SMD10$ci.lb,
-                     stringsAsFactors=FALSE)
-
-xaxis <- SMD[[10]]$sei
-yaxis <- SMD[[10]]$es
-
-png(filename = "./sse_SMD10.jpg", width = 5, height = 5, units = "in", res = 400, type = "windows")
-plot(xaxis,yaxis, 
-     type="n", 
-     main="", ylab="", xlab="",
-     # xlim = c(0, 4), ylim = c(-1, 9)
-     # xaxt="n", yaxt="n"
-     )
-abline(a=0,b=0, lwd=1, lty=1)
-title(main = "Small-study effect (ft117)",
-      xlab = "Sampling error (SE)", 
-      ylab = "SMD",
-      line = 2.75, cex.lab=1.4)
-points(xaxis,yaxis,
-       bg=rgb(0,0,0, 0.1),
-       col=rgb(0,0,0, 0.2),
-       pch=21,
-       cex=1)
-lines(newdat$sei, newdat$fit, lwd=2.75,col="darkorchid4") 
-polygon(c(newdat$sei,rev(newdat$sei)),
-        c(newdat$lower,rev(newdat$upper)),
-        border=NA,col=rgb(104/255,34/255,139/255, 0.5))
-dev.off()
-
-
-## example of decline effect
-de_SMD$case
-which(model_est_SMD$case == "ft167.csv") # 17
-
-pred.de_SMD17 <- predict.rma(model_SMD_pb[[17]], newmods = cbind(mean(SMD[[17]]$sei), seq(min(SMD[[17]]$year_pub.l), max(SMD[[17]]$year_pub.l), length.out=nrow(SMD[[17]]))))
-
-
-newdat <- data.frame(year= seq(min(SMD[[17]]$year_pub), max(SMD[[17]]$year_pub), length.out=nrow(SMD[[17]])),
-                     fit=pred.de_SMD17$pred,
-                     upper=pred.de_SMD17$ci.ub,
-                     lower=pred.de_SMD17$ci.lb,
-                     stringsAsFactors=FALSE)
-
-xaxis <- SMD[[17]]$year_pub
-yaxis <- SMD[[17]]$es
-
-png(filename = "./de_SMD17.jpg", width = 5, height = 5, units = "in", res = 400, type = "windows")
-plot(xaxis,yaxis, 
-     type="n", 
-     main="", ylab="", xlab="",
-     # xlim = c(0, 4), ylim = c(-1, 9)
-     # xaxt="n", yaxt="n"
-     )
-abline(a=0,b=0, lwd=1, lty=1)
-title(main = "Decline effect (ft167)",
-      xlab = "Publication year", 
-      ylab = "SMD",
-      line = 2.75, cex.lab=1.4)
-points(xaxis,yaxis,
-       bg=rgb(0,0,0, 0.1),
-       col=rgb(0,0,0, 0.2),
-       pch=21,
-       cex=1)
-lines(newdat$year, newdat$fit, lwd=2.75,col="darkorchid4") 
-polygon(c(newdat$year,rev(newdat$year)),
-        c(newdat$lower,rev(newdat$upper)),
-        border=NA,col=rgb(104/255,34/255,139/255, 0.5))
-dev.off()
-
-
-
-
-
-
-
-lnRR[[6]] %>% mutate(ymin = pred_model1$ci.lb, 
-                    ymax = pred_model1$ci.ub, 
-                    ymin2 = pred_model1$cr.lb, 
-                    ymax2 = pred_model1$cr.ub, 
-                    pred = pred_model1$pred) %>% ggplot(aes(x = sei, y = es, size = 1/sqrt(sei))) + 
-  geom_point(shape = 21, fill = 'grey95') + 
-  #geom_smooth(aes(y = ymin2), method = "lm", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#0072B2") + 
-  #geom_smooth(aes(y = ymax2), method = "lm", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#0072B2") + 
-  geom_smooth(aes(y = ymin), method = "lm", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#D55E00") + 
-  geom_smooth(aes(y = ymax), method = "lm", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#D55E00") + 
-  geom_smooth(aes(y = pred), method = "lm", se = FALSE, lty = 1, lwd = 0.6, colour = "red") + 
-  labs(x = "Sample error (SE) ", y = 'lnRR', size = expression(paste('Precision (1/SE)')), title = " ") + 
-  scale_x_continuous(labels = scales::number_format(accuracy = 1)) + # need "scales" package
-  guides(fill = "none", colour = "none") + 
-  theme_bw() + 
-  theme(legend.position = c(0, 1), legend.justification = c(0, 1)) + 
-  theme(legend.direction = "horizontal") + 
-  theme(legend.background = element_blank()) + 
-  theme(axis.title = element_text(size = 16, colour = "black"),
-        axis.text.x =  element_text(size = 16, colour = "black"),
-        axis.text.y =  element_text(size = 16, colour = "black"),
-        legend.text = element_text(size = 14, colour = "black"),
-        legend.title = element_text(size = 14, colour = "black"),
-        panel.grid = element_blank(),
-        axis.ticks = element_line(size = 1, colour = "black"),
-        axis.ticks.length = unit(0.15, "cm"),
-        panel.border = element_rect(size = 1.2, colour = "black", fill = NA))
-
-
-
-
-which(model_est_lnRR$case == "ft089.csv")
-
-pred.sse_lnRR6 <- predict.rma(model_lnRR_pb[[6]], newmods = cbind(seq(min(lnRR[[6]]$sei), max(lnRR[[6]]$sei), length.out=177), c(mean(lnRR[[6]]$year_pub))))
-
-
-
-
-
-lnRR[[6]] %>% mutate(ymin = pred.sse_lnRR6$ci.lb, 
-                    ymax = pred.sse_lnRR6$ci.ub, 
-                    ymin2 = pred.sse_lnRR6$cr.lb, 
-                    ymax2 = pred.sse_lnRR6$cr.ub, 
-                    pred = pred.sse_lnRR6$pred) %>% ggplot(aes(x = sei, y = es, size = 1/sqrt(sei))) + 
-  geom_point(shape = 21, fill = 'grey95') + 
-  geom_smooth(aes(y = ymin2), method = "loess", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#0072B2") + 
-  geom_smooth(aes(y = ymax2), method = "loess", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#0072B2") + 
-  geom_smooth(aes(y = ymin), method = "loess", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#D55E00") + 
-  geom_smooth(aes(y = ymax), method = "loess", se = FALSE, lty = "dashed", lwd = 0.6, colour = "#D55E00") + 
-  geom_smooth(aes(y = pred), method = "loess", se = FALSE, lty = 1, lwd = 0.6, colour = "red") + 
-  labs(x = "Sample error (SE) ", y = 'lnRR', size = expression(paste('Precision (1/SE)')), title = " ") + 
-  scale_x_continuous(labels = scales::number_format(accuracy = 1)) + # need "scales" package
-  guides(fill = "none", colour = "none") + 
-  theme_bw() + 
-  theme(legend.position = c(0, 1), legend.justification = c(0, 1)) + 
-  theme(legend.direction = "horizontal") + 
-  theme(legend.background = element_blank()) + 
-  theme(axis.title = element_text(size = 16, colour = "black"),
-        axis.text.x =  element_text(size = 16, colour = "black"),
-        axis.text.y =  element_text(size = 16, colour = "black"),
-        legend.text = element_text(size = 14, colour = "black"),
-        legend.title = element_text(size = 14, colour = "black"),
-        panel.grid = element_blank(),
-        axis.ticks = element_line(size = 1, colour = "black"),
-        axis.ticks.length = unit(0.15, "cm"),
-        panel.border = element_rect(size = 1.2, colour = "black", fill = NA)) -> time_trend_RR.p
-
-
-
-jpeg(filename = "./time_trend_RR.p.jpg", width = 5, height = 5, units = "in", type = "windows", res = 400)
-time_trend_RR.p
-dev.off()
-
-```
-
-
-####2.2.1.3 Correcting for publication bias  
-
-Now we need to estimate bias-corrected overall effect according to different scenarios of the signs beta1 and beta2
-
-#####lnRR
-```{r}
-
-#*************************************************************************#
-#             Identify the presence of publication bias 
-#*************************************************************************#
-
-## check the significance and direction of model regressions from each meta-analysis to identify whether it presents a small-study effect or decline effect
-
-## first to create a dataframe containing full-model's parameter estimates
-### combine two types full-models (with sei and ess.sei as a predictor, respectively)
-### lnRR
-model_lnRR_pb <- append(model_lnRR_sei.year, model_lnRR_ess.sei.year)
-### extract model model coefficients and their significance test results
-model_est_lnRR <- data.frame(case = names(lnRR),
-                             es_type = rep("lnRR", length(lnRR)),
-                             beta0 = sapply(model_lnRR, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = sapply(model_lnRR, function(x) x$se), # standard error of beta0
-                             pval_beta0 = sapply(model_lnRR, function(x) x$pval), # p value of beta0
-                             beta0_c = sapply(model_lnRR_pb, function(x) x$beta[1]), # beta0_c in equation 2 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_pb, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_pb, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_pb, function(x) x$beta[2]), # beta1 in Equation 2 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_pb, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_pb, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_pb, function(x) x$beta[3]), # beta2 in Equation 2 - slope of year 
-                             se_beta2 = sapply(model_lnRR_pb, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_pb, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-
-
-
-
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
-
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## lnRR
-model_est_lnRR[15:16] <- data.frame(beta0Tbeta1 = model_est_lnRR$beta0 * model_est_lnRR$beta1, beta0Tbeta2 = model_est_lnRR$beta0 * model_est_lnRR$beta2) # model_est_lnRR has 14 column (ncol(model_est_lnRR)), so we add columns 15 and 16
-
-## visual check
-model_est_lnRR
-
-## identify the small-study effect - significant beta1 with correct sign
-sse_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$pval_beta1 < 0.05 & model_est_lnRR$beta0Tbeta1 > 0)
-## check which meta-analyses have small-study effects
-sse_lnRR$case 
-
-
-
-## identify the decline effect - significant beta2 with correct sign 
-de_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$pval_beta2 < 0.05 & model_est_lnRR$beta0Tbeta2 < 0)
-## check which meta-analyses have decline effects
-de_lnRR$case # 
-
-
-## identify the concurrence of the small-study effect and decline effect
-sse_de_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$pval_beta1 < 0.05 & model_est_lnRR$beta0Tbeta1 > 0 & model_est_lnRR$pval_beta2 < 0.05 & model_est_lnRR$beta0Tbeta2 < 0) 
-sse_de_lnRR$case 
-
-
-
-#*************************************************************************#
-#        Multilevel models to estimate bias-corrected effect
-#*************************************************************************#
-
-#*****************************scenario 1****************************#
-## both beta1 and beta2 has a correct direction
-beta1c_beta2c_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$beta0Tbeta1 > 0 & model_est_lnRR$beta0Tbeta2 < 0) 
-beta1c_beta2c_lnRR$case 
-
-## if a model slope (beta1 and beta2) has a wrong direction, we need to take out it when fitting model to estimate the bias-corrected mean
-## in scenario 1, both of the two slopes have a correct direction, we use can use full model directly, no need to use take out any predictor
-
-## full model based on scenario 1 - both beta1 and beta2 has a correct direction
-## make a data list which only contains scenario1's data
-s1_file <- beta1c_beta2c_lnRR$case
-## fit ess.sei where possible
-## subset of sei
-s1_sei_file <- lnRR_filenames[lnRR_filenames %in% s1_file] # this subset should use sei as a predictor and belong to scenario 1
-## model fitting - fit a full model
-model_lnRR_sei_s1 <- NA
-for (i in 1:length(s1_sei_file)) {
-  model_lnRR_sei_s1[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = lnRR[s1_sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results for 'sei' in scenario 1
-model_est_lnRR_sei_s1 <- data.frame(case = s1_sei_file,
-                             es_type = rep("lnRR", length(s1_sei_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_sei_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_sei_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_sei_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_sei_s1, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_sei_s1, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_sei_s1, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_sei_s1, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_sei_s1, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_sei_s1, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_sei_s1, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_lnRR_sei_s1, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_sei_s1, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-
-## subset of ess.sei
-s1_ess.sei_file <- lnRR_des_filenames[lnRR_des_filenames %in% s1_file] # this subset should fit ess.sei as a predictor and belong to scenario 1
-## model fitting - full model, which does not need to take out any predictor
-model_lnRR_ess.sei_s1 <- NA
-for (i in 1:length(s1_ess.sei_file)) {
-  model_lnRR_ess.sei_s1[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei + year_pub.l, method = "REML", test = "t", data = lnRR[s1_ess.sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results 'see.sei' for scenario 2 
-model_est_lnRR_ess.sei_s1 <- data.frame(case = s1_ess.sei_file,
-                             es_type = rep("lnRR", length(s1_ess.sei_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_ess.sei_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_ess.sei_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s1_ess.sei_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_ess.sei_s1, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_ess.sei_s1, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_ess.sei_s1, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_ess.sei_s1, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_ess.sei_s1, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_ess.sei_s1, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_ess.sei_s1, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_lnRR_ess.sei_s1, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_ess.sei_s1, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-#*****************************scenario 2****************************#
-## beta1 has a wrong direction, while beta2 has a correct direction
-beta1w_beta2c_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$beta0Tbeta1 < 0 & model_est_lnRR$beta0Tbeta2 < 0) 
-beta1w_beta2c_lnRR$case 
-
-
-## reduced model based on scenario 2 - beta1 has a wrong direction, while beta2 has a correct direction
-## make a data list which only contains scenario2's data
-s2_file <-  beta1w_beta2c_lnRR$case
-## model fitting -  take out beta1-related predictor (sei or esss.sei) and keep beta2-related predictor (year_pub.l)
-## beta1-related predictor is removed, so no need to fit ess.sei where possible
-model_lnRR_s2 <- NA
-for (i in 1:length(s2_file)) {
-  model_lnRR_s2[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ year_pub.l, method = "REML", test = "t", data = lnRR[s2_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 2
-model_est_lnRR_s2 <- data.frame(case = s2_file,
-                             es_type = rep("lnRR", length(s2_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s2_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s2_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s2_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_s2, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_s2, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_s2, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 5 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = sapply(model_lnRR_s2, function(x) x$beta[2]), # beta2 in Equation 5 - slope of year 
-                             se_beta2 = sapply(model_lnRR_s2, function(x) x$se[2]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_s2, function(x) x$pval[2]) # p value of beta2
-                            )
-
-
-#*****************************scenario 3****************************#
-## beta1 has a correct direction, while beta2 has a wrong direction
-beta1c_beta2w_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$beta0Tbeta1 > 0 & model_est_lnRR$beta0Tbeta2 > 0) 
-beta1c_beta2w_lnRR$case 
-
-## reduced model based on scenario 3 - beta1 has a correct direction, while beta2 has a wrong direction
-## make a data list which only contains scenario3's data
-s3_file <-  beta1c_beta2w_lnRR$case
-## fit ess.sei where possible
-## subset of sei
-s3_sei_file <- lnRR_filenames[lnRR_filenames %in% s3_file] # this subset should fit sei as a predictor and belong to scenario 3
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_lnRR_sei_s3 <- NA
-for (i in 1:length(s3_sei_file)) {
-  model_lnRR_sei_s3[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei, method = "REML", test = "t", data = lnRR[s3_sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## subset of ess.sei
-s3_ess.sei_file <- lnRR_des_filenames[lnRR_des_filenames %in% s3_file] # this subset should fit ess.sei as a predictor and belong to scenario 3
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_lnRR_ess.sei_s3 <- NA
-for (i in 1:length(s3_ess.sei_file)) {
-  model_lnRR_ess.sei_s3[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei, method = "REML", test = "t", data = lnRR[s3_ess.sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results for 'sei' in scenario 3
-model_est_lnRR_sei_s3 <- data.frame(case = s3_sei_file,
-                             es_type = rep("lnRR", length(s3_sei_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_sei_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_sei_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_sei_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_sei_s3, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_sei_s3, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_sei_s3, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_sei_s3, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_sei_s3, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_sei_s3, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-## extract model model coefficients and their significance test results for 'ess.sei' in scenario 3
-model_est_lnRR_ess.sei_s3 <- data.frame(case = s3_ess.sei_file,
-                             es_type = rep("lnRR", length(s3_ess.sei_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_ess.sei_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_ess.sei_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s3_ess.sei_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_ess.sei_s3, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_ess.sei_s3, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_ess.sei_s3, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_ess.sei_s3, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_ess.sei_s3, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_ess.sei_s3, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-
-#*****************************scenario 4****************************#
-## both beta1 and beta2 has a wrong direction
-beta1w_beta2w_lnRR <- model_est_lnRR %>% subset(model_est_lnRR$beta0Tbeta1 < 0 & model_est_lnRR$beta0Tbeta2 > 0) 
-beta1w_beta2w_lnRR$case 
-
-## reduced model based on scenario 4 - beta1 has a wrong direction and beta2 has a wrong direction 
-## this reduced model needs to take out both of the two predictors (sei and pub_year.l). This is equivalent to a null model (intercept-only model), which is used to estimate (uncorrected) meta-analytic overall mean
-
-## make a data list which only contains scenario4's data
-s4_file <-  beta1w_beta2w_lnRR$case
-## no need to subset sei and ess.sei because scenario4 fits a null model (without any predictor)
-## model fitting - take out both beta1-related predictor (sei or ess.sei) and  beta2-related predictor (year_pub.l)
-model_lnRR_s4 <- NA
-for (i in 1:length(s4_file)) {
-  model_lnRR_s4[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = lnRR[s4_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 4
-model_est_lnRR_s4 <- data.frame(case = s4_file,
-                             es_type = rep("lnRR", length(s4_file)),
-                             beta0 = model_est_lnRR[model_est_lnRR$case %in% s4_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean # or sapply(model_lnRR_s4, function(x) x$beta[1])
-                             se_beta0 = model_est_lnRR[model_est_lnRR$case %in% s4_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR[model_est_lnRR$case %in% s4_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_s4, function(x) x$beta[1]), # beta0_c in equation 1 -  bias corrected overall mean: this is equal to uncorrected overall mean (i.e., beta0)
-                             se_beta0_c = sapply(model_lnRR_s4, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_s4, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 1 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = 0, # beta2 in Equation 1 - slope of year 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-```
-
-
-##### SMD
-```{r}
-### SMD
+## combine two types of models: one is fitted with sampling error (sei), the other is fitted with effective sample size (ess.sei)
 model_SMD_pb <- append(model_SMD_sei.year, model_SMD_ess.sei.year)
-### extract model model coefficients and their significance test results
+
+## extract model model coefficients and their significance test results
 model_est_SMD <- data.frame(case = names(SMD),
                              es_type = rep("SMD", length(SMD)),
                              beta0 = sapply(model_SMD, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
@@ -964,18 +355,8 @@ model_est_SMD <- data.frame(case = names(SMD),
                              pval_beta2 = sapply(model_SMD_pb, function(x) x$pval[3]) # p value of beta2
                             )
 
+## we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
 
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
-
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## SMD
 model_est_SMD[15:16] <- data.frame(beta0Tbeta1 = model_est_SMD$beta0 * model_est_SMD$beta1, beta0Tbeta2 = model_est_SMD$beta0 * model_est_SMD$beta2) # model_est_SMD has 14 column (ncol(model_est_SMD)), so we add columns 15 and 16
 
 ## visual check
@@ -986,8 +367,6 @@ sse_SMD <- model_est_SMD %>% subset(model_est_SMD$pval_beta1 < 0.05 & model_est_
 ## check which meta-analyses have small-study effects
 sse_SMD$case 
 
-
-
 ## identify the decline effect - significant beta2 with correct sign 
 de_SMD <- model_est_SMD %>% subset(model_est_SMD$pval_beta2 < 0.05 & model_est_SMD$beta0Tbeta2 < 0)
 ## check which meta-analyses have decline effects
@@ -996,8 +375,14 @@ de_SMD$case #
 ## identify the concurrence of the small-study effect and decline effect
 sse_de_SMD <- model_est_SMD %>% subset(model_est_SMD$pval_beta1 < 0.05 & model_est_SMD$beta0Tbeta1 > 0 & model_est_SMD$pval_beta2 < 0.05 & model_est_SMD$beta0Tbeta2 < 0) 
 sse_de_SMD$case # no meta-analysis surfers from both a small-study effect and decline effect
+```
 
 
+## (iii) correct for publication bias  
+
+we aim for estimate bias-corrected beta0 according to 4 scenarios as outlined in the main text (permutation of the signs of beta1 and beta2)
+
+```{r}
 
 #*************************************************************************#
 #        Multilevel models to estimate bias-corrected effect
@@ -1009,15 +394,15 @@ beta1c_beta2c_SMD <- model_est_SMD %>% subset(model_est_SMD$beta0Tbeta1 > 0 & mo
 beta1c_beta2c_SMD$case 
 
 ## if a model slope (beta1 and beta2) has a wrong direction, we need to take out it when fitting model to estimate the bias-corrected mean
-## in scenario 1, both of the two slopes have a correct direction, we use can use full model directly, no need to use take out any predictor
+## in scenario 1, both of the two slopes have a correct direction, we  can use full model directly - no need to take out any predictor
 
 ## full model based on scenario 1 - both beta1 and beta2 has a correct direction
 ## make a data list which only contains scenario1's data
 s1_file <- beta1c_beta2c_SMD$case
-## fit ess.sei where possible
+## note to fit ess.sei where possible
 ## subset of sei
 s1_sei_file <- SMD_filenames[SMD_filenames %in% s1_file] # this subset should use sei as a predictor and belong to scenario 1
-## model fitting - fit a full model
+## model fitting - keep beta1-related predictor (ess.sei) and beta2-related predictor (year_pub.l)
 model_SMD_sei_s1 <- NA
 for (i in 1:length(s1_sei_file)) {
   model_SMD_sei_s1[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = SMD[s1_sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
@@ -1040,17 +425,15 @@ model_est_SMD_sei_s1 <- data.frame(case = s1_sei_file,
                              pval_beta2 = sapply(model_SMD_sei_s1, function(x) x$pval[3]) # p value of beta2
                             )
 
-
-
 ## subset of ess.sei
 s1_ess.sei_file <- SMD_des_filenames[SMD_des_filenames %in% s1_file] # this subset should fit ess.sei as a predictor and belong to scenario 1
-## model fitting - full model, which does not need to take out any predictor
+## model fitting - keep beta1-related predictor (ess.sei) and beta2-related predictor (year_pub.l)
 model_SMD_ess.sei_s1 <- NA
 for (i in 1:length(s1_ess.sei_file)) {
   model_SMD_ess.sei_s1[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei + year_pub.l, method = "REML", test = "t", data = SMD[s1_ess.sei_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
 }
 
-## extract model model coefficients and their significance test results 'see.sei' for scenario 2 
+## extract model model coefficients and their significance test results 'see.sei' for scenario 1 
 model_est_SMD_ess.sei_s1 <- data.frame(case = s1_ess.sei_file,
                              es_type = rep("SMD", length(s1_ess.sei_file)),
                              beta0 = model_est_SMD[model_est_SMD$case %in% s1_ess.sei_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
@@ -1072,7 +455,6 @@ model_est_SMD_ess.sei_s1 <- data.frame(case = s1_ess.sei_file,
 ## beta1 has a wrong direction, while beta2 has a correct direction
 beta1w_beta2c_SMD <- model_est_SMD %>% subset(model_est_SMD$beta0Tbeta1 < 0 & model_est_SMD$beta0Tbeta2 < 0) 
 beta1w_beta2c_SMD$case 
-
 
 ## reduced model based on scenario 2 - beta1 has a wrong direction, while beta2 has a correct direction
 ## make a data list which only contains scenario2's data
@@ -1198,253 +580,16 @@ model_est_SMD_s4 <- data.frame(case = s4_file,
 ```
 
 
-##### Zr
-```{r}
-### Zr
-model_Zr_pb <- model_Zr_sei.year # for consistence, we use a similar naming
-### extract model model coefficients and their significance test results
-model_est_Zr <- data.frame(case = names(Zr),
-                             es_type = rep("Zr", length(Zr)),
-                             beta0 = sapply(model_Zr, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = sapply(model_Zr, function(x) x$se), # standard error of beta0
-                             pval_beta0 = sapply(model_Zr, function(x) x$pval), # p value of beta0
-                             beta0_c = sapply(model_Zr_pb, function(x) x$beta[1]), # beta0_c in equation 2 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_pb, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_pb, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_pb, function(x) x$beta[2]), # beta1 in Equation 2 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_pb, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_pb, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_Zr_pb, function(x) x$beta[3]), # beta2 in Equation 2 - slope of year 
-                             se_beta2 = sapply(model_Zr_pb, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_pb, function(x) x$pval[3]) # p value of beta2
-                            )
+# 2.2 scaled data
 
-
-#*************************************************************************#
-#             Identify the presence of publication bias 
-#*************************************************************************#
-
-## check the significance and direction of model regressions from each meta-analysis to identify whether it presents a small-study effect or decline effect
-
-## first to create a dataframe containing full-model's parameter estimates
-### combine two types full-models (with sei and ess.sei as a predictor, respectively)
-### Zr
-model_Zr_pb <- model_Zr_sei.year
-### extract model model coefficients and their significance test results
-model_est_Zr <- data.frame(case = names(Zr),
-                             es_type = rep("Zr", length(Zr)),
-                             beta0 = sapply(model_Zr, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = sapply(model_Zr, function(x) x$se), # standard error of beta0
-                             pval_beta0 = sapply(model_Zr, function(x) x$pval), # p value of beta0
-                             beta0_c = sapply(model_Zr_pb, function(x) x$beta[1]), # beta0_c in equation 2 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_pb, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_pb, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_pb, function(x) x$beta[2]), # beta1 in Equation 2 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_pb, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_pb, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_Zr_pb, function(x) x$beta[3]), # beta2 in Equation 2 - slope of year 
-                             se_beta2 = sapply(model_Zr_pb, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_pb, function(x) x$pval[3]) # p value of beta2
-                            )
-
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
-
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## Zr
-model_est_Zr[15:16] <- data.frame(beta0Tbeta1 = model_est_Zr$beta0 * model_est_Zr$beta1, beta0Tbeta2 = model_est_Zr$beta0 * model_est_Zr$beta2) # model_est_Zr has 14 column (ncol(model_est_Zr)), so we add columns 15 and 16
-
-## visual check
-model_est_Zr
-
-## identify the small-study effect - significant beta1 with correct sign
-sse_Zr <- model_est_Zr %>% subset(model_est_Zr$pval_beta1 < 0.05 & model_est_Zr$beta0Tbeta1 > 0)
-## check which meta-analyses have small-study effects
-sse_Zr$case 
-
-
-
-## identify the decline effect - significant beta2 with correct sign 
-de_Zr <- model_est_Zr %>% subset(model_est_Zr$pval_beta2 < 0.05 & model_est_Zr$beta0Tbeta2 < 0)
-## check which meta-analyses have decline effects
-de_Zr$case 
-
-## identify the concurrence of the small-study effect and decline effect
-sse_de_Zr <- model_est_Zr %>% subset(model_est_Zr$pval_beta1 < 0.05 & model_est_Zr$beta0Tbeta1 > 0 & model_est_Zr$pval_beta2 < 0.05 & model_est_Zr$beta0Tbeta2 < 0) 
-sse_de_Zr$case
-
-
-
-#*************************************************************************#
-#        Multilevel models to estimate bias-corrected effect
-#*************************************************************************#
-
-#*****************************scenario 1****************************#
-## both beta1 and beta2 has a correct direction
-beta1c_beta2c_Zr <- model_est_Zr %>% subset(model_est_Zr$beta0Tbeta1 > 0 & model_est_Zr$beta0Tbeta2 < 0) 
-beta1c_beta2c_Zr$case 
-
-## if a model slope (beta1 and beta2) has a wrong direction, we need to take out it when fitting model to estimate the bias-corrected mean
-## in scenario 1, both of the two slopes have a correct direction, we use can use full model directly, no need to use take out any predictor
-
-## full model based on scenario 1 - both beta1 and beta2 has a correct direction
-## make a data list which only contains scenario1's data
-s1_file <- beta1c_beta2c_Zr$case
-## fit ess.sei where possible
-## subset of sei
-s1_file <- Zr_filenames[Zr_filenames %in% s1_file] # for Zr, do not need to subset sei and ess.sei
-## model fitting - fit a full model
-model_Zr_s1 <- NA
-for (i in 1:length(s1_file)) {
-  model_Zr_s1[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei + year_pub.l, method = "REML", test = "t", data = Zr[s1_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model coefficients and their significance test results for 'sei' in scenario 1
-model_est_Zr_s1 <- data.frame(case = s1_file,
-                             es_type = rep("Zr", length(s1_file)),
-                             beta0 = model_est_Zr[model_est_Zr$case %in% s1_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr[model_est_Zr$case %in% s1_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr[model_est_Zr$case %in% s1_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s1, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s1, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s1, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_s1, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_s1, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_s1, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_Zr_s1, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_Zr_s1, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_s1, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-#*****************************scenario 2****************************#
-## beta1 has a wrong direction, while beta2 has a correct direction
-beta1w_beta2c_Zr <- model_est_Zr %>% subset(model_est_Zr$beta0Tbeta1 < 0 & model_est_Zr$beta0Tbeta2 < 0) 
-beta1w_beta2c_Zr$case 
-
-## reduced model based on scenario 2 - beta1 has a wrong direction, while beta2 has a correct direction
-## make a data list which only contains scenario2's data
-s2_file <-  beta1w_beta2c_Zr$case
-## model fitting -  take out beta1-related predictor (sei or esss.sei) and keep beta2-related predictor (year_pub.l)
-## beta1-related predictor is removed, so no need to fit ess.sei where possible
-model_Zr_s2 <- NA
-for (i in 1:length(s2_file)) {
-  model_Zr_s2[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ year_pub.l, method = "REML", test = "t", data = Zr[s2_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 2
-model_est_Zr_s2 <- data.frame(case = s2_file,
-                             es_type = rep("Zr", length(s2_file)),
-                             beta0 = model_est_Zr[model_est_Zr$case %in% s2_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr[model_est_Zr$case %in% s2_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr[model_est_Zr$case %in% s2_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s2, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s2, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s2, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 5 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = sapply(model_Zr_s2, function(x) x$beta[2]), # beta2 in Equation 5 - slope of year 
-                             se_beta2 = sapply(model_Zr_s2, function(x) x$se[2]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_s2, function(x) x$pval[2]) # p value of beta2
-                            )
-
-
-#*****************************scenario 3****************************#
-## beta1 has a correct direction, while beta2 has a wrong direction
-beta1c_beta2w_Zr <- model_est_Zr %>% subset(model_est_Zr$beta0Tbeta1 > 0 & model_est_Zr$beta0Tbeta2 > 0) 
-beta1c_beta2w_Zr$case 
-
-## reduced model based on scenario 3 - beta1 has a correct direction, while beta2 has a wrong direction
-## make a data list which only contains scenario3's data
-s3_file <- beta1c_beta2w_Zr$case
-## Zr does not need to subset sei and ess.sei
-s3_file <- Zr_filenames[Zr_filenames %in% s3_file] 
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_Zr_s3 <- NA
-for (i in 1:length(s3_file)) {
-  model_Zr_s3[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei, method = "REML", test = "t", data = Zr[s3_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-
-## extract model coefficients and their significance test results for 'sei' in scenario 3
-model_est_Zr_s3 <- data.frame(case = s3_file,
-                             es_type = rep("Zr", length(s3_file)),
-                             beta0 = model_est_Zr[model_est_Zr$case %in% s3_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr[model_est_Zr$case %in% s3_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr[model_est_Zr$case %in% s3_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s3, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s3, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s3, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_s3, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_s3, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_s3, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-
-
-#*****************************scenario 4****************************#
-## both beta1 and beta2 has a wrong direction
-beta1w_beta2w_Zr <- model_est_Zr %>% subset(model_est_Zr$beta0Tbeta1 < 0 & model_est_Zr$beta0Tbeta2 > 0) 
-beta1w_beta2w_Zr$case 
-
-## reduced model based on scenario 4 - beta1 has a wrong direction and beta2 has a wrong direction 
-## this reduced model needs to take out both of the two predictors (sei and pub_year.l). This is equivalent to a null model (intercept-only model), which is used to estimate (uncorrected) meta-analytic overall mean
-
-## make a data list which only contains scenario4's data
-s4_file <-  beta1w_beta2w_Zr$case
-## no need to subset sei and ess.sei because scenario4 fits a null model (without any predictor)
-## model fitting - take out both beta1-related predictor (sei or ess.sei) and  beta2-related predictor (year_pub.l)
-model_Zr_s4 <- NA
-for (i in 1:length(s4_file)) {
-  model_Zr_s4[i] <- rma.mv(yi = es, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = Zr[s4_file][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model coefficients and their significance test results scenario 4
-model_est_Zr_s4 <- data.frame(case = s4_file,
-                             es_type = rep("Zr", length(s4_file)),
-                             beta0 = model_est_Zr[model_est_Zr$case %in% s4_file, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean # or sapply(model_Zr_s4, function(x) x$beta[1])
-                             se_beta0 = model_est_Zr[model_est_Zr$case %in% s4_file, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr[model_est_Zr$case %in% s4_file, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s4, function(x) x$beta[1]), # beta0_c in equation 1 -  bias corrected overall mean: this is equal to uncorrected overall mean (i.e., beta0)
-                             se_beta0_c = sapply(model_Zr_s4, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s4, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 1 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = 0, # beta2 in Equation 1 - slope of year 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-```
-
-
-
-
-## z-scaled model
-
-## intercept-only
+## (i) estimates of beta0
+fit intercept-only multilevel model to each dataset
 ```{r}
 
 #*************************************************************************#
 #                        meta-analytic overall mean                    
 #*************************************************************************#
 
-## lnRR
-model_lnRR_scaled <- NA
-for (i in 1:length(lnRR)) {
-  model_lnRR_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = lnRR[[i]], sparse = TRUE, control = list(optimizer = "optim")) %>% list()
-}
 
 ## SMD
 model_SMD_scaled <- NA
@@ -1452,16 +597,23 @@ for (i in 1:length(SMD)) {
   model_SMD_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = SMD[[i]], sparse = TRUE, control = list(optimizer = "optim")) %>% list()
 }
 
-
-## Zr
-model_Zr_scaled <- NA
-for (i in 1:length(Zr)) {
-  model_Zr_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = Zr[[i]], sparse = TRUE, control = list(optimizer = "optim")) %>% list()
-}
 ```
 
-## detecing publication bias
+## (ii) detect publication bias
 
+we aim for detecting two forms of publication bias: small-study effect  and decline effect.
+
+we use a full model with sampling error (sei) and publication year (year_pub.l) as moderators to detect publication bias.
+
+of relevance, sei's slope (beta1) and year_pub.l's slope (beta2) can be used to indicate the occurrence of small-study effect and decline effect, respectively.
+
+note that for SMD we need to model 'effective sample size' based sampling error analogue (ees.sei), where possible
+
+### (a) fit full models with samping error and year as predictors
+
+note that in the subsequent models, we keep still year as its original scale.
+
+this is to ease interpretation, where the beta2 can be interpreted as 'one year increase leads to xx unit decrease of SMD'
 ```{r}
 
 #*************************************************************************#
@@ -1470,19 +622,6 @@ for (i in 1:length(Zr)) {
 
 ## use sampling error (sei) and latest year (year_pub.l) as predictors for those with calculated effect sizes and sampling variance
 
-## lnRR
-model_lnRR_sei.year_scaled <- NA
-for (i in 1:length(lnRR[lnRR_filenames])) {
-  model_lnRR_sei.year_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore + year_pub.l, method = "REML", test = "t", data = lnRR[lnRR_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-} # note that here only fit the subset of lnRR[lnRR_filenames] - lnRR with calculated effect sizes and sampling variance
-
-## use effective-sample-size based sampling error (ess.sei) where possible (lnRR with descriptive statistics)
-model_lnRR_ess.sei.year_scaled <- NA
-for (i in 1:length(lnRR[lnRR_des_filenames])) {
-  model_lnRR_ess.sei.year_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei_zscore + year_pub.l, method = "REML", test = "t", data = lnRR[lnRR_des_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-} 
-
-## SMD
 model_SMD_sei.year_scaled <- NA
 for (i in 1:length(SMD[SMD_filenames])) {
   model_SMD_sei.year_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore + year_pub.l, method = "REML", test = "t", data = SMD[SMD_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
@@ -1494,315 +633,24 @@ model_SMD_ess.sei.year_scaled <- NA
 for (i in 1:length(SMD[SMD_des_filenames])) {
   model_SMD_ess.sei.year_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei_zscore + year_pub.l, method = "REML", test = "t", data = SMD[SMD_des_filenames][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
 } 
-
-## Zr - Zr does not have the concern of ‘artefactual’ correlation between effect size and sampling error (because the formula to Zr's estimate sampling error has no component of point estimate: 1/(n-3)). So we only need to fit the regression model with sampling error (sei) as a predictor
-model_Zr_sei.year_scaled <- NA
-for (i in 1:length(Zr)) {
-  model_Zr_sei.year_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore + year_pub.l, method = "REML", test = "t", data = Zr[[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-
 ```
 
 
-## lnRR: identify publication bias
 
+### (b) identify the presence of publication bias
+
+we next aim for identify the presence of the small-study effect and decline effect for each meta-analysis. 
+
+our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In this respect, a slope (beta1 or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias.
+
+we use the product of beta0 and beta1 (i.e., beta×beta1) as the signal, that is, if beta0×beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction).
+
+similarly, when the product of beta0×beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
 ```{r}
 #*************************************************************************#
 #             Identify the presence of publication bias 
 #*************************************************************************#
 
-## check the significance and direction of model regressions from each meta-analysis to identify whether it presents a small-study effect or decline effect
-
-## first to create a dataframe containing full-model's parameter estimates
-### combine two types full-models (with sei and ess.sei as a predictor, respectively)
-### lnRR
-model_lnRR_pb_scaled <- append(model_lnRR_sei.year_scaled, model_lnRR_ess.sei.year_scaled)
-### extract model model coefficients and their significance test results
-model_est_lnRR_scaled <- data.frame(case = names(lnRR),
-                             es_type = rep("lnRR", length(lnRR)),
-                             beta0 = sapply(model_lnRR_scaled, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = sapply(model_lnRR_scaled, function(x) x$se), # standard error of beta0
-                             pval_beta0 = sapply(model_lnRR_scaled, function(x) x$pval), # p value of beta0
-                             beta0_c = sapply(model_lnRR_pb_scaled, function(x) x$beta[1]), # beta0_c in equation 2 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_pb_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_pb_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_pb_scaled, function(x) x$beta[2]), # beta1 in Equation 2 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_pb_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_pb_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_pb_scaled, function(x) x$beta[3]), # beta2 in Equation 2 - slope of year 
-                             se_beta2 = sapply(model_lnRR_pb_scaled, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_pb_scaled, function(x) x$pval[3]) # p value of beta2
-                            )
-
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
-
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## lnRR
-model_est_lnRR_scaled[15:16] <- data.frame(beta0Tbeta1 = model_est_lnRR_scaled$beta0 * model_est_lnRR_scaled$beta1, beta0Tbeta2 = model_est_lnRR_scaled$beta0 * model_est_lnRR_scaled$beta2) # model_est_lnRR has 14 column (ncol(model_est_lnRR)), so we add columns 15 and 16
-
-## visual check
-model_est_lnRR_scaled
-
-## identify the small-study effect - significant beta1 with correct sign
-sse_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$pval_beta1 < 0.05 & model_est_lnRR_scaled$beta0Tbeta1 > 0)
-## check which meta-analyses have small-study effects
-sse_lnRR_scaled$case 
-
-# percentage of correct direction of slopes
-model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta1 > 0) -> a
-nrow(a)/length(lnRR)
-model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta2 < 0) -> b
-nrow(b)/length(lnRR)
-model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0Tbeta1 > 0) -> c
-nrow(c)/length(SMD)
-model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0Tbeta2 < 0) -> d
-nrow(d)/length(SMD)
-model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta1 > 0) -> e
-nrow(e)/length(Zr)
-model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta2 < 0) -> f
-nrow(f)/length(Zr)
-
-# concurrence
-model_est_lnRR_scaled %>% filter(beta0Tbeta1 > 0 & beta0Tbeta2 < 0 ) -> g
-nrow(g)/length(lnRR)
-model_est_SMD_scaled %>% filter(beta0Tbeta1 > 0 & beta0Tbeta2 < 0 ) -> h
-nrow(g)/length(SMD)
-model_est_Zr_scaled %>% filter(beta0Tbeta1 > 0 & beta0Tbeta2 < 0 ) -> i
-nrow(i)/length(Zr)
-
-
-
-## identify the decline effect - significant beta2 with correct sign 
-de_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$pval_beta2 < 0.05 & model_est_lnRR_scaled$beta0Tbeta2 < 0)
-## check which meta-analyses have decline effects
-de_lnRR_scaled$case # "ft181_1", "ft030.csv"  has a decline effect
-
-## identify the concurrence of the small-study effect and decline effect
-sse_de_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$pval_beta1 < 0.05 & model_est_lnRR_scaled$beta0Tbeta1 > 0 & model_est_lnRR_scaled$pval_beta2 < 0.05 & model_est_lnRR_scaled$beta0Tbeta2 < 0) 
-sse_de_lnRR_scaled$case # no meta-analysis surfers from both a small-study effect and decline effect
-
-
-
-#*************************************************************************#
-#        Multilevel models to estimate bias-corrected effect
-#*************************************************************************#
-
-#*****************************scenario 1****************************#
-## both beta1 and beta2 has a correct direction
-beta1c_beta2c_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta1 > 0 & model_est_lnRR_scaled$beta0Tbeta2 < 0) 
-beta1c_beta2c_lnRR_scaled$case 
-
-## if a model slope (beta1 and beta2) has a wrong direction, we need to take out it when fitting model to estimate the bias-corrected mean
-## in scenario 1, both of the two slopes have a correct direction, we use can use full model directly, no need to use take out any predictor
-
-## full model based on scenario 1 - both beta1 and beta2 has a correct direction
-## make a data list which only contains scenario1's data
-s1_file_scaled <- beta1c_beta2c_lnRR_scaled$case
-## fit ess.sei where possible
-## subset of sei
-s1_sei_file_scaled <- lnRR_filenames[lnRR_filenames %in% s1_file_scaled] # this subset should use sei as a predictor and belong to scenario 1
-## model fitting - fit a full model
-model_lnRR_sei_s1_scaled <- NA
-for (i in 1:length(s1_sei_file_scaled)) {
-  model_lnRR_sei_s1_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore + year_pub.l, method = "REML", test = "t", data = lnRR[s1_sei_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results for 'sei' in scenario 1
-model_est_lnRR_sei_s1_scaled <- data.frame(case = s1_sei_file_scaled,
-                             es_type = rep("lnRR", length(s1_sei_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_sei_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_sei_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_sei_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_sei_s1_scaled, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_sei_s1_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_sei_s1_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_sei_s1_scaled, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_sei_s1_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_sei_s1_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_sei_s1_scaled, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_lnRR_sei_s1_scaled, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_sei_s1_scaled, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-
-## subset of ess.sei
-s1_ess.sei_file_scaled <- lnRR_des_filenames[lnRR_des_filenames %in% s1_file_scaled] # this subset should fit ess.sei as a predictor and belong to scenario 1
-## model fitting - full model, which does not need to take out any predictor
-model_lnRR_ess.sei_s1_scaled <- NA
-for (i in 1:length(s1_ess.sei_file_scaled)) {
-  model_lnRR_ess.sei_s1_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei_zscore + year_pub.l, method = "REML", test = "t", data = lnRR[s1_ess.sei_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results 'see.sei' for scenario 2 
-model_est_lnRR_ess.sei_s1_scaled <- data.frame(case = s1_ess.sei_file_scaled,
-                             es_type = rep("lnRR", length(s1_ess.sei_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_ess.sei_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_ess.sei_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s1_ess.sei_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_ess.sei_s1_scaled, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-#*****************************scenario 2****************************#
-## beta1 has a wrong direction, while beta2 has a correct direction
-beta1w_beta2c_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta1 < 0 & model_est_lnRR_scaled$beta0Tbeta2 < 0) 
-beta1w_beta2c_lnRR_scaled$case 
-
-
-## reduced model based on scenario 2 - beta1 has a wrong direction, while beta2 has a correct direction
-## make a data list which only contains scenario2's data
-s2_file_scaled <-  beta1w_beta2c_lnRR_scaled$case
-## model fitting -  take out beta1-related predictor (sei or esss.sei) and keep beta2-related predictor (year_pub.l)
-## beta1-related predictor is removed, so no need to fit ess.sei where possible
-model_lnRR_s2_scaled <- NA
-for (i in 1:length(s2_file_scaled)) {
-  model_lnRR_s2_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ year_pub.l, method = "REML", test = "t", data = lnRR[s2_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 2
-model_est_lnRR_s2_scaled <- data.frame(case = s2_file_scaled,
-                             es_type = rep("lnRR", length(s2_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s2_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s2_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s2_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_s2_scaled, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_s2_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_s2_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 5 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = sapply(model_lnRR_s2_scaled, function(x) x$beta[2]), # beta2 in Equation 5 - slope of year 
-                             se_beta2 = sapply(model_lnRR_s2_scaled, function(x) x$se[2]), # standard error of beta2
-                             pval_beta2 = sapply(model_lnRR_s2_scaled, function(x) x$pval[2]) # p value of beta2
-                            )
-
-
-#*****************************scenario 3****************************#
-## beta1 has a correct direction, while beta2 has a wrong direction
-beta1c_beta2w_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta1 > 0 & model_est_lnRR_scaled$beta0Tbeta2 > 0) 
-beta1c_beta2w_lnRR_scaled$case 
-
-## reduced model based on scenario 3 - beta1 has a correct direction, while beta2 has a wrong direction
-## make a data list which only contains scenario3's data
-s3_file_scaled <-  beta1c_beta2w_lnRR_scaled$case
-## fit ess.sei where possible
-## subset of sei
-s3_sei_file_scaled <- lnRR_filenames[lnRR_filenames %in% s3_file_scaled] # this subset should fit sei as a predictor and belong to scenario 3
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_lnRR_sei_s3_scaled <- NA
-for (i in 1:length(s3_sei_file_scaled)) {
-  model_lnRR_sei_s3_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore, method = "REML", test = "t", data = lnRR[s3_sei_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## subset of ess.sei
-s3_ess.sei_file_scaled <- lnRR_des_filenames[lnRR_des_filenames %in% s3_file_scaled] # this subset should fit ess.sei as a predictor and belong to scenario 3
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_lnRR_ess.sei_s3_scaled <- NA
-for (i in 1:length(s3_ess.sei_file_scaled)) {
-  model_lnRR_ess.sei_s3_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ ess.sei_zscore, method = "REML", test = "t", data = lnRR[s3_ess.sei_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results for 'sei' in scenario 3
-model_est_lnRR_sei_s3_scaled <- data.frame(case = s3_sei_file_scaled,
-                             es_type = rep("lnRR", length(s3_sei_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_sei_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_sei_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_sei_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_sei_s3_scaled, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_sei_s3_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_sei_s3_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_sei_s3_scaled, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_sei_s3_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_sei_s3_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-## extract model model coefficients and their significance test results for 'ess.sei' in scenario 3
-model_est_lnRR_ess.sei_s3_scaled <- data.frame(case = s3_ess.sei_file_scaled,
-                             es_type = rep("lnRR", length(s3_ess.sei_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_ess.sei_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_ess.sei_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s3_ess.sei_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_lnRR_ess.sei_s3_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-
-#*****************************scenario 4****************************#
-## both beta1 and beta2 has a wrong direction
-beta1w_beta2w_lnRR_scaled <- model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0Tbeta1 < 0 & model_est_lnRR_scaled$beta0Tbeta2 > 0) 
-beta1w_beta2w_lnRR_scaled$case 
-
-## reduced model based on scenario 4 - beta1 has a wrong direction and beta2 has a wrong direction 
-## this reduced model needs to take out both of the two predictors (sei and pub_year.l). This is equivalent to a null model (intercept-only model), which is used to estimate (uncorrected) meta-analytic overall mean
-
-## make a data list which only contains scenario4's data
-s4_file_scaled <-  beta1w_beta2w_lnRR_scaled$case
-## no need to subset sei and ess.sei because scenario4 fits a null model (without any predictor)
-## model fitting - take out both beta1-related predictor (sei or ess.sei) and  beta2-related predictor (year_pub.l)
-model_lnRR_s4_scaled <- NA
-for (i in 1:length(s4_file_scaled)) {
-  model_lnRR_s4_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = lnRR[s4_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 4
-model_est_lnRR_s4_scaled <- data.frame(case = s4_file_scaled,
-                             es_type = rep("lnRR", length(s4_file_scaled)),
-                             beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s4_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean # or sapply(model_lnRR_s4_scaled, function(x) x$beta[1])
-                             se_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s4_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% s4_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_lnRR_s4_scaled, function(x) x$beta[1]), # beta0_c in equation 1 -  bias corrected overall mean: this is equal to uncorrected overall mean (i.e., beta0)
-                             se_beta0_c = sapply(model_lnRR_s4_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_lnRR_s4_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 1 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = 0, # beta2 in Equation 1 - slope of year 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-```
-
-
-## SMD: identify publication bias
-
-```{r}
-#*************************************************************************#
-#             Identify the presence of publication bias 
-#*************************************************************************#
-
-## check the significance and direction of model regressions from each meta-analysis to identify whether it presents a small-study effect or decline effect
-
-## first to create a dataframe containing full-model's parameter estimates
-### combine two types full-models (with sei and ess.sei as a predictor, respectively)
-### SMD
 model_SMD_pb_scaled <- append(model_SMD_sei.year_scaled, model_SMD_ess.sei.year_scaled)
 
 ### extract model model coefficients and their significance test results
@@ -1822,17 +670,8 @@ model_est_SMD_scaled <- data.frame(case = names(SMD),
                              pval_beta2 = sapply(model_SMD_pb_scaled, function(x) x$pval[3]) # p value of beta2
                             )
 
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
+## we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
 
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## SMD
 model_est_SMD_scaled[15:16] <- data.frame(beta0Tbeta1 = model_est_SMD_scaled$beta0 * model_est_SMD_scaled$beta1, beta0Tbeta2 = model_est_SMD_scaled$beta0 * model_est_SMD_scaled$beta2) # model_est_SMD has 14 column (ncol(model_est_SMD)), so we add columns 15 and 16
 
 ## visual check
@@ -2055,385 +894,23 @@ model_est_SMD_s4_scaled <- data.frame(case = s4_file_scaled,
 ```
 
 
-## Zr: identify publication bias
+
+# 3. meta-meta-analysis
+
+we use random-effect meta-analytic models to aggregate three coefficients obtained from the above meta-analytic models:
+
+3.1 D - the mean difference between overall mean (beta0) and bias-corrected overall mean (beta0_c); see formula in the main text
+
+3.2 beta1 - the slope of uncertainty (sampling error or effective sample size analogue)
+
+3.3 beta2 - the slope of year
+
+note that for a given meta-analysis, if beta0 is negative, we need to flip beta1 and beta2 prior to model fitting
+
+## 3.1 D
+quantify the overall decline in the magniude of effect size after adjusting for publication bias
 
 ```{r}
-#*************************************************************************#
-#             Identify the presence of publication bias 
-#*************************************************************************#
-
-## check the significance and direction of model regressions from each meta-analysis to identify whether it presents a small-study effect or decline effect
-
-## first to create a dataframe containing full-model's parameter estimates
-### combine two types full-models (with sei and ess.sei as a predictor, respectively)
-### Zr
-model_Zr_pb_scaled <- model_Zr_sei.year_scaled
-### extract model model coefficients and their significance test results
-model_est_Zr_scaled <- data.frame(case = names(Zr),
-                             es_type = rep("Zr", length(Zr)),
-                             beta0 = sapply(model_Zr_scaled, function(x) x$beta), # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = sapply(model_Zr_scaled, function(x) x$se), # standard error of beta0
-                             pval_beta0 = sapply(model_Zr_scaled, function(x) x$pval), # p value of beta0
-                             beta0_c = sapply(model_Zr_pb_scaled, function(x) x$beta[1]), # beta0_c in equation 2 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_pb_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_pb_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_pb_scaled, function(x) x$beta[2]), # beta1 in Equation 2 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_pb_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_pb_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_Zr_pb_scaled, function(x) x$beta[3]), # beta2 in Equation 2 - slope of year 
-                             se_beta2 = sapply(model_Zr_pb_scaled, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_pb_scaled, function(x) x$pval[3]) # p value of beta2
-                            )
-
-## we next aim to identify the presence of the small-study effect and decline effect for each meta-analysis. We also figure out the wrong directions of slope, which will be used to inform the parameterization of reduced models
-
-## our rational is: for an effect that is expected to be positive, a small study effect and decline effect would be expressed in a positive value of beta1 and negative value of beta2, respectively. In such a case, a slope (beta1] or beta2)) with opposing direction (unexpected sign) indicates no detectable publication bias and subsequently does not require correction for such a bias
-
-## we use the product of beta0 and beta1 (i.e., beta*beta1) as the signal, that is, if beta0*beta1 is positive, it indicates the examined meta-analysis has a small-study effect (beta1 is in a correct direction)
-
-## of relevance, when the value of beta0*beta2 is negative, the examined meta-analysis has a decline effect (beta 2 is in a correct direction)
-
-## so we first to create two new columns to contain the two products:  beta0*beta1 and beta0*beta2
-
-## Zr
-model_est_Zr_scaled[15:16] <- data.frame(beta0Tbeta1 = model_est_Zr_scaled$beta0 * model_est_Zr_scaled$beta1, beta0Tbeta2 = model_est_Zr_scaled$beta0 * model_est_Zr_scaled$beta2) # model_est_Zr has 14 column (ncol(model_est_Zr)), so we add columns 15 and 16
-
-## visual check
-model_est_Zr_scaled
-
-## identify the small-study effect - significant beta1 with correct sign
-sse_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$pval_beta1 < 0.05 & model_est_Zr_scaled$beta0Tbeta1 > 0)
-## check which meta-analyses have small-study effects
-sse_Zr_scaled$case 
-
-
-
-## identify the decline effect - significant beta2 with correct sign 
-de_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$pval_beta2 < 0.05 & model_est_Zr_scaled$beta0Tbeta2 < 0)
-## check which meta-analyses have decline effects
-de_Zr_scaled$case 
-
-## identify the concurrence of the small-study effect and decline effect
-sse_de_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$pval_beta1 < 0.05 & model_est_Zr_scaled$beta0Tbeta1 > 0 & model_est_Zr_scaled$pval_beta2 < 0.05 & model_est_Zr_scaled$beta0Tbeta2 < 0) 
-sse_de_Zr_scaled$case
-
-
-
-#*************************************************************************#
-#        Multilevel models to estimate bias-corrected effect
-#*************************************************************************#
-
-#*****************************scenario 1****************************#
-## both beta1 and beta2 has a correct direction
-beta1c_beta2c_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta1 > 0 & model_est_Zr_scaled$beta0Tbeta2 < 0) 
-beta1c_beta2c_Zr_scaled$case 
-
-## if a model slope (beta1 and beta2) has a wrong direction, we need to take out it when fitting model to estimate the bias-corrected mean
-## in scenario 1, both of the two slopes have a correct direction, we use can use full model directly, no need to use take out any predictor
-
-## full model based on scenario 1 - both beta1 and beta2 has a correct direction
-## make a data list which only contains scenario1's data
-s1_file_scaled <- beta1c_beta2c_Zr_scaled$case
-## fit ess.sei where possible
-## subset of sei
-s1_file_scaled <- Zr_filenames[Zr_filenames %in% s1_file_scaled] # for Zr, do not need to subset sei and ess.sei
-## model fitting - fit a full model
-model_Zr_s1_scaled <- NA
-for (i in 1:length(s1_file_scaled)) {
-  model_Zr_s1_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore + year_pub.l, method = "REML", test = "t", data = Zr[s1_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model coefficients and their significance test results for 'sei' in scenario 1
-model_est_Zr_s1_scaled <- data.frame(case = s1_file_scaled,
-                             es_type = rep("Zr", length(s1_file_scaled)),
-                             beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s1_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s1_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s1_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s1_scaled, function(x) x$beta[1]), # beta0_c in equation 6 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s1_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s1_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_s1_scaled, function(x) x$beta[2]), # beta1 in Equation 6 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_s1_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_s1_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = sapply(model_Zr_s1_scaled, function(x) x$beta[3]), # beta2 in Equation 6 - slope of year 
-                             se_beta2 = sapply(model_Zr_s1_scaled, function(x) x$se[3]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_s1_scaled, function(x) x$pval[3]) # p value of beta2
-                            )
-
-
-#*****************************scenario 2****************************#
-## beta1 has a wrong direction, while beta2 has a correct direction
-beta1w_beta2c_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta1 < 0 & model_est_Zr_scaled$beta0Tbeta2 < 0) 
-beta1w_beta2c_Zr_scaled$case 
-
-## reduced model based on scenario 2 - beta1 has a wrong direction, while beta2 has a correct direction
-## make a data list which only contains scenario2's data
-s2_file_scaled <-  beta1w_beta2c_Zr_scaled$case
-## model fitting -  take out beta1-related predictor (sei or esss.sei) and keep beta2-related predictor (year_pub.l)
-## beta1-related predictor is removed, so no need to fit ess.sei where possible
-model_Zr_s2_scaled <- NA
-for (i in 1:length(s2_file_scaled)) {
-  model_Zr_s2_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ year_pub.l, method = "REML", test = "t", data = Zr[s2_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model model coefficients and their significance test results scenario 2
-model_est_Zr_s2_scaled <- data.frame(case = s2_file_scaled,
-                             es_type = rep("Zr", length(s2_file_scaled)),
-                             beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s2_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s2_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s2_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s2_scaled, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s2_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s2_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 5 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = sapply(model_Zr_s2_scaled, function(x) x$beta[2]), # beta2 in Equation 5 - slope of year 
-                             se_beta2 = sapply(model_Zr_s2_scaled, function(x) x$se[2]), # standard error of beta2
-                             pval_beta2 = sapply(model_Zr_s2_scaled, function(x) x$pval[2]) # p value of beta2
-                            )
-
-
-#*****************************scenario 3****************************#
-## beta1 has a correct direction, while beta2 has a wrong direction
-beta1c_beta2w_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta1 > 0 & model_est_Zr_scaled$beta0Tbeta2 > 0) 
-beta1c_beta2w_Zr_scaled$case 
-
-## reduced model based on scenario 3 - beta1 has a correct direction, while beta2 has a wrong direction
-## make a data list which only contains scenario3's data
-s3_file_scaled <- beta1c_beta2w_Zr_scaled$case
-## Zr does not need to subset sei and ess.sei
-s3_file_scaled <- Zr_filenames[Zr_filenames %in% s3_file_scaled] 
-## model fitting - keep beta1-related predictor (sei) and take out beta2-related predictor (year_pub.l)
-model_Zr_s3_scaled <- NA
-for (i in 1:length(s3_file_scaled)) {
-  model_Zr_s3_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), mods = ~ sei_zscore, method = "REML", test = "t", data = Zr[s3_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-
-## extract model coefficients and their significance test results for 'sei' in scenario 3
-model_est_Zr_s3_scaled <- data.frame(case = s3_file_scaled,
-                             es_type = rep("Zr", length(s3_file_scaled)),
-                             beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s3_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean
-                             se_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s3_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s3_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s3_scaled, function(x) x$beta[1]), # beta0_c in equation 5 -  bias corrected overall mean
-                             se_beta0_c = sapply(model_Zr_s3_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s3_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = sapply(model_Zr_s3_scaled, function(x) x$beta[2]), # beta1 in Equation 5 - slope of sampling error 
-                             se_beta1 = sapply(model_Zr_s3_scaled, function(x) x$se[2]), # standard error of beta1
-                             pval_beta1 = sapply(model_Zr_s3_scaled, function(x) x$pval[2]), # p value of beta1
-                             beta2 = 0, # beta2 in Equation 5 - slope of year: no year term 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-
-
-#*****************************scenario 4****************************#
-## both beta1 and beta2 has a wrong direction
-beta1w_beta2w_Zr_scaled <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0Tbeta1 < 0 & model_est_Zr_scaled$beta0Tbeta2 > 0) 
-beta1w_beta2w_Zr_scaled$case 
-
-## reduced model based on scenario 4 - beta1 has a wrong direction and beta2 has a wrong direction 
-## this reduced model needs to take out both of the two predictors (sei and pub_year.l). This is equivalent to a null model (intercept-only model), which is used to estimate (uncorrected) meta-analytic overall mean
-
-## make a data list which only contains scenario4's data
-s4_file_scaled <-  beta1w_beta2w_Zr_scaled$case
-## no need to subset sei and ess.sei because scenario4 fits a null model (without any predictor)
-## model fitting - take out both beta1-related predictor (sei or ess.sei) and  beta2-related predictor (year_pub.l)
-model_Zr_s4_scaled <- NA
-for (i in 1:length(s4_file_scaled)) {
-  model_Zr_s4_scaled[i] <- rma.mv(yi = es_zscore, V = var, random = list(~1|study_ID/obs_ID), method = "REML", test = "t", data = Zr[s4_file_scaled][[i]], sparse = TRUE, control=list(optimizer = "optim")) %>% list()
-}
-
-## extract model coefficients and their significance test results for scenario 4
-model_est_Zr_s4_scaled <- data.frame(case = s4_file_scaled,
-                             es_type = rep("Zr", length(s4_file_scaled)),
-                             beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s4_file_scaled, ]$beta0, # beta0 in Equation 1 - meta-analytic overall mean # or sapply(model_Zr_s4_scaled, function(x) x$beta[1])
-                             se_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s4_file_scaled, ]$se_beta0, # standard error of beta0
-                             pval_beta0 = model_est_Zr_scaled[model_est_Zr_scaled$case %in% s4_file_scaled, ]$pval_beta0, # p value of beta0
-                             beta0_c = sapply(model_Zr_s4_scaled, function(x) x$beta[1]), # beta0_c in equation 1 -  bias corrected overall mean: this is equal to uncorrected overall mean (i.e., beta0)
-                             se_beta0_c = sapply(model_Zr_s4_scaled, function(x) x$se[1]), # standard error of beta0_c
-                             pval_beta0_c = sapply(model_Zr_s4_scaled, function(x) x$pval[1]), # p valuer of beta0_c
-                             beta1 = 0, # beta1 in Equation 1 - slope of sampling error: no error term
-                             se_beta1 = 0, # standard error of beta1
-                             pval_beta1 = 0, # p value of beta1
-                             beta2 = 0, # beta2 in Equation 1 - slope of year 
-                             se_beta2 = 0, # standard error of beta2
-                             pval_beta2 = 0 # p value of beta2
-                            )
-
-```
-
-
-
-### 2.2.2 Second-order meta-analysis 
-#### 2.2.2.1 Estimating the overall extent and severity of publication bias 
-To allow for aggregations of beta1 and beta2 across meta-analyses, we need to z-transform error term, year term and the effect size to eliminate scale-dependence.
-
-We do aggregation for two datasets: (1) full dataset (all beta regardless of directions), (2) reduced dataset (only correct directions)
-
-The purpose of aggregating beta is to see whether there is a systematic pattern of publication bias across the field of EcoEvo
-
-### lnRR
-
-```{r}
-#*************************************************************************#
-#      Z-transform slopes and effect sizes in full models
-#*************************************************************************#
-
-# differences in beta0
-model_est_lnRR_scaled$D <- abs(model_est_lnRR_scaled$beta0 - model_est_lnRR_scaled$beta0_c)
-# differences in beta0' variance
-model_est_lnRR_scaled$D_var <- model_est_lnRR_scaled$se_beta0^2 + model_est_lnRR_scaled$se_beta0_c^2 + 2*model_est_lnRR_scaled$se_beta0*model_est_lnRR_scaled$se_beta0_c
-# differences in beta0' SE
-model_est_lnRR_scaled$D_sei <- sqrt(model_est_lnRR_scaled$D_var)
-
-# get folded mean and variance
-model_est_lnRR_scaled$D_folded <- folded_es(mean = model_est_lnRR_scaled$D, variance = model_est_lnRR_scaled$D_var)
-model_est_lnRR_scaled$D_var_folded <- folded_error(mean = model_est_lnRR_scaled$D, variance = model_est_lnRR_scaled$D_var)
-model_est_lnRR_scaled$D_sei_folded <- sqrt(model_est_lnRR_scaled$D_var_folded)
-
-# overall decline in effect size magnitude
-MMA_D_lnRR <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_lnRR_scaled)
-
-# aggregation of coefficients from full model 
-## overall evidence of small-study effect
-beta1_flip_lnRR <- (model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0 < 0))$case
-# first use beta as flipped beta1
-model_est_lnRR_scaled$beta1_flip <- model_est_lnRR_scaled$beta1
-# then replace those with wrong directions
-model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% beta1_flip_lnRR, ]$beta1_flip <- model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% beta1_flip_lnRR, ]$beta1*(-1)
-
-MMA_beta1_lnRR <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", data = model_est_lnRR_scaled)
-
-
-beta2_flip_lnRR <- (model_est_lnRR_scaled %>% subset(model_est_lnRR_scaled$beta0 < 0))$case
-# first use beta as flipped beta2
-model_est_lnRR_scaled$beta2_flip <- model_est_lnRR_scaled$beta2
-# then replace those with wrong directions
-model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% beta2_flip_lnRR, ]$beta2_flip <- model_est_lnRR_scaled[model_est_lnRR_scaled$case %in% beta2_flip_lnRR, ]$beta2*(-1)
-
-MMA_beta2_lnRR <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_lnRR_scaled)
-
-
-#*************************************************************************#
-#           Z-transform in reduced models (with correct directions) 
-#*************************************************************************#
-
-model_est_lnRR_corrected_scaled <- rbind(model_est_lnRR_sei_s1_scaled, model_est_lnRR_ess.sei_s1_scaled, model_est_lnRR_s2_scaled, model_est_lnRR_sei_s3_scaled, model_est_lnRR_ess.sei_s3_scaled,model_est_lnRR_s4_scaled)
-
-# differences in beta0
-model_est_lnRR_corrected_scaled$D <- abs(model_est_lnRR_corrected_scaled$beta0 - model_est_lnRR_corrected_scaled$beta0_c)
-# differences in beta0' variance
-model_est_lnRR_corrected_scaled$D_var <- model_est_lnRR_corrected_scaled$se_beta0^2 + model_est_lnRR_corrected_scaled$se_beta0_c^2 + 2*model_est_lnRR_corrected_scaled$se_beta0*model_est_lnRR_corrected_scaled$se_beta0_c
-# differences in beta0' SE
-model_est_lnRR_corrected_scaled$D_sei <- sqrt(model_est_lnRR_corrected_scaled$D_var)
-
-# get folded mean and variance
-model_est_lnRR_corrected_scaled$D_folded <- folded_es(mean = model_est_lnRR_corrected_scaled$D, variance = model_est_lnRR_corrected_scaled$D_var)
-model_est_lnRR_corrected_scaled$D_var_folded <- folded_error(mean = model_est_lnRR_corrected_scaled$D, variance = model_est_lnRR_corrected_scaled$D_var)
-model_est_lnRR_corrected_scaled$D_sei_folded <- sqrt(model_est_lnRR_corrected_scaled$D_var_folded)
-
-# overall decline in effect size magnitude
-MMA_D_lnRR_corrected <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_lnRR_corrected_scaled)
-
-
-# aggregation of coefficients from reduced models
-## overall evidence of small-study effect
-beta1_flip_lnRR_corrected <- (model_est_lnRR_corrected_scaled %>% subset(model_est_lnRR_corrected_scaled$beta0 < 0))$case
-# first use beta as flipped beta1
-model_est_lnRR_corrected_scaled$beta1_flip <- model_est_lnRR_corrected_scaled$beta1
-# then replace those with wrong directions
-model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$case %in% beta1_flip_lnRR_corrected, ]$beta1_flip <- model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$case %in% beta1_flip_lnRR_corrected, ]$beta1*(-1)
-
-MMA_beta1_lnRR_corrected <- rma(yi = beta1_flip, sei = se_beta1, method = "REML",  data = model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$beta1 != 0, ]) # only fit non-zero beta1
-
-## overall evidence of decline effect
-
-beta2_flip_lnRR_corrected <- (model_est_lnRR_corrected_scaled %>% subset(model_est_lnRR_corrected_scaled$beta0 < 0))$case
-# first use beta as flipped beta2
-model_est_lnRR_corrected_scaled$beta2_flip <- model_est_lnRR_corrected_scaled$beta2
-# then replace those with wrong directions
-model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$case %in% beta2_flip_lnRR_corrected, ]$beta2_flip <- model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$case %in% beta2_flip_lnRR_corrected, ]$beta2*(-1)
-
-MMA_beta2_lnRR_corrected <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$beta2 != 0, ]) # only fit non-zero beta2
-
-
-
-
-MMA_beta2_lnRR_corrected2 <- rma.mv(yi = beta2_flip, V = se_beta2^2, random = ~1 | case, method = "REML", data = model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$beta2 != 0, ])
-
-
-results <- mod_results(MMA_beta2_lnRR_corrected2, mod = "1", group = "case", data = model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$beta2 != 0, ])
-
-orchard_plot(results, xlab = "lnRR", data = model_est_lnRR_corrected_scaled[model_est_lnRR_corrected_scaled$beta2 != 0, ])
-
-## visualizations of slopes
-### full model
-MMA_beta1_lnRR_results <- mod_results(MMA_beta1_lnRR, mod = "1")
-MMA_beta2_lnRR_results <- mod_results(MMA_beta2_lnRR, mod = "Int")
-
-MMA_slopes_lnRR_results <- submerge(MMA_beta2_lnRR_results, MMA_beta1_lnRR_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_lnRR <- orchard_plot(MMA_slopes_lnRR_results, mod = "Int", xlab = "Standardised coefficents of lnRR", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Full model of lnRR \n (without consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-### reduced model
-MMA_beta1_lnRR_corrected_results <- mod_results(MMA_beta1_lnRR_corrected, mod = "Int")
-MMA_beta2_lnRR_corrected_results <- mod_results(MMA_beta2_lnRR_corrected, mod = "Int")
-
-MMA_slopes_lnRR_corrected_results <- submerge(MMA_beta2_lnRR_corrected_results, MMA_beta1_lnRR_corrected_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_lnRR_corrected <- orchard_plot(MMA_slopes_lnRR_corrected_results, mod = "Int", xlab = "Standardised coefficents of lnRR", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Reduced model of lnRR \n (with consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-
-png(filename = "./MMA_slopes_lnRR.jpg", width = 10, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_slopes_lnRR + orchard_MMA_slopes_lnRR_corrected +              plot_layout(nrow = 1, ncol = 2,  heights = c(1,1))
-dev.off() 
-
-
-## visualization of D
-MMA_D_lnRR_results <- mod_results(MMA_D_lnRR, mod = "Int")
-MMA_D_lnRR_corrected_results <- mod_results(MMA_D_lnRR_corrected, mod = "Int")
-
-MMA_D_lnRR_results2 <- submerge(MMA_D_lnRR_corrected_results, MMA_D_lnRR_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_D_lnRR <- orchard_plot(MMA_D_lnRR_results2, mod = "Int", xlab = "Standardised coefficents of lnRR", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("D (reduced model)", "D (full model)")) + 
-  labs(title = "Decline in lnRR \n (full model vs. reduced model)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-png(filename = "./MMA_D_lnRR.jpg", width = 6, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_D_lnRR
-dev.off() 
-
-
-```
-
-
-### SMD
-```{r}
-#*************************************************************************#
-#      Z-transform slopes and effect sizes in full models
-#*************************************************************************#
-
-
 # differences in beta0
 model_est_SMD_scaled$D <- abs(model_est_SMD_scaled$beta0 - model_est_SMD_scaled$beta0_c)
 # differences in beta0' variance
@@ -2448,420 +925,49 @@ model_est_SMD_scaled$D_sei_folded <- sqrt(model_est_SMD_scaled$D_var_folded)
 
 # overall decline in effect size magnitude
 MMA_D_SMD <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_SMD_scaled)
+```
 
-# aggregation of coefficients from full model 
-## overall evidence of small-study effect
 
+## 3.2 beta1
+quantify the systematic pattern of small-study effect in the filed of Eco&Evo
+
+```{r}
+# overall evidence of small-study effect
+# for the dataset with negative beta0, we need to flip beta1
+# get the subset of negative beta0
 beta1_flip_SMD <- (model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0 < 0))$case
-
-positive_SMD <- model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0 > 0)
-negative_SMD <- model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0 < 0)
 
 # first use beta as flipped beta1
 model_est_SMD_scaled$beta1_flip <- model_est_SMD_scaled$beta1
-# then replace those with wrong directions
+# then flip negative beta0's beta1
 model_est_SMD_scaled[model_est_SMD_scaled$case %in% beta1_flip_SMD, ]$beta1_flip <- model_est_SMD_scaled[model_est_SMD_scaled$case %in% beta1_flip_SMD, ]$beta1*(-1)
 
+# meta-meta-analysis
 MMA_beta1_SMD <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", data = model_est_SMD_scaled)
+```
 
+## 3.3 beta2
+quantify the systematic pattern of decline effect in the filed of Eco&Evo
 
+```{r}
+# for the dataset with negative beta0, we need to flip beta1
+# get the subset of negative beta0
 beta2_flip_SMD <- (model_est_SMD_scaled %>% subset(model_est_SMD_scaled$beta0 < 0))$case
 # first use beta as flipped beta2
 model_est_SMD_scaled$beta2_flip <- model_est_SMD_scaled$beta2
-# then replace those with wrong directions
+# then flip negative beta0's beta2
 model_est_SMD_scaled[model_est_SMD_scaled$case %in% beta2_flip_SMD, ]$beta2_flip <- model_est_SMD_scaled[model_est_SMD_scaled$case %in% beta2_flip_SMD, ]$beta2*(-1)
 
+# meta-meta-analysis
 MMA_beta2_SMD <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_SMD_scaled)
-
-
-
-#*************************************************************************#
-#           Z-transform in reduced models (with correct directions) 
-#*************************************************************************#
-
-model_est_SMD_corrected_scaled <- rbind(model_est_SMD_sei_s1_scaled, model_est_SMD_ess.sei_s1_scaled, model_est_SMD_s2_scaled, model_est_SMD_sei_s3_scaled, model_est_SMD_ess.sei_s3_scaled,model_est_SMD_s4_scaled)
-
-# differences in beta0
-model_est_SMD_corrected_scaled$D <- abs(model_est_SMD_corrected_scaled$beta0 - model_est_SMD_corrected_scaled$beta0_c)
-# differences in beta0' variance
-model_est_SMD_corrected_scaled$D_var <- model_est_SMD_corrected_scaled$se_beta0^2 + model_est_SMD_corrected_scaled$se_beta0_c^2 + 2*model_est_SMD_corrected_scaled$se_beta0*model_est_SMD_corrected_scaled$se_beta0_c
-# differences in beta0' SE
-model_est_SMD_corrected_scaled$D_sei <- sqrt(model_est_SMD_corrected_scaled$D_var)
-
-# get folded mean and variance
-model_est_SMD_corrected_scaled$D_folded <- folded_es(mean = model_est_SMD_corrected_scaled$D, variance = model_est_SMD_corrected_scaled$D_var)
-model_est_SMD_corrected_scaled$D_var_folded <- folded_error(mean = model_est_SMD_corrected_scaled$D, variance = model_est_SMD_corrected_scaled$D_var)
-model_est_SMD_corrected_scaled$D_sei_folded <- sqrt(model_est_SMD_corrected_scaled$D_var_folded)
-
-# overall decline in effect size magnitude
-MMA_D_SMD_corrected <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_SMD_corrected_scaled)
-
-# aggregation of coefficients from reduced models
-## overall evidence of small-study effect
-beta1_flip_SMD_corrected <- (model_est_SMD_corrected_scaled %>% subset(model_est_SMD_corrected_scaled$beta0 < 0))$case
-# first use beta as flipped beta1
-model_est_SMD_corrected_scaled$beta1_flip <- model_est_SMD_corrected_scaled$beta1
-# then replace those with wrong directions
-model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case %in% beta1_flip_SMD_corrected, ]$beta1_flip <- model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case %in% beta1_flip_SMD_corrected, ]$beta1*(-1)
-
-# note that for dataset ft112.csv, when fitting reduced model with only sei as a predictor (scenario 3 where year is removed due to wrong direction), the sign of beta1 (sei's coefficient) changed from positive to negative (which is wrong direction), so we need to remove this dataset when aggregating beta1 with correct directions.
-model_est_SMD_corrected_scaled <- model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case != "ft112.csv", ]
-
-MMA_beta1_SMD_corrected <- rma(yi = beta1_flip, sei = se_beta1, method = "REML",  data = model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$beta1 != 0, ]) # only fit non-zero beta1
-
-## overall evidence of decline effect
-
-beta2_flip_SMD_corrected <- (model_est_SMD_corrected_scaled %>% subset(model_est_SMD_corrected_scaled$beta0 < 0))$case
-# first use beta as flipped beta2
-model_est_SMD_corrected_scaled$beta2_flip <- model_est_SMD_corrected_scaled$beta2
-# then replace those with wrong directions
-model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case %in% beta2_flip_SMD_corrected, ]$beta2_flip <- model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case %in% beta2_flip_SMD_corrected, ]$beta2*(-1)
-
-# note that for ft037_1.csv and ft037_2.csv, when fitting reduced model with only year as a predictor (scenario 2 where seri is removed due to wrong direction), the sign of beta2 (year's coefficient) changed from negative to positive (which is wrong direction), so we need to remove this dataset when aggregating beta2 with correct directions.
-model_est_SMD_corrected_scaled <- model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case != "ft037_1.csv", ]
-model_est_SMD_corrected_scaled <- model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$case != "ft037_2.csv", ]
-
-MMA_beta2_SMD_corrected <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_SMD_corrected_scaled[model_est_SMD_corrected_scaled$beta2 != 0, ]) # only fit non-zero beta2
-
-## visualizations of slopes
-### full model
-MMA_beta1_SMD_results <- mod_results(MMA_beta1_SMD, mod = "Int")
-MMA_beta2_SMD_results <- mod_results(MMA_beta2_SMD, mod = "Int")
-
-MMA_slopes_SMD_results <- submerge(MMA_beta2_SMD_results, MMA_beta1_SMD_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_SMD <- orchard_plot(MMA_slopes_SMD_results, mod = "Int", xlab = "Standardised coefficents of SMD", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Full model of SMD \n (without consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-### reduced model
-MMA_beta1_SMD_corrected_results <- mod_results(MMA_beta1_SMD_corrected, mod = "Int")
-MMA_beta2_SMD_corrected_results <- mod_results(MMA_beta2_SMD_corrected, mod = "Int")
-
-MMA_slopes_SMD_corrected_results <- submerge(MMA_beta2_SMD_corrected_results, MMA_beta1_SMD_corrected_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_SMD_corrected <- orchard_plot(MMA_slopes_SMD_corrected_results, mod = "Int", xlab = "Standardised coefficents of SMD", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Reduced model of SMD \n (with consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-
-png(filename = "./MMA_slopes_SMD.jpg", width = 10, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_slopes_SMD + orchard_MMA_slopes_SMD_corrected +              plot_layout(nrow = 1, ncol = 2,  heights = c(1,1))
-dev.off() 
-
-
-## visualization of D
-MMA_D_SMD_results <- mod_results(MMA_D_SMD, mod = "Int")
-MMA_D_SMD_corrected_results <- mod_results(MMA_D_SMD_corrected, mod = "Int")
-
-MMA_D_SMD_results2 <- submerge(MMA_D_SMD_corrected_results, MMA_D_SMD_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_D_SMD <- orchard_plot(MMA_D_SMD_results2, mod = "Int", xlab = "Standardised coefficents of SMD", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("D (reduced model)", "D (full model)")) + 
-  labs(title = "Decline in SMD \n (full model vs. reduced model)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-png(filename = "./MMA_D_SMD.jpg", width = 6, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_D_SMD
-dev.off() 
-
-```
-
-### Zr
-```{r}
-#*************************************************************************#
-#      Z-transform slopes and effect sizes in full models
-#*************************************************************************#
-
-# differences in beta0
-model_est_Zr_scaled$D <- abs(model_est_Zr_scaled$beta0 - model_est_Zr_scaled$beta0_c)
-# differences in beta0' variance
-model_est_Zr_scaled$D_var <- model_est_Zr_scaled$se_beta0^2 + model_est_Zr_scaled$se_beta0_c^2 + 2*model_est_Zr_scaled$se_beta0*model_est_Zr_scaled$se_beta0_c
-# differences in beta0' SE
-model_est_Zr_scaled$D_sei <- sqrt(model_est_Zr_scaled$D_var)
-
-# get folded mean and variance
-model_est_Zr_scaled$D_folded <- folded_es(mean = model_est_Zr_scaled$D, variance = model_est_Zr_scaled$D_var)
-model_est_Zr_scaled$D_var_folded <- folded_error(mean = model_est_Zr_scaled$D, variance = model_est_Zr_scaled$D_var)
-model_est_Zr_scaled$D_sei_folded <- sqrt(model_est_Zr_scaled$D_var_folded)
-
-# overall decline in effect size magnitude
-MMA_D_Zr <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", test = "t", data = model_est_Zr_scaled)
-
-# aggregation of coefficients from full model 
-## overall evidence of small-study effect
-
-beta1_flip_Zr <- (model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0 < 0))$case
-
-
-# first use beta as flipped beta2
-model_est_Zr_scaled$beta1_flip <- model_est_Zr_scaled$beta1
-# then replace those with wrong directions
-model_est_Zr_scaled[model_est_Zr_scaled$case %in% beta1_flip_Zr, ]$beta1_flip <- model_est_Zr_scaled[model_est_Zr_scaled$case %in% beta1_flip_Zr, ]$beta1*(-1)
-
-MMA_beta1_Zr <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", data = model_est_Zr_scaled)
-
-negative_beta0_Zr <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0 < 0)
-
-positive_beta0_Zr <- model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0 > 0)
-
-
-beta2_flip_Zr <- (model_est_Zr_scaled %>% subset(model_est_Zr_scaled$beta0 < 0))$case
-# first use beta as flipped beta2
-model_est_Zr_scaled$beta2_flip <- model_est_Zr_scaled$beta2
-# then replace those with wrong directions
-model_est_Zr_scaled[model_est_Zr_scaled$case %in% beta1_flip_Zr, ]$beta2_flip <- model_est_Zr_scaled[model_est_Zr_scaled$case %in% beta1_flip_Zr, ]$beta2*(-1)
-
-MMA_beta2_Zr <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_Zr_scaled)
-
-
-
-
-model_est_Zr_scaled2 <- model_est_Zr_scaled[model_est_Zr_scaled$case != "ft047.csv", ]
-rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_Zr_scaled2)
-
-model_est_Zr_scaled3 <- model_est_Zr_scaled2[model_est_Zr_scaled2$case != "ft054.csv", ]
-rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_Zr_scaled3)
-
-model_est_Zr_scaled4 <- model_est_Zr_scaled3[model_est_Zr_scaled2$case != "ft047.csv", ]
-
-
-rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_Zr_scaled4)
-
-
-
- 
-
-
-
-#*************************************************************************#
-#           Z-transform in reduced models (with correct directions) 
-#*************************************************************************#
-
-model_est_Zr_corrected_scaled <- rbind(model_est_Zr_s1_scaled, model_est_Zr_s2_scaled, model_est_Zr_s3_scaled, model_est_Zr_s4_scaled)
-
-# differences in beta0
-model_est_Zr_corrected_scaled$D <- abs(model_est_Zr_corrected_scaled$beta0 - model_est_Zr_corrected_scaled$beta0_c)
-# differences in beta0' variance
-model_est_Zr_corrected_scaled$D_var <- model_est_Zr_corrected_scaled$se_beta0^2 + model_est_Zr_corrected_scaled$se_beta0_c^2 + 2*model_est_Zr_corrected_scaled$se_beta0*model_est_Zr_corrected_scaled$se_beta0_c
-# differences in beta0' SE
-model_est_Zr_corrected_scaled$D_sei <- sqrt(model_est_Zr_corrected_scaled$D_var)
-
-# get folded mean and variance
-model_est_Zr_corrected_scaled$D_folded <- folded_es(mean = model_est_Zr_corrected_scaled$D, variance = model_est_Zr_corrected_scaled$D_var)
-model_est_Zr_corrected_scaled$D_var_folded <- folded_error(mean = model_est_Zr_corrected_scaled$D, variance = model_est_Zr_corrected_scaled$D_var)
-model_est_Zr_corrected_scaled$D_sei_folded <- sqrt(model_est_Zr_corrected_scaled$D_var_folded)
-
-# overall decline in effect size magnitude
-MMA_D_Zr_corrected <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_Zr_corrected_scaled)
-
-# aggregation of coefficients from reduced models
-## overall evidence of small-study effect
-## flip beta1 into "positive" values prior to modelling fitting
-model_est_Zr_corrected_scaled$beta1_flip <- abs(model_est_Zr_corrected_scaled$beta1)
-
-## overall evidence of small-study effect
-MMA_beta1_Zr_corrected <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", data = model_est_Zr_corrected_scaled[model_est_Zr_corrected_scaled$beta1 != 0, ]) # only fit non-zero beta1
-## overall evidence of decline effect
-## flip beta2 into "negative" values prior to modelling fitting
-model_est_Zr_corrected_scaled$beta2_flip <- abs(model_est_Zr_corrected_scaled$beta2)*(-1)
-MMA_beta2_Zr_corrected <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_Zr_corrected_scaled[model_est_Zr_corrected_scaled$beta2 != 0, ]) # only fit non-zero beta2
-
-
-## visualizations of slopes
-### full model
-MMA_beta1_Zr_results <- mod_results(MMA_beta1_Zr, mod = "Int")
-MMA_beta2_Zr_results <- mod_results(MMA_beta2_Zr, mod = "Int")
-
-MMA_slopes_Zr_results <- submerge(MMA_beta2_Zr_results, MMA_beta1_Zr_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_Zr <- orchard_plot(MMA_slopes_Zr_results, mod = "Int", xlab = "Standardised coefficents of Zr", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Full model of Zr \n (without consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-### reduced model
-MMA_beta1_Zr_corrected_results <- mod_results(MMA_beta1_Zr_corrected, mod = "Int")
-MMA_beta2_Zr_corrected_results <- mod_results(MMA_beta2_Zr_corrected, mod = "Int")
-
-MMA_slopes_Zr_corrected_results <- submerge(MMA_beta2_Zr_corrected_results, MMA_beta1_Zr_corrected_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_slopes_Zr_corrected <- orchard_plot(MMA_slopes_Zr_corrected_results, mod = "Int", xlab = "Standardised coefficents of Zr", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("beta2 (time-lag bias)", "beta1 (small-study effect)")) + 
-  labs(title = "Reduced model of Zr \n (with consideration of direction)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-
-
-png(filename = "./MMA_slopes_Zr.jpg", width = 10, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_slopes_Zr + orchard_MMA_slopes_Zr_corrected +  plot_layout(nrow = 1, ncol = 2,  heights = c(1,1))
-dev.off() 
-
-## visualization of D
-MMA_D_Zr_results <- mod_results(MMA_D_Zr, mod = "Int")
-MMA_D_Zr_corrected_results <- mod_results(MMA_D_Zr_corrected, mod = "Int")
-
-MMA_D_Zr_results2 <- submerge(MMA_D_Zr_corrected_results, MMA_D_Zr_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_D_Zr <- orchard_plot(MMA_D_Zr_results2, mod = "Int", xlab = "Standardised coefficents of Zr", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("D (reduced model)", "D (full model)")) + 
-  labs(title = "Decline in Zr \n (full model vs. reduced model)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-png(filename = "./MMA_D_Zr.jpg", width = 6, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_D_Zr
-dev.off() 
-
-```
-
-### overall decline
-```{r}
-# full model
-model_est_all_scaled <- rbind(model_est_lnRR_scaled, model_est_SMD_scaled, model_est_Zr_scaled) 
-
-MMA_D_all <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_all_scaled)
-
-# reduced model
-model_est_all_corrected_scaled <- rbind(model_est_lnRR_corrected_scaled, model_est_SMD_corrected_scaled, model_est_Zr_corrected_scaled)
-
-MMA_D_all_corrected <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", data = model_est_all_corrected_scaled)
-
-
-MMA_D_all_results <- mod_results(MMA_D_all, mod = "Int")
-MMA_D_all_corrected_results <- mod_results(MMA_D_all_corrected, mod = "Int")
-
-MMA_D_all_results2 <- submerge(MMA_D_all_corrected_results, MMA_D_all_results, mix = TRUE) # reverse the order for following visualizations
-
-orchard_MMA_D_all <- orchard_plot(MMA_D_all_results2, mod = "Int", xlab = "Standardised coefficents over three types of effect size", k = TRUE, transfm = "none", angle = 0) + 
-  #xlim(-1.5, 8) + 
-  scale_y_discrete(labels = c("D (reduced model)", "D (full model)")) + 
-  labs(title = "Decline over different effect sizes \n (full model vs. reduced model)", y = "") +
-  theme(axis.text.x = element_text(size = 10, colour = "black"),
-        axis.text.y = element_text(size = 10, colour = "black"),
-        axis.title.x = element_text(size = 10, colour = "black"))
-
-png(filename = "./MMA_D_all.jpg", width = 6, height = 4, units = "in", res = 400, type = "windows")
-orchard_MMA_D_all
-dev.off() 
-
-
-
-# effect size types as a predictor
-## full model
-MMA_D_all <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", mods = ~ es_type -1, data = model_est_all_scaled)
-MMA_beta1_all <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", mods = ~ es_type -1, data = model_est_all_scaled)
-MMA_beta2_all <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", mods = ~ es_type -1, data = model_est_all_scaled)
-
-rma(yi = beta2_flip, sei = se_beta2, method = "REML", data = model_est_all_scaled, subset=es_type=="Zr")
-
-anova(MMA_beta2_all, X=c(0,-1,1))
-
-## reduced model
-MMA_D_all_corrected <- rma(yi = D_folded, sei = D_sei_folded, method = "REML", mods = ~ es_type -1, data = model_est_all_corrected_scaled)
-MMA_beta1_all_corrected <- rma(yi = beta1_flip, sei = se_beta1, method = "REML", mods = ~ es_type -1, data = model_est_all_corrected_scaled[model_est_all_corrected_scaled$beta1_flip != 0, ])
-MMA_beta2_all_corrected <- rma(yi = beta2_flip, sei = se_beta2, method = "REML", mods = ~ es_type -1, data = model_est_all_corrected_scaled[model_est_all_corrected_scaled$beta2_flip != 0, ])
-
-
-
-
-
 ```
 
 
-### put it all
-```{r}
-# scaled effect size estimates
-es_zscore_lnRR <- sapply(lnRR, function(x) x$es_zscore) %>% unlist
-es_zscore2_lnRR <- sapply(lnRR, function(x) x$es_zscore) %>% unlist
-sei_zscore_lnRR <- sapply(lnRR, function(x) x$sei_zscore) %>% unlist
-plot(sei_zscore_lnRR, es_zscore_lnRR)
-plot(es_zscore_lnRR, sei_zscore_lnRR)
 
-# original effect size estimates
-es_lnRR <- sapply(lnRR, function(x) x$es) %>% unlist
-sei_lnRR <- sapply(lnRR, function(x) x$sei) %>% unlist
-plot(sei_lnRR, es_lnRR)
-plot(es_lnRR, sei_lnRR)
-
-
-# scaled effect size estimates
-es_zscore_SMD <- sapply(SMD, function(x) x$es_zscore) %>% unlist
-es_zscore2_SMD <- sapply(SMD, function(x) x$es_zscore) %>% unlist
-sei_zscore_SMD <- sapply(SMD, function(x) x$sei_zscore) %>% unlist
-plot(sei_zscore_SMD, es_zscore_SMD)
-
-# original effect size estimates
-es_SMD <- sapply(SMD, function(x) x$es) %>% unlist
-sei_SMD <- sapply(SMD, function(x) x$sei) %>% unlist
-plot(sei_SMD, es_SMD)
-plot(es_SMD, sei_SMD)
-
-# scaled effect size estimates
-es_zscore_Zr <- sapply(Zr, function(x) x$es_zscore) %>% unlist
-es_zscore2_Zr <- sapply(Zr, function(x) x$es_zscore) %>% unlist
-sei_zscore_Zr <- sapply(Zr, function(x) x$sei_zscore) %>% unlist
-plot(sei_zscore_Zr, es_zscore_Zr)
-plot(es_zscore_Zr, sei_zscore_Zr)
-
-# original effect size estimates
-es_Zr <- sapply(Zr, function(x) x$es) %>% unlist
-sei_Zr <- sapply(Zr, function(x) x$sei) %>% unlist
-plot(sei_Zr, es_Zr)
-plot(es_Zr, sei_Zr)
-
-# combine
-es_zscore <- c(es_zscore_lnRR, es_zscore_SMD, es_zscore_Zr)
-sei_zscore <- c(sei_zscore_lnRR, sei_zscore_SMD, sei_zscore_Zr)
-
-zscore <- data.frame(es_zscore = es_zscore,
-                     sei_zscore = sei_zscore)
-
-zscore2 <- zscore %>% filter(es_zscore < 8 & es_zscore > -8)
-plot(zscore2$es_zscore, zscore2$sei_zscore)
-
-
-```
-
-
-### interpretation of standardised coefficients
+## 3.4 interpretation of D
 
 ```{r}
 
-# lnRR
-# sd for each dataset
-sd_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  sd_lnRR[i] <- sd(lnRR[[i]]$es)
-}
-# average sd
-mean(sd_lnRR)
-# overall standardised beta0
-MMA_D_lnRR$beta
-# convert standardised beta0 into original scale
-MMA_D_lnRR$beta[1]*mean(sd_lnRR) # 0.122525
-MMA_D_lnRR$beta[1]*mean(unlist(w.sd_es_lnRR)) # 0.0756529
-
-# SMD
 # sd for each dataset
 sd_SMD <- NA
 for (i in 1:length(SMD)) {
@@ -2869,355 +975,27 @@ for (i in 1:length(SMD)) {
 }
 # average sd
 mean(sd_SMD) # 2.06368
+# exclude large sd
 mean(sd_SMD[sd_SMD<2]) # 1.147149
-# overall standardized beta0
-MMA_D_SMD$beta
 # convert standardised beta0 into original scale
-MMA_D_SMD$beta[1]*mean(sd_SMD) # 0.4955738
-MMA_D_SMD$beta[1]*mean(sd_SMD[sd_SMD<2])
-
-MMA_D_SMD$beta[1]*mean(unlist(w.sd_es_SMD)) # 0.6492663
-
-
-# pooled_sd according to the number of effect size
-
-sd_pooled <- lm(sd_SMD2 ~ 1, weights = model_est_SMD$k)
-sd_pooled$coefficients
-
-# Zr
-# sd for each dataset
-sd_Zr <- NA
-for (i in 1:length(Zr)) {
-  sd_Zr[i] <- sd(Zr[[i]]$es)
-}
-# average sd
-mean(sd_Zr)
-# overall standardised beta0
-MMA_D_Zr$beta
-# convert standardised beta0 into original scale
-MMA_D_Zr$beta[1]*mean(sd_Zr) # 0.1076858
-
-MMA_D_Zr$beta[1]*mean(unlist(w.sd_es_Zr)) # 0.07933505
-
-
-# alternative approach
-es_lnRR <- sapply(lnRR, function(x) x$es) %>% unlist
-sd(es_lnRR)
-es_SMD <- sapply(SMD, function(x) x$es) %>% unlist
-sd(es_SMD)
-es_Zr <- sapply(Zr, function(x) x$es) %>% unlist
-sd(es_Zr)
-
-### calculate weighted sd 
-var_lnRR <- sapply(lnRR, function(x) x$var) %>% unlist
-weighted.var(es_lnRR, w = 1/var_lnRR) %>% sqrt() # 0.7209148
-
-var_SMD <- sapply(SMD, function(x) x$var) %>% unlist
-weighted.var(es_SMD, w = 1/var_SMD) %>% sqrt() # 0.01278843
-
-var_Zr <- sapply(Zr, function(x) x$var) %>% unlist
-weighted.var(es_Zr, w = 1/var_Zr) %>% sqrt() # 0.05958888
-
-
-
+MMA_D_SMD$beta[1]*mean(sd_SMD) # 0.5721656
+MMA_D_SMD$beta[1]*mean(sd_SMD[sd_SMD<2]) # 0.3180529
 ```
 
 
 
-# Meta-science
+# 4. power, Type M/S
+we estimate the power, Type M/S at two levels: 
+4.1 meta-analysis level 
+4.2 experimental level (effect size level)
 
-### lnRR
-#### Meta-analysis level
-```{r}
-#****************************************************************#
-#-------------------------------lnRR-----------------------------#
-#****************************************************************#
 
-#-----------------------------------------------------------#
-#          (1) two-tailed power for meta-analyses
-#-----------------------------------------------------------#
-model_est_lnRR$MA.power <- power.ma_Shinichi(mu=model_est_lnRR$beta0,SE=model_est_lnRR$se_beta0)
+## 4.1 meta-analysis level
+(a) compute power, Type M/S for each dataset
 
-#-----------------------------------------------------------#
-#            (2) type S error for meta-analyses
-#-----------------------------------------------------------#
-MA.power.S <- NA
-for (i in 1:length(model_est_lnRR$case)) {
-  MA.power.S[i] <- error_S(mu=model_est_lnRR$beta0[i],se=model_est_lnRR$se_beta0[i],alpha=0.05) %>% unlist()
-}
+(b) aggregate these three parameters across meta-analyses
 
-model_est_lnRR$MA.power.S <- MA.power.S
-
-
-#-----------------------------------------------------------#
-#   (3) type M error (overestimate ratio) for meta-analyses
-#-----------------------------------------------------------#
-MA.power.M <- NA
-for (i in 1:length(model_est_lnRR$case)) {
-  MA.power.M[i] <- error_M(mu=model_est_lnRR$beta0[i],se=model_est_lnRR$se_beta0[i],alpha=0.05,N=10000) %>% unlist()
-}
-
-model_est_lnRR$MA.power.M <- MA.power.M
-```
-
-
-#### Single experiment level
-
-```{r}
-#***************************************************************#
-#        power for single experiments within meta-analysis       #
-#***************************************************************#
-
-
-#****************************************************************#
-#------------------------------lnRR-----------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-
-# lnRR
-power_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  power_lnRR[i] <- power.individual_Shinichi(mu=rep(model_lnRR[[i]]$beta, length(lnRR[[i]]$sei)), se=lnRR[[i]]$sei) %>% list()}
-
-# allocate each set of power into corresponding dataset
-for (i in 1:length(power_lnRR)) {
-  lnRR[[i]]$power_lnRR <- power_lnRR[[i]]
-}
-
-
-#---------------------- (2) type S error -----------------------#
-power.S_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  power.S_lnRR[i] <- mapply(error_S,mu=rep(model_lnRR[[i]]$beta, length(lnRR[[i]]$sei)), se=lnRR[[i]]$sei) %>% list()}
-
-# allocate each set of type S error into corresponding dataset
-for (i in 1:length(power.S_lnRR)) {
-  lnRR[[i]]$power.S_lnRR <- power.S_lnRR[[i]]
-}
-
-
-#---------------- (3) type M error (overestimate ratio) --------------#
-power.M_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  power.M_lnRR[i] <- mapply(error_M,mu=rep(model_lnRR[[i]]$beta, length(lnRR[[i]]$sei)), se=lnRR[[i]]$sei) %>% list()}
-
-# allocate each set of type S error into corresponding dataset
-for (i in 1:length(power.M_lnRR)) {
-  lnRR[[i]]$power.M_lnRR <- power.M_lnRR[[i]]
-}
-
-
-#*********************************************************************#
-#------------------- summary of experimental power --------------------#
-#*********************************************************************#
-
-#****************************************************************#
-#-----------------------------lnRR------------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-power_summary_lnRR <- data.frame(case=names(lnRR),
-                   Minimum=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[1,],      
-                   `First quarter`=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[2,],
-                   Median=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[3,],
-                   Mean=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[4,], 
-                   `Third quarter`=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[5,], 
-                   Maximum=mapply(summary, sapply(lnRR, function(x) x$power_lnRR))[6,]) 
-
-
-#---------------------- (2) type S error -----------------------#
-power.S_summary_lnRR <-  data.frame(case=names(lnRR),
-                   Minimum=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[1,],      
-                   `First quarter`=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[2,],
-                   Median=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[3,],
-                   Mean=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[4,], 
-                   `Third quarter`=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[5,], 
-                   Maximum=mapply(summary, sapply(lnRR, function(x) x$power.S_lnRR))[6,]) 
-
-
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-power.M_summary_lnRR <-  data.frame(case=names(lnRR),
-                   Minimum=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[1,],      
-                   `First quarter`=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[2,],
-                   Median=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[3,],
-                   Mean=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[4,], 
-                   `Third quarter`=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[5,], 
-                   Maximum=mapply(summary, sapply(lnRR, function(x) x$power.M_lnRR))[6,]) 
-
-
-#*********************************************************************#
-#--------- calculate standard error for each type of power -----------#
-#*********************************************************************#
-
-#****************************************************************#
-#-----------------------------lnRR------------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-# standard error of variable power_lnRR
-se_power <- NA
-for (i in 1:length(lnRR)) {
-  se_power[i] <- sd(lnRR[[i]]$power_lnRR, na.rm=TRUE) / sqrt(length(lnRR[[i]]$power_lnRR[!is.na(lnRR[[i]]$power_lnRR)]))
-}
-
-power_summary_lnRR$se_power <- se_power
-
-
-#---------------------- (2) type S error -----------------------#
-# standard error of variable power.S_lnRR
-se_power.S <- NA
-for (i in 1:length(lnRR)) {
-  se_power.S[i] <- sd(lnRR[[i]]$power.S_lnRR, na.rm=TRUE) / sqrt(length(lnRR[[i]]$power.S_lnRR[!is.na(lnRR[[i]]$power.S_lnRR)]))
-}
-
-power.S_summary_lnRR$se_power.S <- se_power.S
-
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-## standard error of variable power.M_lnRR
-se_power.M <- NA
-for (i in 1:length(lnRR)) {
-  se_power.M[i] <- sd(lnRR[[i]]$power.M_lnRR, na.rm=TRUE) / sqrt(length(lnRR[[i]]$power.M_lnRR[!is.na(lnRR[[i]]$power.M_lnRR)]))
-}
-
-power.M_summary_lnRR$se_power.M <- se_power.M
-
-```
-
-#### Aggregation
-
-This section is used to obtain overall estimates of the three parameters across different meta-analyses (which provided us with comparable summaries of the three parameters).
-
-We used weighted regression to statistically aggregate over the three parameters obtained at the within-meta-analysis level whereas we used mixed effects models to aggregate these parameters at the experiment level. Both procedures involved aggregating the parameters across meta-analyses (i.e., between-meta-analysis modelling). 
-```{r}
-#***************************************************************#
-#      estimate overall power for meta-analysis level power     #
-#***************************************************************#
-
-# add N and k
-N_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  N_lnRR[i] <- lnRR[[i]]$study_ID %>% unique() %>% length()
-}
-model_est_lnRR$N <- N_lnRR
-
-k_lnRR <- NA
-for (i in 1:length(lnRR)) {
-  k_lnRR[i] <- lnRR[[i]]$obs_ID %>% length()
-}
-model_est_lnRR$k <- k_lnRR
-
-#--------------------- (1) two tailed power ---------------------#
-# log
-MMA_MA.power_lnRR <- lm(log(MA.power) ~ 1, weights = k, data = model_est_lnRR)
-# original scale
-MMA_MA.power_lnRR2 <- lm(MA.power ~ 1, weights = k, data = model_est_lnRR)
-MMA_MA.power_lnRR2$coefficients
-
-# this is median
-MMA_MA.power_lnRR$coefficients  %>% exp() 
-# this is mean
-(MMA_MA.power_lnRR$coefficients + 0.5*var(log(model_est_lnRR$MA.power))) %>% exp() 
-#confidence interval of median
-confint(MMA_MA.power_lnRR) %>% exp()
-
-# compare residuals
-par(mfrow = c(1, 2))
-residuals(MMA_MA.power_lnRR) %>% hist(main = paste("log power"), xlab = "Residual")
-residuals(MMA_MA.power_lnRR2) %>% hist(main = paste("original power"), xlab = "Residual") 
-
-#---------------------- (2) type S error -----------------------#
-# log
-MMA_MA.power.S_lnRR <- lm(log(MA.power.S+0.025) ~ 1, weights = k, data = model_est_lnRR) # add an offset of 0.025(25%) to avoid ln(0) = infinity 
-# this is median
-MMA_MA.power.S_lnRR$coefficients %>% exp() - 0.025
-# this is mean
-(MMA_MA.power.S_lnRR$coefficients + 0.5*var(log(model_est_lnRR$MA.power.S + 0.025))) %>% exp() - 0.025
-#confidence interval of median
-confint(MMA_MA.power.S_lnRR) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-# log
-MMA_MA.power.M_lnRR <- lm(log(MA.power.M) ~ 1, weights = k, data = model_est_lnRR)
-# this is median
-MMA_MA.power.M_lnRR$coefficients %>% exp() 
-# this is mean
-(MMA_MA.power.M_lnRR$coefficients + 0.5*var(log(model_est_lnRR$MA.power.M))) %>% exp() 
-
-#confidence interval of median
-confint(MMA_MA.power.M_lnRR) %>% exp()
-
-
-#***************************************************************#
-#      estimate overall power for experimental level power     #
-#***************************************************************#
-
-#****************************************************************#
-#-----------------------------lnRR------------------------------#
-#****************************************************************#
-
-
-study_ID_lnRR <- sapply(lnRR, function(x) x$study_ID) %>% unlist()
-power_lnRR <- sapply(lnRR, function(x) x$power_lnRR) %>% unlist()
-power.S_lnRR <- sapply(lnRR, function(x) x$power.S_lnRR) %>% unlist()
-power.M_lnRR <- sapply(lnRR, function(x) x$power.M_lnRR) %>% unlist()
-
-individual_est_lnRR <- data.frame("study_ID_lnRR" = study_ID_lnRR,
-                                 "power_lnRR" = power_lnRR,
-                                 "power.S_lnRR" = power.S_lnRR,
-                                 "power.M_lnRR" = power.M_lnRR
-                                  )
-
-#--------------------- (1) two tailed power ---------------------#
-# log
-MMA_EXP.power_lnRR <- lmer(log(power_lnRR) ~ 1 + (1 | study_ID_lnRR), data = individual_est_lnRR)
-# original scale
-MMA_EXP.power_lnRR2 <- lmer(power_lnRR ~ 1 + (1 | study_ID_lnRR), data = individual_est_lnRR)
-summary(MMA_EXP.power_lnRR2)$coefficients[1]
-
-# this is median 
-summary(MMA_EXP.power_lnRR)$coefficients[1] %>% exp()
-# this is mean
-(summary(MMA_EXP.power_lnRR)$coefficients[1] + 0.5*var(log(individual_est_lnRR$power_lnRR))) %>% exp()
-# confidence interval of median
-confint(MMA_EXP.power_lnRR) %>% exp()
-
-# compare residual
-par(mfrow = c(1, 2))
-residuals(MMA_EXP.power_lnRR) %>% hist(main = paste("log power"), xlab = "Residual")
-residuals(MMA_EXP.power_lnRR2) %>% hist(main = paste("orignal power"), xlab = "Residual") 
-
-#---------------------- (2) type S error -----------------------#
-# log
-MMA_EXP.power.S_lnRR <- lmer( log(power.S_lnRR + 0.025) ~ 1 + (1 | study_ID_lnRR), data = individual_est_lnRR) # add an offset of 0.025 to avoid log(0) = inf
-# this is median 
-summary(MMA_EXP.power.S_lnRR)$coefficients[1] %>% exp() - 0.025 # - 0.025 is important
-# this is mean
-(summary(MMA_EXP.power.S_lnRR)$coefficients[1] + 
-                0.5*(summary(MMA_EXP.power.S_lnRR)$varcor[[1]][[1]] + # sigma^2 for study level
-                     summary(MMA_EXP.power.S_lnRR)$sigma^2) # residual level - we cannot do like what we did above as we added 0.025
-        ) %>% exp() - 0.025
-
-#confidence interval of median
-confint(MMA_EXP.power.S_lnRR) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
-
-#--------------------- (3) type M error ---------------------#
-# log
-MMA_EXP.power.M_lnRR <- lmer(log(power.M_lnRR) ~ 1 + (1 | study_ID_lnRR), data = individual_est_lnRR)
-
-# this is median 
-summary(MMA_EXP.power.M_lnRR)$coefficients[1] %>% exp()
-# this is mean
-(summary(MMA_EXP.power.M_lnRR)$coefficients[1] + 0.5*var(log(individual_est_lnRR$power.M_lnRR))) %>% exp()
-# confidence interval of median
-confint(MMA_EXP.power.M_lnRR) %>% exp()
-```
-
-
-### SMD
-#### Meta-analysis level
+### (a) computation
 ```{r}
 #****************************************************************#
 #-------------------------------SMD-----------------------------#
@@ -3238,7 +1016,6 @@ for (i in 1:length(model_est_SMD$case)) {
 
 model_est_SMD$MA.power.S <- MA.power.S
 
-
 #-----------------------------------------------------------#
 #   (3) type M error (overestimate ratio) for meta-analyses
 #-----------------------------------------------------------#
@@ -3250,9 +1027,77 @@ for (i in 1:length(model_est_SMD$case)) {
 model_est_SMD$MA.power.M <- MA.power.M
 ```
 
+### (b) aggregation
+use weighted regression to aggregate meta-analysis level power
 
-#### Single experiment level
+```{r}
+#***************************************************************#
+#      estimate overall power for meta-analysis level power     #
+#***************************************************************#
 
+# add N and k
+N_SMD <- NA
+for (i in 1:length(SMD)) {
+  N_SMD[i] <- SMD[[i]]$study_ID %>% unique() %>% length()
+}
+model_est_SMD$N <- N_SMD
+
+k_SMD <- NA
+for (i in 1:length(SMD)) {
+  k_SMD[i] <- SMD[[i]]$obs_ID %>% length()
+}
+model_est_SMD$k <- k_SMD
+
+#--------------------- (1) two tailed power ---------------------#
+# log transform
+MMA_MA.power_SMD <- lm(log(MA.power) ~ 1, weights = k, data = model_est_SMD)
+# original scale
+MMA_MA.power_SMD2 <- lm(MA.power ~ 1, weights = k, data = model_est_SMD)
+MMA_MA.power_SMD2$coefficients
+
+# median
+MMA_MA.power_SMD$coefficients  %>% exp() 
+# mean
+(MMA_MA.power_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power))) %>% exp() 
+# confidence interval of median
+confint(MMA_MA.power_SMD) %>% exp()
+
+# compare residuals
+par(mfrow = c(1, 2))
+residuals(MMA_MA.power_SMD) %>% hist(main = paste("log power"), xlab = "Residual")
+residuals(MMA_MA.power_SMD2) %>% hist(main = paste("original power"), xlab = "Residual") 
+
+#---------------------- (2) type S error -----------------------#
+# log
+MMA_MA.power.S_SMD <- lm(log(MA.power.S+0.025) ~ 1, weights = k, data = model_est_SMD) # add an offset of 0.025(25%) to avoid ln(0) = infinity 
+# median
+MMA_MA.power.S_SMD$coefficients %>% exp() - 0.025
+# mean
+(MMA_MA.power.S_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power.S + 0.025))) %>% exp() - 0.025
+# confidence interval of median
+confint(MMA_MA.power.S_SMD) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
+
+#-------------- (3) type M error (overestimate ratio) -------------#
+# log
+MMA_MA.power.M_SMD <- lm(log(MA.power.M) ~ 1, weights = k, data = model_est_SMD)
+# median
+MMA_MA.power.M_SMD$coefficients %>% exp() 
+# mean
+(MMA_MA.power.M_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power.M))) %>% exp() 
+
+# confidence interval of median
+confint(MMA_MA.power.M_SMD) %>% exp()
+```
+
+
+
+
+##  4.2 experiment level
+(a) compute power, Type M/S for each dataset
+
+(b) aggregate these three parameters across meta-analyses
+
+### (a) computation
 ```{r}
 #***************************************************************#
 #        power for single experiments within meta-analysis       #
@@ -3296,7 +1141,6 @@ for (i in 1:length(SMD)) {
 for (i in 1:length(power.M_SMD)) {
   SMD[[i]]$power.M_SMD <- power.M_SMD[[i]]
 }
-
 
 #*********************************************************************#
 #------------------- summary of experimental power --------------------#
@@ -3376,70 +1220,12 @@ power.M_summary_SMD$se_power.M <- se_power.M
 
 ```
 
-#### Aggregation
 
-This section is used to obtain overall estimates of the three parameters across different meta-analyses (which provided us with comparable summaries of the three parameters).
 
-We used weighted regression to statistically aggregate over the three parameters obtained at the within-meta-analysis level whereas we used mixed effects models to aggregate these parameters at the experiment level. Both procedures involved aggregating the parameters across meta-analyses (i.e., between-meta-analysis modelling). 
+### (b) aggregation
+use linear mixed model to aggregate experimental level power
+
 ```{r}
-#***************************************************************#
-#      estimate overall power for meta-analysis level power     #
-#***************************************************************#
-
-# add N and k
-N_SMD <- NA
-for (i in 1:length(SMD)) {
-  N_SMD[i] <- SMD[[i]]$study_ID %>% unique() %>% length()
-}
-model_est_SMD$N <- N_SMD
-
-k_SMD <- NA
-for (i in 1:length(SMD)) {
-  k_SMD[i] <- SMD[[i]]$obs_ID %>% length()
-}
-model_est_SMD$k <- k_SMD
-
-#--------------------- (1) two tailed power ---------------------#
-# log
-MMA_MA.power_SMD <- lm(log(MA.power) ~ 1, weights = k, data = model_est_SMD)
-# original scale
-MMA_MA.power_SMD2 <- lm(MA.power ~ 1, weights = k, data = model_est_SMD)
-MMA_MA.power_SMD2$coefficients
-
-# this is median
-MMA_MA.power_SMD$coefficients  %>% exp() 
-# this is mean
-(MMA_MA.power_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power))) %>% exp() 
-#confidence interval of median
-confint(MMA_MA.power_SMD) %>% exp()
-
-# compare residuals
-par(mfrow = c(1, 2))
-residuals(MMA_MA.power_SMD) %>% hist(main = paste("log power"), xlab = "Residual")
-residuals(MMA_MA.power_SMD2) %>% hist(main = paste("original power"), xlab = "Residual") 
-
-#---------------------- (2) type S error -----------------------#
-# log
-MMA_MA.power.S_SMD <- lm(log(MA.power.S+0.025) ~ 1, weights = k, data = model_est_SMD) # add an offset of 0.025(25%) to avoid ln(0) = infinity 
-# this is median
-MMA_MA.power.S_SMD$coefficients %>% exp() - 0.025
-# this is mean
-(MMA_MA.power.S_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power.S + 0.025))) %>% exp() - 0.025
-#confidence interval of median
-confint(MMA_MA.power.S_SMD) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-# log
-MMA_MA.power.M_SMD <- lm(log(MA.power.M) ~ 1, weights = k, data = model_est_SMD)
-# this is median
-MMA_MA.power.M_SMD$coefficients %>% exp() 
-# this is mean
-(MMA_MA.power.M_SMD$coefficients + 0.5*var(log(model_est_SMD$MA.power.M))) %>% exp() 
-
-#confidence interval of median
-confint(MMA_MA.power.M_SMD) %>% exp()
-
-
 #***************************************************************#
 #      estimate overall power for experimental level power     #
 #***************************************************************#
@@ -3448,7 +1234,7 @@ confint(MMA_MA.power.M_SMD) %>% exp()
 #-----------------------------SMD------------------------------#
 #****************************************************************#
 
-
+# construct a dataframe to contain necessay elements 
 study_ID_SMD <- sapply(SMD, function(x) x$study_ID) %>% unlist()
 power_SMD <- sapply(SMD, function(x) x$power_SMD) %>% unlist()
 power.S_SMD <- sapply(SMD, function(x) x$power.S_SMD) %>% unlist()
@@ -3467,9 +1253,9 @@ MMA_EXP.power_SMD <- lmer(log(power_SMD) ~ 1 + (1 | study_ID_SMD), data = indivi
 MMA_EXP.power_SMD2 <- lmer(power_SMD ~ 1 + (1 | study_ID_SMD), data = individual_est_SMD)
 summary(MMA_EXP.power_SMD2)$coefficients[1]
 
-# this is median 
+# median 
 summary(MMA_EXP.power_SMD)$coefficients[1] %>% exp()
-# this is mean
+# mean
 (summary(MMA_EXP.power_SMD)$coefficients[1] + 0.5*var(log(individual_est_SMD$power_SMD))) %>% exp()
 # confidence interval of median
 confint(MMA_EXP.power_SMD) %>% exp()
@@ -3482,7 +1268,7 @@ residuals(MMA_EXP.power_SMD2) %>% hist(main = paste("orignal power"), xlab = "Re
 #---------------------- (2) type S error -----------------------#
 # log
 MMA_EXP.power.S_SMD <- lmer( log(power.S_SMD + 0.025) ~ 1 + (1 | study_ID_SMD), data = individual_est_SMD) # add an offset of 0.025 to avoid log(0) = inf
-# this is median 
+# median 
 summary(MMA_EXP.power.S_SMD)$coefficients[1] %>% exp() - 0.025 # - 0.025 is important
 # this is mean
 (summary(MMA_EXP.power.S_SMD)$coefficients[1] + 
@@ -3490,428 +1276,18 @@ summary(MMA_EXP.power.S_SMD)$coefficients[1] %>% exp() - 0.025 # - 0.025 is impo
                      summary(MMA_EXP.power.S_SMD)$sigma^2) # residual level - we cannot do like what we did above as we added 0.025
         ) %>% exp() - 0.025
 
-#confidence interval of median
+# confidence interval of median
 confint(MMA_EXP.power.S_SMD) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
 
 #--------------------- (3) type M error ---------------------#
 # log
 MMA_EXP.power.M_SMD <- lmer(log(power.M_SMD) ~ 1 + (1 | study_ID_SMD), data = individual_est_SMD)
 
-# this is median 
+# median 
 summary(MMA_EXP.power.M_SMD)$coefficients[1] %>% exp()
-# this is mean
+# mean
 (summary(MMA_EXP.power.M_SMD)$coefficients[1] + 0.5*var(log(individual_est_SMD$power.M_SMD))) %>% exp()
 # confidence interval of median
 confint(MMA_EXP.power.M_SMD) %>% exp()
 ```
-
-
-### Zr
-#### Meta-analysis level
-```{r}
-#****************************************************************#
-#-------------------------------Zr-----------------------------#
-#****************************************************************#
-
-#-----------------------------------------------------------#
-#          (1) two-tailed power for meta-analyses
-#-----------------------------------------------------------#
-model_est_Zr$MA.power <- power.ma_Shinichi(mu=model_est_Zr$beta0,SE=model_est_Zr$se_beta0)
-
-#-----------------------------------------------------------#
-#            (2) type S error for meta-analyses
-#-----------------------------------------------------------#
-MA.power.S <- NA
-for (i in 1:length(model_est_Zr$case)) {
-  MA.power.S[i] <- error_S(mu=model_est_Zr$beta0[i],se=model_est_Zr$se_beta0[i],alpha=0.05) %>% unlist()
-}
-
-model_est_Zr$MA.power.S <- MA.power.S
-
-
-#-----------------------------------------------------------#
-#   (3) type M error (overestimate ratio) for meta-analyses
-#-----------------------------------------------------------#
-MA.power.M <- NA
-for (i in 1:length(model_est_Zr$case)) {
-  MA.power.M[i] <- error_M(mu=model_est_Zr$beta0[i],se=model_est_Zr$se_beta0[i],alpha=0.05,N=10000) %>% unlist()
-}
-
-model_est_Zr$MA.power.M <- MA.power.M
-```
-
-
-#### Single experiment level
-
-```{r}
-#***************************************************************#
-#        power for single experiments within meta-analysis       #
-#***************************************************************#
-
-
-#****************************************************************#
-#------------------------------Zr-----------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-
-# Zr
-power_Zr <- NA
-for (i in 1:length(Zr)) {
-  power_Zr[i] <- power.individual_Shinichi(mu=rep(model_Zr[[i]]$beta, length(Zr[[i]]$sei)), se=Zr[[i]]$sei) %>% list()}
-
-# allocate each set of power into corresponding dataset
-for (i in 1:length(power_Zr)) {
-  Zr[[i]]$power_Zr <- power_Zr[[i]]
-}
-
-
-#---------------------- (2) type S error -----------------------#
-power.S_Zr <- NA
-for (i in 1:length(Zr)) {
-  power.S_Zr[i] <- mapply(error_S,mu=rep(model_Zr[[i]]$beta, length(Zr[[i]]$sei)), se=Zr[[i]]$sei) %>% list()}
-
-# allocate each set of type S error into corresponding dataset
-for (i in 1:length(power.S_Zr)) {
-  Zr[[i]]$power.S_Zr <- power.S_Zr[[i]]
-}
-
-
-#---------------- (3) type M error (overestimate ratio) --------------#
-power.M_Zr <- NA
-for (i in 1:length(Zr)) {
-  power.M_Zr[i] <- mapply(error_M,mu=rep(model_Zr[[i]]$beta, length(Zr[[i]]$sei)), se=Zr[[i]]$sei) %>% list()}
-
-# allocate each set of type S error into corresponding dataset
-for (i in 1:length(power.M_Zr)) {
-  Zr[[i]]$power.M_Zr <- power.M_Zr[[i]]
-}
-
-
-#*********************************************************************#
-#------------------- summary of experimental power --------------------#
-#*********************************************************************#
-
-#****************************************************************#
-#-----------------------------Zr------------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-power_summary_Zr <- data.frame(case=names(Zr),
-                   Minimum=mapply(summary, sapply(Zr, function(x) x$power_Zr))[1,],      
-                   `First quarter`=mapply(summary, sapply(Zr, function(x) x$power_Zr))[2,],
-                   Median=mapply(summary, sapply(Zr, function(x) x$power_Zr))[3,],
-                   Mean=mapply(summary, sapply(Zr, function(x) x$power_Zr))[4,], 
-                   `Third quarter`=mapply(summary, sapply(Zr, function(x) x$power_Zr))[5,], 
-                   Maximum=mapply(summary, sapply(Zr, function(x) x$power_Zr))[6,]) 
-
-
-#---------------------- (2) type S error -----------------------#
-power.S_summary_Zr <-  data.frame(case=names(Zr),
-                   Minimum=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[1,],      
-                   `First quarter`=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[2,],
-                   Median=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[3,],
-                   Mean=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[4,], 
-                   `Third quarter`=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[5,], 
-                   Maximum=mapply(summary, sapply(Zr, function(x) x$power.S_Zr))[6,]) 
-
-
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-power.M_summary_Zr <-  data.frame(case=names(Zr),
-                   Minimum=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[1,],      
-                   `First quarter`=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[2,],
-                   Median=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[3,],
-                   Mean=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[4,], 
-                   `Third quarter`=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[5,], 
-                   Maximum=mapply(summary, sapply(Zr, function(x) x$power.M_Zr))[6,]) 
-
-
-#*********************************************************************#
-#--------- calculate standard error for each type of power -----------#
-#*********************************************************************#
-
-#****************************************************************#
-#-----------------------------Zr------------------------------#
-#****************************************************************#
-
-#--------------------- (1) two tailed power ---------------------#
-# standard error of variable power_Zr
-se_power <- NA
-for (i in 1:length(Zr)) {
-  se_power[i] <- sd(Zr[[i]]$power_Zr, na.rm=TRUE) / sqrt(length(Zr[[i]]$power_Zr[!is.na(Zr[[i]]$power_Zr)]))
-}
-
-power_summary_Zr$se_power <- se_power
-
-
-#---------------------- (2) type S error -----------------------#
-# standard error of variable power.S_Zr
-se_power.S <- NA
-for (i in 1:length(Zr)) {
-  se_power.S[i] <- sd(Zr[[i]]$power.S_Zr, na.rm=TRUE) / sqrt(length(Zr[[i]]$power.S_Zr[!is.na(Zr[[i]]$power.S_Zr)]))
-}
-
-power.S_summary_Zr$se_power.S <- se_power.S
-
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-## standard error of variable power.M_Zr
-se_power.M <- NA
-for (i in 1:length(Zr)) {
-  se_power.M[i] <- sd(Zr[[i]]$power.M_Zr, na.rm=TRUE) / sqrt(length(Zr[[i]]$power.M_Zr[!is.na(Zr[[i]]$power.M_Zr)]))
-}
-
-power.M_summary_Zr$se_power.M <- se_power.M
-
-```
-
-#### Aggregation
-
-This section is used to obtain overall estimates of the three parameters across different meta-analyses (which provided us with comparable summaries of the three parameters).
-
-We used weighted regression to statistically aggregate over the three parameters obtained at the within-meta-analysis level whereas we used mixed effects models to aggregate these parameters at the experiment level. Both procedures involved aggregating the parameters across meta-analyses (i.e., between-meta-analysis modelling). 
-```{r}
-#***************************************************************#
-#      estimate overall power for meta-analysis level power     #
-#***************************************************************#
-
-# add N and k
-N_Zr <- NA
-for (i in 1:length(Zr)) {
-  N_Zr[i] <- Zr[[i]]$study_ID %>% unique() %>% length()
-}
-model_est_Zr$N <- N_Zr
-
-k_Zr <- NA
-for (i in 1:length(Zr)) {
-  k_Zr[i] <- Zr[[i]]$obs_ID %>% length()
-}
-model_est_Zr$k <- k_Zr
-
-#--------------------- (1) two tailed power ---------------------#
-# log
-MMA_MA.power_Zr <- lm(log(MA.power) ~ 1, weights = k, data = model_est_Zr)
-# original scale
-MMA_MA.power_Zr2 <- lm(MA.power ~ 1, weights = k, data = model_est_Zr)
-MMA_MA.power_Zr2$coefficients
-
-# this is median
-MMA_MA.power_Zr$coefficients  %>% exp() 
-# this is mean
-(MMA_MA.power_Zr$coefficients + 0.5*var(log(model_est_Zr$MA.power))) %>% exp() 
-#confidence interval of median
-confint(MMA_MA.power_Zr) %>% exp()
-
-# compare residuals
-par(mfrow = c(1, 2))
-residuals(MMA_MA.power_Zr) %>% hist(main = paste("log power"), xlab = "Residual")
-residuals(MMA_MA.power_Zr2) %>% hist(main = paste("original power"), xlab = "Residual") 
-
-#---------------------- (2) type S error -----------------------#
-# log
-MMA_MA.power.S_Zr <- lm(log(MA.power.S+0.025) ~ 1, weights = k, data = model_est_Zr) # add an offset of 0.025(25%) to avoid ln(0) = infinity 
-# this is median
-MMA_MA.power.S_Zr$coefficients %>% exp() - 0.025
-# this is mean
-(MMA_MA.power.S_Zr$coefficients + 0.5*var(log(model_est_Zr$MA.power.S + 0.025))) %>% exp() - 0.025
-#confidence interval of median
-confint(MMA_MA.power.S_Zr) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
-
-#-------------- (3) type M error (overestimate ratio) -------------#
-# log
-MMA_MA.power.M_Zr <- lm(log(MA.power.M) ~ 1, weights = k, data = model_est_Zr)
-# this is median
-MMA_MA.power.M_Zr$coefficients %>% exp() 
-# this is mean
-(MMA_MA.power.M_Zr$coefficients + 0.5*var(log(model_est_Zr$MA.power.M))) %>% exp() 
-
-#confidence interval of median
-confint(MMA_MA.power.M_Zr) %>% exp()
-
-
-#***************************************************************#
-#      estimate overall power for experimental level power     #
-#***************************************************************#
-
-#****************************************************************#
-#-----------------------------Zr------------------------------#
-#****************************************************************#
-
-
-study_ID_Zr <- sapply(Zr, function(x) x$study_ID) %>% unlist()
-power_Zr <- sapply(Zr, function(x) x$power_Zr) %>% unlist()
-power.S_Zr <- sapply(Zr, function(x) x$power.S_Zr) %>% unlist()
-power.M_Zr <- sapply(Zr, function(x) x$power.M_Zr) %>% unlist()
-
-individual_est_Zr <- data.frame("study_ID_Zr" = study_ID_Zr,
-                                 "power_Zr" = power_Zr,
-                                 "power.S_Zr" = power.S_Zr,
-                                 "power.M_Zr" = power.M_Zr
-                                  )
-
-#--------------------- (1) two tailed power ---------------------#
-# log
-MMA_EXP.power_Zr <- lmer(log(power_Zr) ~ 1 + (1 | study_ID_Zr), data = individual_est_Zr)
-# original scale
-MMA_EXP.power_Zr2 <- lmer(power_Zr ~ 1 + (1 | study_ID_Zr), data = individual_est_Zr)
-summary(MMA_EXP.power_Zr2)$coefficients[1]
-
-# this is median 
-summary(MMA_EXP.power_Zr)$coefficients[1] %>% exp()
-# this is mean
-(summary(MMA_EXP.power_Zr)$coefficients[1] + 0.5*var(log(individual_est_Zr$power_Zr))) %>% exp()
-# confidence interval of median
-confint(MMA_EXP.power_Zr) %>% exp()
-
-# compare residual
-par(mfrow = c(1, 2))
-residuals(MMA_EXP.power_Zr) %>% hist(main = paste("log power"), xlab = "Residual")
-residuals(MMA_EXP.power_Zr2) %>% hist(main = paste("orignal power"), xlab = "Residual") 
-
-#---------------------- (2) type S error -----------------------#
-# log
-MMA_EXP.power.S_Zr <- lmer( log(power.S_Zr + 0.025) ~ 1 + (1 | study_ID_Zr), data = individual_est_Zr) # add an offset of 0.025 to avoid log(0) = inf
-# this is median 
-summary(MMA_EXP.power.S_Zr)$coefficients[1] %>% exp() - 0.025 # - 0.025 is important
-# this is mean
-(summary(MMA_EXP.power.S_Zr)$coefficients[1] + 
-                0.5*(summary(MMA_EXP.power.S_Zr)$varcor[[1]][[1]] + # sigma^2 for study level
-                     summary(MMA_EXP.power.S_Zr)$sigma^2) # residual level - we cannot do like what we did above as we added 0.025
-        ) %>% exp() - 0.025
-
-#confidence interval of median
-confint(MMA_EXP.power.S_Zr) %>% exp() - 0.025 # if the lower boundary was negative (probably caused by the negative variance), we used 0 to replace it
-
-#--------------------- (3) type M error ---------------------#
-# log
-MMA_EXP.power.M_Zr <- lmer(log(power.M_Zr) ~ 1 + (1 | study_ID_Zr), data = individual_est_Zr)
-
-# this is median 
-summary(MMA_EXP.power.M_Zr)$coefficients[1] %>% exp()
-# this is mean
-(summary(MMA_EXP.power.M_Zr)$coefficients[1] + 0.5*var(log(individual_est_Zr$power.M_Zr))) %>% exp()
-# confidence interval of median
-confint(MMA_EXP.power.M_Zr) %>% exp()
-```
-
-
-
-# ES VS. power vs. M vs. M
-```{r}
-library(retrodesign)
-library(gridExtra)
-library(ggplot2)
-
-# creat different levels of effect sizes
-possible_effects <- seq(0.01,1.01,by=0.01)
-
-# calculate power, Type S and M with alpha 0.05
-effect_power_s_m_0.05 <- retrodesign::retro_design(A = possible_effects, s = 0.25, alpha = 0.05)
-
-# creat a dataframe
-effect_pairs_0.05 <- data.frame(es = possible_effects, power = effect_power_s_m_0.05$power, types = effect_power_s_m_0.05$typeS, typem = effect_power_s_m_0.05$typeM, alpha = rep(c("0.05"),length(possible_effects)))
-
-
-# es vs. power
-power_plot <- ggplot(effect_pairs_0.05) + geom_line(aes(x=es,y=power),show.legend=F) + 
-  scale_y_continuous(breaks = seq(0, 1, 0.2), limits = c(0, 1)) +
-  #geom_vline(xintercept=0.25) +
-  #geom_hline(yintercept=retrodesign::retro_design(A = 0.25, s = 0.2, alpha = 0.05)$power) + 
-  geom_segment(aes(x = 0.15, y = 0, xend = 0.15, yend = retrodesign::retro_design(A = 0.15, s = 0.25, alpha = 0.05)$power), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.15, s = 0.25, alpha = 0.05)$power, xend = 0.15, yend = retrodesign::retro_design(A = 0.15, s = 0.25, alpha = 0.05)$power), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.15, y = retrodesign::retro_design(A = 0.15, s = 0.25, alpha = 0.05)$power), colour = "red", size = 3) +
-  
-  geom_segment(aes(x = 0.75, y = 0, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$power), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$power, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$power), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.75, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$power), colour = "blue", size = 3) +
-  
-  annotate(geom = "text", x = 0.33,  y = 0.06, label = "small effect", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.1,  y = 0.18, label = "low power", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.91,  y = 0.5, label = "large effect", size = 3, colour = "blue") +
-  annotate(geom = "text", x = 0.38,  y = 0.9, label = "high power", size = 3, colour = "blue") +
-
-  labs(x="Effect size", y="Statistical power") + theme_bw()
-
-  
-png(filename = "./power_plot.png", width=3, height=3, units="in", type="window", res=400)
-power_plot
-dev.off()
-
-
-# es vs. typeS
-s_plot <- ggplot(effect_pairs_0.05) + geom_line(aes(x=es,y=types),show.legend=F) + 
-    geom_segment(aes(x = 0.1, y = 0, xend = 0.1, yend = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeS), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeS, xend = 0.1, yend = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeS), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.1, y = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeS), colour = "red", size = 3) +
-  
-  geom_segment(aes(x = 0.75, y = 0.15, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeS), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeS, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeS), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.75, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeS), colour = "blue", size = 3) +
-  
-  annotate(geom = "text", x = 0.28,  y = 0.07, label = "small effect", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.185,  y = 0.17, label = "high Type S error", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.75,  y = 0.17, label = "large effect", size = 3, colour = "blue") +
-  annotate(geom = "text", x = 0.5,  y = 0.02, label = "low Type S error", size = 3, colour = "blue") +
-  labs(x="Effect size", y="Type S error") + theme_bw()
-
-
-png(filename = "./s_plot.png", width=3, height=3, units="in", type="window", res=400)
-s_plot
-dev.off()
-
-
-
-# es vs. Type M
-m_plot <- ggplot(effect_pairs_0.05) + geom_line(aes(x=es,y=typem),show.legend=F) + 
-    geom_segment(aes(x = 0.1, y = 13, xend = 0.1, yend = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeM), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeM, xend = 0.1, yend = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeM), colour = "red", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.1, y = retrodesign::retro_design(A = 0.1, s = 0.25, alpha = 0.05)$typeM), colour = "red", size = 3) +
-  
-  geom_segment(aes(x = 0.75, y = 10, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeM), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +  
-  geom_segment(aes(x = 0, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeM, xend = 0.75, yend = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeM), colour = "blue", arrow = arrow(length = unit(0.15, "cm"), ends="first", type = "closed")) +
-  geom_point(aes(x = 0.75, y = retrodesign::retro_design(A = 0.75, s = 0.25, alpha = 0.05)$typeM), colour = "blue", size = 3) +
-  
-  annotate(geom = "text", x = 0.1,  y = 16, label = "small effect", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.29,  y = 8, label = "high M error", size = 3, colour = "red") +
-  annotate(geom = "text", x = 0.75,  y = 12, label = "large effect", size = 3, colour = "blue") +
-  annotate(geom = "text", x = 0.53,  y = 4, label = "low Type M error", size = 3, colour = "blue") +
-    labs(x="Effect size", y="Type M error") + theme_bw()
-
-png(filename = "./m_plot.png", width = 3, height = 3, units = "in", type = "windows", res = 400)
-m_plot
-dev.off()
-
-
-
-
-png(filename = "./power_s_m.png", width = 9, height = 3, units = "in", type = "windows", res = 400)
-power_plot + s_plot + m_plot + plot_layout(ncol = 3, nrow = 1)
-dev.off()
-
-
-
-
-# power vs. Type S
-ggplot(effect_pairs_0.05) + geom_line(aes(x=power,y=types),show.legend=F) + labs(x="Statistical power", y="Type S error") + theme_bw() -> power_s_plot
-
-# power vs. Type M
-ggplot(effect_pairs_0.05) + geom_line(aes(x=power,y=typem),show.legend=F) + geom_vline(xintercept=0.8) + labs(x="Statistical power", y="Type M error") + theme_bw() -> power_m_plot
-
-# Type S vs. Type M
-ggplot(effect_pairs_0.05) + geom_line(aes(x=types,y=typem),show.l=F) + labs(x="Type S error", y="Type M error") + theme_bw() -> s_m_plot
-
-
-png(filename = "./power_m_s.png", width=8, height=8, units="in", type="windows",res=400)
-gridExtra::grid.arrange(power_plot, s_plot, 
-                        m_plot, power_s_plot,
-                        power_m_plot, s_m_plot,
-                        nrow = 3, ncol = 2)
-dev.off()
-
-
-```
-
-
-
 
