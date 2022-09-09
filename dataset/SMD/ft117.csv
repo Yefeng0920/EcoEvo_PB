@@ -1,0 +1,205 @@
+﻿obs_ID,study_ID,year_pub,es,var
+obs001,Hemptinne et al. (1998),1998,1.08,0.044
+obs002,Wood and Ratnieks (2004),2004,3.06,0.352
+obs003,Couldridge and van Staaden (2006),2006,0.19,0.02
+obs006,Tynkknyen et al. (2008),2008,2.12,0.646
+obs009,Tynkknyen et al. (2008),2008,1.32,0.099
+obs010,Fonseca and Revez (2002),2002,1.28,0.089
+obs011,Hammack (1992),1992,2.18,0.056
+obs012,Hammack (1992),1992,3.15,0.21
+obs013,Hammack (1992),1992,2.67,0.31
+obs014,Hammack (1992),1992,2.01,0.317
+obs015,McDonald and Borden (1996),1996,0.78,0.018
+obs016,Tomaru et al. (1995),1995,3.7,0.663
+obs017,Noor (1996),1996,0.22,0.02
+obs018,Noor (1996),1996,-0.2,0.021
+obs019,Carracedo et al. (2003),2003,0.61,0.039
+obs020,Coyne et al. (2002),2002,0.1,0.024
+obs021,Coyne et al. (2005),2005,0.38,0.031
+obs022,Coyne et al. (2005),2005,0.28,0.003
+obs023,Coyne et al. (2002),2002,0.39,0.03
+obs024,Coyne et al. (2005),2005,-0.25,0.031
+obs025,Coyne et al. (2005),2005,0.26,0.007
+obs026,South et al. (2008),2008,0.67,0.236
+obs027,Doherty and Callos (1991),1991,1.86,0.629
+obs028,Gray (2004),2004,0.54,0.016
+obs029,Gray (2004),2004,0.53,0.017
+obs030,Gray (2004),2004,0.7,0.017
+obs031,Gray (2004),2004,0.34,0.045
+obs032,Kasumovic and Andrade (2004),2004,0.47,0.031
+obs033,Friberg et al. (2008),2008,2.32,0.669
+obs034,Friberg et al. (2008),2008,0.34,0.036
+obs035,Friberg et al. (2008),2008,2.08,0.673
+obs036,Friberg et al. (2008),2008,-0.28,0.034
+obs037,South et al. (2008),2008,-0.04,0.25
+obs038,Schultz and Switzer (2001),2001,1.16,0.003
+obs039,South et al. (2008),2008,0.72,0.215
+obs040,Michaelidis et al. (2006),2006,0.17,0.019
+obs041,South et al. (2008),2008,0.12,0.251
+obs042,Tanigaki et al. (2007),2007,-4.12,0.932
+obs043,Tanigaki et al. (2007),2007,-3.72,0.781
+obs044,Ohguchi and Hidaka (1988),1988,0.79,0.136
+obs045,Wiernasz and Kingsolver (1992),1992,0.97,0.217
+obs046,Wiernasz and Kingsolver (1992),1992,0.95,0.042
+obs047,Ohguchi and Hidaka (1988),1988,0.59,0.135
+obs048,Heady and Denno (1991),1991,0.83,0.128
+obs049,Heady and Denno (1991),1991,2.2,0.206
+obs050,Heady and Denno (1991),1991,0.25,0.112
+obs051,Heady and Denno (1991),1991,0.79,0.145
+obs052,Roberts and Uetz (2004a),2004,0.16,0.001
+obs053,Roberts and Uetz (2004a),2004,0.56,0.004
+obs054,Roberts and Uetz (2004b),2004,0.15,0.001
+obs055,Honda-Sum (2005),2005,0.94,0.072
+obs056,Honda-Sum (2005),2005,0.56,0.046
+obs057,Lee (1983),1983,1.31,0.053
+obs058,Lee (1983),1983,1.55,0.184
+obs059,Lee (1983),1983,2.09,0.073
+obs060,Lee (1983),1983,2.13,0.04
+obs061,Detto et al. (2006),2006,0.32,0.011
+obs062,Rosenfield and Kodric-Brown (2003),2003,-0.43,0.057
+obs063,Leiser (2003),2003,0.88,0.026
+obs064,Leiser (2003),2003,0.17,0.016
+obs065,Rosenfield and Kodric-Brown (2003),2003,0.48,0.058
+obs066,Rafferty and Boughman (2006),2006,0.33,0.155
+obs067,Basolo (2002),2002,0.86,0.137
+obs068,Gumm and Gabor (2005),2005,-0.41,0.044
+obs069,Gumm and Gabor (2005),2005,0.37,0.04
+obs070,Ptacek (1998),1998,-2.89,0.19
+obs071,Ptacek (1998),1998,0.84,0.046
+obs072,Plath et al. (2008),2008,-0.4,0.051
+obs073,Ptacek (1998),1998,0.68,0.089
+obs074,Ptacek (1998),1998,0.18,0.042
+obs075,Riesch et al. (2006),2006,0.22,0.04
+obs076,Riesch et al. (2006),2006,0.65,0.082
+obs077,Riesch et al. (2006),2006,-0.02,0.067
+obs078,Riesch et al. (2006),2006,0.02,0.133
+obs079,Ptacek (1998),1998,0.38,0.1
+obs080,Kozak et al. (2008),2008,0.76,0.046
+obs081,Kozak et al. (2008),2008,0.33,0.045
+obs082,Kozak et al. (2008),2008,0.63,0.047
+obs083,Kozak et al. (2008),2008,0.95,0.047
+obs084,Knight and Turner (1999),1999,2.59,0.111
+obs085,Couldridge and Alexander (2002),2002,2.21,0.076
+obs086,Couldridge and Alexander (2002),2002,1.52,0.058
+obs087,Couldridge and Alexander (2002),2002,1.69,0.062
+obs088,Couldridge and Alexander (2002),2002,1.13,0.053
+obs089,Knight and Turner (1999),1999,1.12,0.101
+obs090,Knight and Turner (1999),1999,1.05,0.086
+obs091,Wong and Rosenthal (2006),2006,1.47,0.071
+obs092,Wong and Rosenthal (2006),2006,0.29,0.135
+obs093,Wong et al. (2005),2005,-0.99,0.151
+obs094,Wong et al. (2005),2005,1.99,0.204
+obs095,McLennan and Ryan (2008),2008,-1.31,0.102
+obs096,McLennan and Ryan (1999),1999,1.38,0.029
+obs098,Crapon de Caprona and Ryan (1990),1990,6.41,0.382
+obs099,McLennan and Ryan (1999),1999,2.08,0.04
+obs100,Crapon de Caprona and Ryan (1990),1990,3.21,0.185
+obs101,Crapon de Caprona and Ryan (1990),1990,-0.63,0.132
+obs102,Hankison and Morris (2003),2003,1.31,0.164
+obs103,Hankison and Morris (2003),2003,0.27,0.072
+obs104,Cheong et al. (2008),2008,-0.34,0.067
+obs105,Bee (2008),2008,0.55,0.014
+obs106,Gerhardt (2005),2005,0.38,0.035
+obs107,Marshall et al. (2006),2006,1.96,0.313
+obs108,Marshall et al. (2006),2006,-0.19,0.22
+obs109,Tárano and Ryan (2002),2002,0.16,0.013
+obs110,Kime et al. (1998),1998,0.19,0.018
+obs111,Ryan and Rand (1999),1999,1.47,0.044
+obs112,Ryan et al. (2003),2003,2,0.146
+obs113,Dawley (1987),1987,-0.18,0.062
+obs114,Dawley (1987),1987,0.73,0.108
+obs115,Rollmann et al. (2003),2003,0.07,0.052
+obs116,Dawley (1987),1987,-0.36,0.054
+obs117,Dawley (1987),1987,1.7,0.318
+obs118,Bee (2007),2007,0.45,0.037
+obs119,Pfennig (2000),2000,0.02,0.012
+obs120,Pfennig (2000),2000,0.48,0.027
+obs121,Huck and Banks (1984),1984,2.28,0.004
+obs122,Huck and Banks (1984),1984,-0.15,0.059
+obs123,Huck and Banks (1984),1984,0.58,0.021
+obs124,Huck and Banks (1984),1984,-0.11,0.046
+obs125,Huck and Banks (1984),1984,2.33,0.004
+obs126,Fornasieri and Roeder (1992),1992,-0.11,0.1
+obs127,Fornasieri and Roeder (1992),1992,0.07,0.153
+obs128,Belcher et al. (1988),1988,0.45,0.029
+obs129,Searcy and Brenowitz (1988),1988,0.89,0.148
+obs130,Ceugniet and Aubin (2001),2001,-0.08,0.135
+obs131,Ceugniet and Aubin (2001),2001,0.6,0.044
+obs132,Ceugniet and Aubin (2001),2001,0.42,0.069
+obs133,Ceugniet and Aubin (2001),2001,0.96,0.035
+obs134,García (2003),2003,1.21,0.115
+obs135,García (2003),2003,0.48,0.345
+obs136,Pearson and Rohwer (2000),2000,1.04,0.035
+obs137,Pearson and Rohwer (2000),2000,0.76,0.036
+obs138,Ratcliffe and Grant (1983),1983,1.77,0.018
+obs139,Ratcliffe and Grant (1985),1985,0.7,0.031
+obs140,Ratcliffe and Grant (1983),1983,1.41,0.011
+obs141,Ratcliffe and Grant (1983),1983,0.72,0.071
+obs142,Ratcliffe and Grant (1985),1985,0.48,0.003
+obs143,Ratcliffe and Grant (1983),1983,1.58,0.011
+obs144,Ratcliffe and Grant (1985),1985,0.83,0.032
+obs145,Ratcliffe and Grant (1983),1983,2.41,0.012
+obs146,Ratcliffe and Grant (1983),1983,1.57,0.02
+obs147,Ratcliffe and Grant (1985),1985,1.3,0.016
+obs148,Mays and Hopper (2004),2004,0.85,0.074
+obs149,Mays and Hopper (2004),2004,0.25,0.051
+obs151,Nowicki et al. (2001),2001,0.94,0.113
+obs152,Nowicki et al. (2001),2001,-0.5,0.106
+obs153,Peters et al. (1980),1980,2.93,0.249
+obs154,Peters et al. (1980),1980,2.13,0.069
+obs155,Reichard and Price (2008),2008,0.61,0.032
+obs156,O'Loghlen and Rothstein (2004),2004,1.25,0.07
+obs157,Hansen and Slagsvold (2003),2003,-3.18,0.13
+obs158,Hansen and Slagsvold (2003),2003,1.5,0.144
+obs159,Hansen and Slagsvold (2003),2003,2.4,0.12
+obs160,Hansen and Slagsvold (2003),2003,1.3,0.205
+obs161,Nagle et al. (2002),2002,0.48,0.026
+obs162,Parisot et al. (2002),2002,-0.36,0.057
+obs163,Cardosos et al. (2007),2007,0.16,0.015
+obs164,Cardosos et al. (2007),2007,0.77,0.113
+obs165,den Hartog et al. (2007),2007,0.6,0.044
+obs166,de Kort et al. (2002),2002,0.58,0.014
+obs167,de Kort and ten Cate (2001),2001,0.91,0.036
+obs168,den Hartog et al. (2007),2007,0.57,0.044
+obs169,de Kort and ten Cate (2001),2001,0.62,0.033
+obs170,de Kort et al. (2002),2002,0.4,0.013
+obs171,Matyjasiak (2005),2005,-0.62,0.076
+obs172,Clayton and Pröve (1989),1989,0.81,0.176
+obs173,Clayton and Pröve (1989),1989,0.91,0.202
+obs174,Collins and Luddem (2002),2002,0.02,0.143
+obs175,Luddem et al. (2004),2004,0.11,0.199
+obs176,Luddem et al. (2004),2004,0,0.5
+obs177,Luddem et al. (2004),2004,2,0.422
+obs178,Collins and Luddem (2002),2002,1.57,0.197
+obs179,Luddem et al. (2004),2004,0.9,0.279
+obs180,Luddem et al. (2004),2004,2.88,0.546
+obs181,Luddem et al. (2004),2004,0.32,0.254
+obs182,Luddem et al. (2004),2004,1.94,0.813
+obs183,Luddem et al. (2004),2004,-1.35,0.651
+obs184,Collins and Luddem (2002),2002,2.68,0.39
+obs185,Luddem et al. (2004),2004,1.54,0.334
+obs187,Luddem et al. (2004),2004,0.45,0.257
+obs188,Luddem et al. (2004),2004,2.69,0.509
+obs189,Luddem et al. (2004),2004,0.73,0.269
+obs190,Pleszczynska (1980),1980,10.73,0.793
+obs191,Pleszczynska (1980),1980,5.74,0.015
+obs192,Pleszczynska (1980),1980,5.44,0.093
+obs193,Moore et al. (2004),2004,0.75,0.047
+obs194,Pleszczynska (1980),1980,4.51,0.045
+obs195,Galeotti et al. (2007),2007,1.54,0.131
+obs196,Galeotti et al. (2007),2007,1.97,0.151
+obs197,Shine et al. (2002),2002,0.76,0.166
+obs198,Shine et al. (2002),2002,2.04,0.698
+obs199,Shine et al. (2002),2002,1.28,0.273
+obs200,Shine et al. (2002),2002,2.08,0.738
+obs201,Dussault and Krekorian (1991),1991,0.45,0.046
+obs202,Dussault and Krekorian (1991),1991,0.83,0.046
+obs203,Cooper and Vitt (1986a),1986,3.85,0.164
+obs204,Cooper and Vitt (1986b),1986,3.38,0.159
+obs205,Cooper and Vitt (1986b),1986,1.19,0.066
+obs206,Dame and Petren (2006),2006,-1.31,0.176
+obs207,Dame and Petren (2006),2006,0.52,0.16
+obs208,Barbosa et al. (2006),2006,-0.22,0.183
+obs209,Barbosa et al. (2006),2006,1.22,0.219
+obs210,Barbosa et al. (2006),2006,0.18,0.167
+obs211,Barbosa et al. (2006),2006,1.29,0.223

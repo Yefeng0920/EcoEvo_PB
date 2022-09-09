@@ -1,0 +1,55 @@
+obs_ID,study_ID,year_pub,es,var
+obs001,RJ Miller & RJ Etter,2008,0,0.40824829
+obs002,RW Thacker et al.,2001,0.69,0.816496581
+obs004,P Jernakoff,1983,1.03,0.816496581
+obs005,HF Jara & CA Moreno,1984,0.1,1.414213562
+obs006,J Lubchenco & J Cubit,1980,0.61,1.224744871
+obs007,J Lubchenco et al.,1984,0.46,0.774596669
+obs008,J Lubchenco et al.,1984,0.08,0.752772653
+obs009,J Lubchenco et al,1984,0.04,0.752772653
+obs010,BA Menge,1976,0.28,0.577350269
+obs011,BG Hatcher & AWG Larkum,1983,0.11,0.534522484
+obs012,BG Hatcher & AWG Larkum,1983,0.09,0.707106781
+obs013,MD Bertness et al.,2006,0.65,0.707106781
+obs014,MD Bertness et al.,2006,0.69,0.707106781
+obs015,AH Buschmann ,1990,0.26,0.816496581
+obs016,GA Williams,1993,0.3,0.577350269
+obs017,GR Russ,1980,-0.02,0.707106781
+obs018,WP Sousa ,1984,0.16,0.5
+obs019,PG van Tamelen,1987,0.67,0.577350269
+obs020,SM Lewis,1986,0.01,0.755928946
+obs021,RH Karlson,1978,0.02,0.816496581
+obs022,DW Keats et al.,1990,1.08,1.414213562
+obs023,DW Keats et al.,1990,1.21,1.414213562
+obs024,SA Navarette,1996,0.31,0.40824829
+obs025,B Klemens-Eriksson et al.,2007,0.63,0.333333333
+obs026,S Korpinen & V Jormalainen,2008,0.26,0.816496581
+obs027,S Kaehler & GA Williams,1998,0.12,0.816496581
+obs028,D Morrison,1988,0.02,0.632455532
+obs029,LD Coen,1988,0.93,0.547722558
+obs030,FJ Scott & CR Russ,1987,0.35,0.333333333
+obs031,FJ Hidalgo et al.,2008,0.39,0.5
+obs032,CEL Ferreira et al.,1998,-0.21,0.632455532
+obs033,MA Hixon & WN Brostoff,1996,1.24,0.3086067
+obs034,JB Geller,1991,0.89,0.612372436
+obs035,DO Duggins & MN Dethier,1985,0.29,1
+obs036,JD Cubit,1984,0.46,0.226529886
+obs037,TM Farrell,1988,0.61,0.5
+obs039,L Benedetti-cecchi & F Cinelli,1995,0.35,0.577350269
+obs040,MD Bertness et al.,2002,0.3,0.23570226
+obs041,MD Bertness et al.,2002,0.9,0.23570226
+obs042,SK Carter et al.,2007,0.17,0.816496581
+obs043,ME Nicotri,1977,0.3,0.40824829
+obs044,KJ Nielsen,2001,-0.02,0.40824829
+obs046,RW Osman & RB Whitlatch ,2004,0.3,0.447213595
+obs047,RW Osman & RB Whitlatch ,2004,0.69,0.447213595
+obs048,RT Paine  ,2002,1,0.731925055
+obs049,C Palacin et al.,1998,0.16,0.447213595
+obs050,CH Peterson  ,1979,0.6,0.456435465
+obs051,C Robles & J Robb,1993,0.88,0.816496581
+obs052,E Sala & CF Boudouresque,1997,0.1,0.40824829
+obs053,Sammarco P.W.,1980,0.51,1
+obs054,PW Sammarco,1983,0.25,0.816496581
+obs055,B Santelices et al.,1981,0.57,0.816496581
+obs056,RE Scheibling,1994,0.38,0.707106781
+obs057,TW Baynes,1999,0,0.333333333

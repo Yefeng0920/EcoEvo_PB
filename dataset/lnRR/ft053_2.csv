@@ -1,0 +1,20 @@
+obs_ID,study_ID,year_pub,es,var
+obs001,Vila-Aiub et al. 2009,2009,-0.25,0.004
+obs002,Vila-Aiub et al. 2005,2005,0,0.013
+obs003,Burnet et al. 1993,1993,-0.12,0.005
+obs004,Burnet et al. 1993,1993,-0.07,0.002
+obs005,Schonfeld et al. 1987,1987,0.06,0
+obs006,Jordan 1996,1996,-0.13,0.002
+obs007,Jordan 1996,1996,-0.11,0.001
+obs008,Gassman and Futuyma 2004,2004,-0.93,0.115
+obs009,Anderson et al. 1996,1996,-0.74,0.01
+obs010,Weaver and Warwick 1982,1982,-0.13,0.121
+obs011,Weaver and Warwick 1982,1982,-0.06,0.063
+obs012,Warwick and Black 1981,1981,-0.3,0.004
+obs013,Warwick and Black 1981,1981,0,0.006
+obs014,Warwick 1980,1980,-0.55,0.006
+obs015,Warwick 1980,1980,-0.61,0.019
+obs016,Holt and Radosevich 1983,1983,-0.67,0.001
+obs017,Conard and Radosevich 1979,1979,-0.3,0.011
+obs018,Williams et al. 1995,1995,-0.66,0.046
+obs019,Kremer and Lotz 1998,1998,0.49,0.001

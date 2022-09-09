@@ -1,0 +1,388 @@
+obs_ID,study_ID,year_pub,es,var
+obs001,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.7376,0.0145
+obs002,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.4249,0.0494
+obs003,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-1.3863,0.0084
+obs004,Stevenson PR,2000,0.4055,0.0241
+obs005,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.1769,0.0118
+obs006,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1671,0.0006
+obs007,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.6961,0.0432
+obs008,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.6931,0.0078
+obs009,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.5596,0.0083
+obs010,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.2231,0.0051
+obs011,Moraes PLR,1992,-1.0116,0.0007
+obs012,Bravo SP.,2009,-0.023,0.0018
+obs013,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-2.5123,0.0124
+obs014,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.7246,0.0093
+obs015,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.3365,0.0034
+obs016,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-1.3863,0.0008
+obs017,Julliot C,1996,-1.0296,0.0005
+obs018,"Knogge C, Herrera ERT, Heymann EW",2003,-1.8396,
+obs019,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1072,0.0013
+obs020,"Knogge C, Herrera ERT, Heymann EW",2003,4.0254,10.0009
+obs021,"Knogge C, Herrera ERT, Heymann EW",2003,4.1431,10.0016
+obs022,"Wehncke EV, Dalling JW ",2005,0.1671,0.0021
+obs023,Valenta K & Fedigan LM,2009,-0.4249,0.0001
+obs024,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.8267,0.002
+obs025,"Knogge C, Herrera ERT, Heymann EW",2003,-1.7918,0.0006
+obs026,Moraes PLR,1992,-1.3122,0.0004
+obs027,Julliot C,1996,-0.7621,0.0002
+obs028,"Wehncke EV, Dalling JW ",2005,-0.1942,0.0001
+obs029,Valenta K & Fedigan LM,2009,-0.1386,0.0003
+obs030,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-1.0578,0.0002
+obs031,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.1411,0.004
+obs032,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.156,0.0005
+obs033,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.3275,0.0002
+obs034,"Knogge C, Herrera ERT, Heymann EW",2003,-1.889,
+obs035,Julliot C,1996,0.1703,0.0003
+obs036,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0113,0.0008
+obs037,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.4601,0.0001
+obs038,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.7472,0.0011
+obs039,Martins MM,2006,-0.8473,0.0003
+obs040,"Knogge C, Herrera ERT, Heymann EW",2003,-1.7037,0.0011
+obs041,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1239,0.0005
+obs042,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-2.1322,
+obs043,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.3623,0.0007
+obs044,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.4749,0.0002
+obs045,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.4643,0.0032
+obs046,"Knogge C, Herrera ERT, Heymann EW",2003,-0.2877,0.0005
+obs047,"Wehncke EV, Dalling JW ",2005,-0.2877,0.0004
+obs048,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.7559,0.0002
+obs049,"Righini N, Serio-Silva JC, Rico-Gray V, Mart??nez-Mota R",2004,-0.8301,0.001
+obs050,"Wehncke EV, Dalling JW ",2005,-0.087,0.0002
+obs051,"Wehncke EV, Dalling JW ",2005,-0.2412,0.0001
+obs052,"Knogge C, Herrera ERT, Heymann EW",2003,-1.0265,
+obs053,Nunes A,1995,-0.4595,0.0002
+obs054,Martins MM,2006,-0.1542,0.0002
+obs055,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,4.7958,1.7243
+obs056,"Knogge C, Herrera ERT, Heymann EW",2003,-1.5686,
+obs057,Valenta K & Fedigan LM,2009,-0.5139,
+obs058,"Knogge C, Herrera ERT, Heymann EW",2003,-1.4112,
+obs059,Martins MM,2006,-0.3795,0.0021
+obs060,Martins MM,2006,-0.0741,0.0002
+obs061,Julliot C,1996,-0.3795,0.0001
+obs062,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-1.123,0.0002
+obs063,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.204,0.0002
+obs064,"Knogge C, Herrera ERT, Heymann EW",2003,0.6931,0.0018
+obs065,Nunes A,1995,-0.2513,0.0002
+obs066,Martins MM,2006,-1.8892,0.0001
+obs067,Julliot C,1996,-0.069,0.0001
+obs068,"Knogge C, Herrera ERT, Heymann EW",2003,1.9601,0.0013
+obs069,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.1495,0.0001
+obs070,Valenta K & Fedigan LM,2009,-0.4613,0.0001
+obs071,Julliot C,1996,-1.743,
+obs072,Martins MM,2006,-0.7577,0.0007
+obs073,Nunes A,1995,-0.2877,0.0002
+obs074,Bravo SP.,2009,-0.4077,0.0001
+obs075,"Wehncke EV, Dalling JW ",2005,-0.0633,
+obs076,"Righini N, Serio-Silva JC, Rico-Gray V, Mart??nez-Mota R",2004,-0.4845,0.0006
+obs077,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.2668,0.0004
+obs078,Nunes A,1995,-0.2719,0.0002
+obs079,Nunes A,1995,-0.1719,0.0001
+obs080,Moraes PLR,1992,-0.5232,
+obs081,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.7056,0.0005
+obs082,"Dom??nguez-Dom??nguez LE, Morales-M??vil JE, Alba-Landa J",2006,-0.1625,0.0002
+obs083,Estrada A & Coates-Estrada R,1984,-0.2877,0.0001
+obs084,"Wehncke EV, Dalling JW ",2005,5.193,3.5715
+obs085,"Knogge C, Herrera ERT, Heymann EW",2003,-1.1766,
+obs086,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.2664,0.0002
+obs087,Julliot C,1996,-0.1466,
+obs088,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.6109,
+obs089,Julliot C,1996,-0.3137,
+obs090,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.2383,0.0001
+obs091,"Dom??nguez-Dom??nguez LE, Morales-M??vil JE, Alba-Landa J",2006,-0.1915,0.0002
+obs092,Martins MM,2006,-1.5454,0.0001
+obs093,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-1.0473,0.0001
+obs094,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.3001,0.0001
+obs095,Nunes A,1995,-0.2231,0.0001
+obs096,"Wehncke EV, Dalling JW ",2005,-0.7178,0.0001
+obs097,Moraes PLR,1992,-0.47,
+obs098,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1189,0.0002
+obs099,"Knogge C, Herrera ERT, Heymann EW",2003,-1.4663,0.0002
+obs100,"Knogge C, Herrera ERT, Heymann EW",2003,0.4055,0.0007
+obs101,"Knogge C, Herrera ERT, Heymann EW",2003,-0.2877,0.0002
+obs102,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.2113,
+obs103,"Knogge C, Herrera ERT, Heymann EW",2003,-0.6931,
+obs104,"Knogge C, Herrera ERT, Heymann EW",2003,-0.6931,
+obs105,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.3659,0.0016
+obs106,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1416,0.0001
+obs107,Estrada A & Coates-Estrada R,1984,5.3936,1
+obs108,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-1.0033,
+obs109,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.0182,0.0001
+obs110,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0917,0.0001
+obs111,Stevenson PR,2000,0.8329,0.0008
+obs112,Moraes PLR,1992,-0.5781,0.0001
+obs113,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.8329,0.0002
+obs114,Valenta K & Fedigan LM,2009,0.0475,
+obs115,Moraes PLR,1992,-0.8995,
+obs116,"Knogge C, Herrera ERT, Heymann EW",2003,1.4939,0.0002
+obs117,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.6539,0.0005
+obs118,Stevenson PR,2000,1.8326,0.0043
+obs119,Martins MM,2006,-0.8189,0.0001
+obs120,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.8326,0.0013
+obs121,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.1278,
+obs122,"Knogge C, Herrera ERT, Heymann EW",2003,1.5181,0.0002
+obs123,Julliot C,1996,0.1671,0.0001
+obs124,Bravo SP.,2009,-0.21,0.0001
+obs125,Bravo SP.,2009,-0.239,0.0001
+obs126,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.7156,0.0006
+obs127,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.3365,0.0001
+obs128,"Knogge C, Herrera ERT, Heymann EW",2003,-0.5942,
+obs129,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.8752,
+obs130,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.6931,0.0001
+obs131,"Knogge C, Herrera ERT, Heymann EW",2003,0.2877,
+obs132,"Knogge C, Herrera ERT, Heymann EW",2003,-0.7958,
+obs133,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.6155,0.0005
+obs134,Stevenson PR,2000,-0.3365,0.0001
+obs135,Martins MM,2006,-0.2364,0.0001
+obs136,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.3365,
+obs137,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.5108,
+obs138,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.8835,
+obs139,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0423,
+obs140,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.5021,
+obs141,Martins MM,2006,-0.2036,0.0001
+obs142,"Wehncke EV, Dalling JW ",2005,0.0488,
+obs143,Stevenson PR,2000,0.1335,0.0002
+obs144,Moraes PLR,1992,-0.0896,
+obs145,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.1335,
+obs146,Julliot C,1996,0.0645,
+obs147,"Knogge C, Herrera ERT, Heymann EW",2003,2.7788,0.0013
+obs148,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.217,0.0001
+obs149,"Chaves OM,  Stoner KE,  Arroyo-Rodr??guez V, Estrada A",2011,1.6094,0.0016
+obs150,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.7885,0.0001
+obs151,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0588,
+obs152,Bravo SP.,2009,0.0927,
+obs153,Julliot C,1996,-0.3857,
+obs154,"Knogge C, Herrera ERT, Heymann EW",2003,0.9163,0.0006
+obs155,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-1.0194,0.0001
+obs156,"Knogge C, Herrera ERT, Heymann EW",2003,1.6094,0.0017
+obs157,"Knogge C, Herrera ERT, Heymann EW",2003,0.9163,0.0002
+obs158,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.9664,
+obs159,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-1.335,
+obs160,"Knogge C, Herrera ERT, Heymann EW",2003,-0.3365,
+obs161,"Knogge C, Herrera ERT, Heymann EW",2003,0.2231,
+obs162,"Knogge C, Herrera ERT, Heymann EW",2003,0.2231,
+obs163,"Wehncke EV, Dalling JW ",2005,-0.0681,
+obs164,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.8509,
+obs165,Estrada A & Coates-Estrada R,1984,0.0572,
+obs166,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.106,0.0001
+obs167,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,5.9135,0.5714
+obs168,Estrada A & Coates-Estrada R,1984,0.2787,
+obs169,"Chaves OM,  Stoner KE,  Arroyo-Rodr??guez V, Estrada A",2011,2.7213,0.004
+obs170,"Knogge C, Herrera ERT, Heymann EW",2003,-0.4736,
+obs171,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.1953,
+obs172,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.9416,
+obs173,Julliot C,1996,-0.2485,
+obs174,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.2231,0.0001
+obs175,"Knogge C, Herrera ERT, Heymann EW",2003,-0.5794,0.0001
+obs176,"Knogge C, Herrera ERT, Heymann EW",2003,5.9915,10
+obs177,Valenta K & Fedigan LM,2009,0.6444,
+obs178,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.1823,0.0001
+obs179,Valenta K & Fedigan LM,2009,0.2938,
+obs180,"Knogge C, Herrera ERT, Heymann EW",2003,-0.1542,0.0001
+obs181,Stevenson PR,2000,0.2719,0.0001
+obs182,"Knogge C, Herrera ERT, Heymann EW",2003,-0.1542,
+obs183,"Knogge C, Herrera ERT, Heymann EW",2003,1.7918,0.0017
+obs184,"Knogge C, Herrera ERT, Heymann EW",2003,1.0986,0.0002
+obs185,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.2719,
+obs186,"Knogge C, Herrera ERT, Heymann EW",2003,-0.1542,
+obs187,Martins MM,2006,-0.0465,
+obs188,Martins MM,2006,-0.2883,
+obs189,Stevenson PR,2000,-0.0455,0.0001
+obs190,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0455,
+obs191,Julliot C,1996,-0.11,
+obs192,Valenta K & Fedigan LM,2009,-0.2538,
+obs193,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.7272,0.0001
+obs194,"Knogge C, Herrera ERT, Heymann EW",2003,-0.7831,
+obs195,Stevenson PR,2000,-0.5152,0.0001
+obs196,Stevenson PR,2000,2.4423,0.0042
+obs197,Nunes A,1995,6.1312,2
+obs198,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.5152,
+obs199,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,2.4423,0.0007
+obs200,Julliot C,1996,0.3408,
+obs201,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0417,
+obs202,Julliot C,1996,0.0215,
+obs203,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.1865,
+obs204,Martins MM,2006,-0.0606,
+obs205,Julliot C,1996,-0.7828,
+obs206,"Knogge C, Herrera ERT, Heymann EW",2003,-0.6084,
+obs207,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.4578,
+obs208,"Gonz??lez-Di Pierro AM,  Ben??tez-Malvido J, M??ndez-Toribio M,  Zerme??o I, Arroyo-Rodr??guez V, Stoner KE",2011,-0.2578,0.0001
+obs209,"Knogge C, Herrera ERT, Heymann EW",2003,-0.5388,
+obs210,Martins MM,2006,-0.0198,
+obs211,Julliot C,1996,-0.2311,
+obs212,Julliot C,1996,0.1508,
+obs213,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,1.166,0.0004
+obs214,Moraes PLR,1992,-0.4376,
+obs215,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,1.0443,0.0011
+obs216,Stevenson PR,2000,1.6487,0.0007
+obs217,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.6487,0.0002
+obs218,Martins MM,2006,-0.1568,0.0001
+obs219,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.2091,
+obs220,Stevenson PR,2000,0.2278,0.0001
+obs221,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.0886,
+obs222,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.4177,
+obs223,"Knogge C, Herrera ERT, Heymann EW",2003,1.8819,0.0012
+obs224,Stevenson PR,2000,1.4424,0.0006
+obs225,Stevenson PR,2000,2.3979,0.0027
+obs226,"Chaves OM,  Stoner KE,  Arroyo-Rodr??guez V, Estrada A",2011,2.1828,0.0016
+obs227,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.4424,0.0002
+obs228,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,2.3979,0.0007
+obs229,Julliot C,1996,-0.1198,
+obs230,"Knogge C, Herrera ERT, Heymann EW",2003,6.3261,10
+obs231,Martins MM,2006,-0.1018,
+obs232,"Knogge C, Herrera ERT, Heymann EW",2003,0.9808,0.0002
+obs233,Martins MM,2006,0.499,
+obs234,"Knogge C, Herrera ERT, Heymann EW",2003,0.1335,
+obs235,"Knogge C, Herrera ERT, Heymann EW",2003,0.1335,
+obs236,Moraes PLR,1992,0.6419,
+obs237,Estrada A & Coates-Estrada R,1984,4.7467,0.0017
+obs238,Bravo SP.,2009,0.0607,
+obs239,Stevenson PR,2000,2.1145,0.0014
+obs240,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,2.1145,0.0003
+obs241,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.2617,
+obs242,Nunes A,1995,0.1723,
+obs243,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.8088,0.0009
+obs244,"Knogge C, Herrera ERT, Heymann EW",2003,-0.3582,
+obs245,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,1.0986,0.0005
+obs246,Nunes A,1995,0.3102,
+obs247,"Knogge C, Herrera ERT, Heymann EW",2003,1.9781,0.0012
+obs248,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.2442,
+obs249,Julliot C,1996,0.1823,
+obs250,Estrada A & Coates-Estrada R,1984,1.1891,
+obs251,Estrada A & Coates-Estrada R,1984,0.6931,
+obs252,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.2777,
+obs253,"Knogge C, Herrera ERT, Heymann EW",2003,0.5878,
+obs254,Julliot C,1996,0.0656,
+obs255,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,1.1474,
+obs256,"Knogge C, Herrera ERT, Heymann EW",2003,0.5878,0.0001
+obs257,Moraes PLR,1992,1.1144,
+obs258,"Wehncke EV, Dalling JW ",2005,-0.4362,
+obs259,Julliot C,1996,-0.2059,
+obs260,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.149,0.0001
+obs261,"Knogge C, Herrera ERT, Heymann EW",2003,0.1985,
+obs262,Moraes PLR,1992,0.3242,
+obs263,Julliot C,1996,0.5368,
+obs264,"Dom??nguez-Dom??nguez LE, Morales-M??vil JE, Alba-Landa J",2006,1.9929,0.0005
+obs265,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.0643,
+obs266,Nunes A,1995,0.5679,
+obs267,"Knogge C, Herrera ERT, Heymann EW",2003,-0.2684,
+obs268,Stevenson PR,2000,2.2588,0.0014
+obs269,Stevenson PR,2000,-0.0438,
+obs270,"Wehncke EV, Dalling JW ",2005,1.9021,0.0002
+obs271,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.3171,
+obs272,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,2.2588,0.0003
+obs273,Estrada A & Coates-Estrada R,1984,-0.1898,
+obs274,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,-0.0438,
+obs275,"Gonz??lez-Di Pierro AM,  Ben??tez-Malvido J, M??ndez-Toribio M,  Zerme??o I, Arroyo-Rodr??guez V, Stoner KE",2011,-0.1693,
+obs276,"Knogge C, Herrera ERT, Heymann EW",2003,-0.261,
+obs277,"Wehncke EV, Dalling JW ",2005,-0.0432,
+obs278,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.2285,
+obs279,"Knogge C, Herrera ERT, Heymann EW",2003,0.5108,
+obs280,"Knogge C, Herrera ERT, Heymann EW",2003,0.6931,0.0001
+obs281,"Wehncke EV, Dalling JW ",2005,-0.0882,
+obs282,"Knogge C, Herrera ERT, Heymann EW",2003,-0.1668,
+obs283,Julliot C,1996,-0.2954,
+obs284,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.6518,
+obs285,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,6.5653,1.7241
+obs286,"Righini N, Serio-Silva JC, Rico-Gray V, Mart??nez-Mota R",2004,0.7069,0.0001
+obs287,"Knogge C, Herrera ERT, Heymann EW",2003,-0.2877,
+obs288,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.5241,
+obs289,Valenta K & Fedigan LM,2009,0.3662,
+obs290,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0052,
+obs291,Nunes A,1995,6.6529,2.5
+obs292,Bravo SP.,2009,0.0103,
+obs293,Bravo SP.,2009,-0.1857,
+obs294,Julliot C,1996,-0.2357,
+obs295,"Knogge C, Herrera ERT, Heymann EW",2003,-0.2319,
+obs296,Julliot C,1996,1.0059,
+obs297,"Knogge C, Herrera ERT, Heymann EW",2003,0.0583,
+obs298,Stevenson PR,2000,0.47,
+obs299,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.8267,
+obs300,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.47,
+obs301,Moraes PLR,1992,1.0862,
+obs302,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.8206,0.0001
+obs303,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.2016,
+obs304,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.3417,
+obs305,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.269,
+obs306,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0206,
+obs307,Julliot C,1996,-0.1701,
+obs308,"Righini N, Serio-Silva JC, Rico-Gray V, Mart??nez-Mota R",2004,0.8353,0.0001
+obs309,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,1.7798,0.0001
+obs310,Moraes PLR,1992,0.1014,
+obs311,"Wehncke EV, Dalling JW ",2005,-0.1863,
+obs312,"Knogge C, Herrera ERT, Heymann EW",2003,0.2873,
+obs313,"Wehncke EV, Dalling JW ",2005,0.087,
+obs314,Nunes A,1995,0.6931,
+obs315,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.1275,
+obs316,"Knogge C, Herrera ERT, Heymann EW",2003,-0.1672,
+obs317,Figueiredo RA,1993,0.5231,
+obs318,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.1625,
+obs319,"Wehncke EV, Dalling JW ",2005,6.7452,1.5625
+obs320,Martins MM,2006,0.4914,
+obs321,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.6231,
+obs322,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.2395,
+obs323,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.1092,
+obs324,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.1136,
+obs325,Stevenson PR,2000,0.0706,
+obs326,Martins MM,2006,0.6931,
+obs327,Julliot C,1996,0.1079,
+obs328,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,2.1861,0.0005
+obs329,"Knogge C, Herrera ERT, Heymann EW",2003,0.1495,
+obs330,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,-0.05,
+obs331,"Chaves OM,  Stoner KE,  Arroyo-Rodr??guez V, Estrada A",2011,0.5878,
+obs332,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.2513,
+obs333,Moraes PLR,1992,-0.2877,
+obs334,Moraes PLR,1992,0.2371,
+obs335,"Gonz??lez-Di Pierro AM,  Ben??tez-Malvido J, M??ndez-Toribio M,  Zerme??o I, Arroyo-Rodr??guez V, Stoner KE",2011,0.1863,
+obs336,"Knogge C, Herrera ERT, Heymann EW",2003,0.0589,
+obs337,"Knogge C, Herrera ERT, Heymann EW",2003,0.7732,
+obs338,Nunes A,1995,0.4445,
+obs339,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.3183,
+obs340,"Knogge C, Herrera ERT, Heymann EW",2003,0.5463,
+obs341,Stevenson PR,2000,0.0667,
+obs342,Nunes A,1995,0.4449,
+obs343,Martins MM,2006,0.5814,
+obs344,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.9217,
+obs345,"Knogge C, Herrera ERT, Heymann EW",2003,0.1123,
+obs346,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.6313,
+obs347,"Knogge C, Herrera ERT, Heymann EW",2003,0.0524,
+obs348,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0608,
+obs349,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.0541,
+obs350,"Wehncke EV, Dalling JW ",2005,0.1576,
+obs351,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.0336,
+obs352,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0325,
+obs353,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.0852,
+obs354,"Knogge C, Herrera ERT, Heymann EW",2003,0.6931,
+obs355,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0182,
+obs356,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,0.4034,
+obs357,"Benitez-Malvido J, Gonz??lez-Di Pierro AM, Lombera R, Guill??n S & Estrada A",2014,1.0262,0.0001
+obs358,Martins MM,2006,1.8971,0.0002
+obs359,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.1054,
+obs360,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.2231,
+obs361,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,1.5418,0.0002
+obs362,"Knogge C, Herrera ERT, Heymann EW",2003,0.1054,
+obs363,"Chaves OM,  Stoner KE,  Arroyo-Rodr??guez V, Estrada A",2011,1.2379,0.0001
+obs364,Stevenson PR,2000,0.0305,
+obs365,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.0513,
+obs366,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.2231,
+obs367,"Stevenson PR, Castellanos MC, Pizarro JC, Garavito M",2002,0.2877,
+obs368,"Knogge C, Herrera ERT, Heymann EW",2003,0.2877,
+obs369,Moraes PLR,1992,0.1625,
+obs370,Martins MM,2006,0.2231,
+obs371,Estrada A & Coates-Estrada R,1984,0.0566,
+obs372,"Knogge C, Herrera ERT, Heymann EW",2003,1.0986,
+obs373,"Knogge C, Herrera ERT, Heymann EW",2003,0.7621,
+obs374,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.314,
+obs375,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.1063,
+obs376,"Knogge C, Herrera ERT, Heymann EW",2003,-0.3857,
+obs377,Julliot C,1996,-0.2513,
+obs378,"Catenacci LS, Vleeschouwer KM, Nogueira-Filho SLG",2009,0.38,
+obs379,"Knogge C, Herrera ERT, Heymann EW",2003,-0.0541,
+obs380,Moraes PLR,1992,-0.0593,
+obs381,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,0.4205,
+obs382,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,7.346,1.7241
+obs383,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.2518,
+obs384,"Knogge C, Herrera ERT, Heymann EW",2003,0.5819,
+obs385,Julliot C,1996,-0.0386,
+obs386,Julliot C,1996,0.2776,
+obs387,"Lapenta MJ, Proc??pio-de-Oliveira P, Kierulff MCM, Motta-Junior JC.",2008,-0.1619,
