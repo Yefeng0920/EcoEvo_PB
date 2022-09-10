@@ -15,7 +15,7 @@ The code has detailed annotations for our analysis pipelines. Using the datasets
 We added one additional analysis which have not been included in our paper but have implications for future studies. They are: (i) 'stressor specific' results, which are the additional analysis required by one of Referee, (ii) the empirically-derived effect size interpretation guidelines in global change studies, and (3) false-positive report probability (FPRP) in global change studies. One can easily update our results if one has a “bigger” dataset. 
 
 # data folder contains:
-30 lnRR* datasets, 12 lnRR datasets, 12 SMD datasets, 12 SMDH datasets, 12 lnCVR datasets, 12 lnVR datasets
+20 lnRR datasets, 36 SMD datasets, 31 Zr dataset
 
 # Figures folder contains:
 Figures 1 - 6  reported in the main text; funnel plots and model residuals in the online supplementary materials
