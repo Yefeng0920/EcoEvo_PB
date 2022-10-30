@@ -1,7 +1,7 @@
 # Publication bias impacts on effect size, statistical power, and magnitude  (Type M) and sign (Type S) errors in ecology and evolutionary biology
 
 # Citation
-Yefeng Yang*, Alfredo Sánchez-Tójar, Rose E. O’Dea, Daniel W.A. Noble, Julia Koricheva, Michael D. Jennions, Timothy H. Parker, Malgorzata Lagisz, Shinichi Nakagawa*. *Low statistical power and overestimated anthropogenic impacts, exacerbated by publication bias, dominate field studies in global change biolog*. BMC Biology, in revision 2022.
+Yefeng Yang*, Alfredo Sánchez-Tójar, Rose E. O’Dea, Daniel W.A. Noble, Julia Koricheva, Michael D. Jennions, Timothy H. Parker, Malgorzata Lagisz, Shinichi Nakagawa*. *Low statistical power and overestimated anthropogenic impacts, exacerbated by publication bias, dominate field studies in global change biolog*. BMC Biology, in revision 2022. [ecoevorxiv](https://ecoevorxiv.org/repository/view/3665/)
 
 # How to use
 This repository houses the code used to reproduce the models, Figures, and Tables in the paper of 'Publication bias impacts on effect size, statistical power, and magnitude  (Type M) and sign (Type S) errors in ecology and evolutionary biology'.
